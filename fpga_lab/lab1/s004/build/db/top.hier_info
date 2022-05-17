@@ -1,0 +1,36 @@
+|top
+user_led0 <= user_sw0.DB_MAX_OUTPUT_PORT_TYPE
+user_sw0 => user_led0.DATAIN
+user_led1 <= user_sw1.DB_MAX_OUTPUT_PORT_TYPE
+user_sw1 => user_led1.DATAIN
+user_led2 <= user_sw2.DB_MAX_OUTPUT_PORT_TYPE
+user_sw2 => user_led2.DATAIN
+user_led3 <= user_sw3.DB_MAX_OUTPUT_PORT_TYPE
+user_sw3 => user_led3.DATAIN
+user_led4 <= user_sw4.DB_MAX_OUTPUT_PORT_TYPE
+user_sw4 => user_led4.DATAIN
+user_led5 <= user_sw5.DB_MAX_OUTPUT_PORT_TYPE
+user_sw5 => user_led5.DATAIN
+user_led6 <= user_sw6.DB_MAX_OUTPUT_PORT_TYPE
+user_sw6 => user_led6.DATAIN
+user_led7 <= user_sw7.DB_MAX_OUTPUT_PORT_TYPE
+user_sw7 => user_led7.DATAIN
+user_led8 <= user_sw8.DB_MAX_OUTPUT_PORT_TYPE
+user_sw8 => user_led8.DATAIN
+user_led9 <= user_sw9.DB_MAX_OUTPUT_PORT_TYPE
+user_sw9 => user_led9.DATAIN
+user_led10 <= user_sw10.DB_MAX_OUTPUT_PORT_TYPE
+user_sw10 => user_led10.DATAIN
+user_led11 <= user_sw11.DB_MAX_OUTPUT_PORT_TYPE
+user_sw11 => user_led11.DATAIN
+user_led12 <= user_sw12.DB_MAX_OUTPUT_PORT_TYPE
+user_sw12 => user_led12.DATAIN
+user_led13 <= user_sw13.DB_MAX_OUTPUT_PORT_TYPE
+user_sw13 => user_led13.DATAIN
+user_led14 <= user_sw14.DB_MAX_OUTPUT_PORT_TYPE
+user_sw14 => user_led14.DATAIN
+user_led15 <= user_sw15.DB_MAX_OUTPUT_PORT_TYPE
+user_sw15 => user_led15.DATAIN
+clk50 => ~NO_FANOUT~
+
+

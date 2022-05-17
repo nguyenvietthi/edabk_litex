@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Mon May 16 20:11:46 2022
+# Process ID: 30234
+# Current directory: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s004/build
+# Command line: vivado -mode batch -source top.tcl
+# Log file: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s004/build/vivado.log
+# Journal file: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s004/build/vivado.jou
+#-----------------------------------------------------------
+source top.tcl

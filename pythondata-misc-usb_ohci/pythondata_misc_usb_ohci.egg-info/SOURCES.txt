@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+pythondata_misc_usb_ohci/__init__.py
+pythondata_misc_usb_ohci.egg-info/PKG-INFO
+pythondata_misc_usb_ohci.egg-info/SOURCES.txt
+pythondata_misc_usb_ohci.egg-info/dependency_links.txt
+pythondata_misc_usb_ohci.egg-info/not-zip-safe
+pythondata_misc_usb_ohci.egg-info/top_level.txt
+pythondata_misc_usb_ohci/verilog/UsbOhciWishbone_Dw32_Pc1_Pf48000000.v

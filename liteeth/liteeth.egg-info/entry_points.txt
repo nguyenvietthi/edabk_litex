@@ -1,0 +1,3 @@
+[console_scripts]
+liteeth_gen = liteeth.gen:main
+

@@ -1,0 +1,2 @@
+graft pythondata_cpu_lm32/verilog/
+global-exclude *.py[cod]

@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: litejesd204b
+Version: 0.0.0
+Summary: Small footprint and configurable JESD204B core
+Home-page: http://enjoy-digital.fr
+Author: Florent Kermarrec
+Author-email: florent@enjoy-digital.fr
+License: BSD
+Download-URL: https://github.com/enjoy-digital/litejesd204b
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: ~=3.6

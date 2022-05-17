@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: litedram
+Version: 0.0.0
+Summary: Small footprint and configurable DRAM core
+Home-page: http://enjoy-digital.fr
+Author: Florent Kermarrec
+Author-email: florent@enjoy-digital.fr
+License: BSD
+Download-URL: https://github.com/enjoy-digital/litedram
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: ~=3.6

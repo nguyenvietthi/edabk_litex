@@ -1,0 +1,46 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  compliance:
+    name: RISC-V Compliance Test
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        path: serv
+
+    - name: install fusesoc, verilator and gcc
+      run: |
+        sudo apt-get install -y python3-setuptools verilator gcc-riscv64-unknown-elf
+        pip3 install fusesoc
+
+    - name: set SERV directory
+      run: echo "SERV=$GITHUB_WORKSPACE/serv" >> $GITHUB_ENV
+
+    - name: setup workspace
+      run: fusesoc library add serv $SERV
+
+    - name: build servant
+      run: fusesoc run --target=verilator_tb --build --build-root=servant_x servant
+
+    - name: download risc-v compliance
+      run: git clone https://github.com/riscv/riscv-compliance --branch 1.0
+
+    - name: run RV32i compliance tests
+      run: |
+        cd $GITHUB_WORKSPACE/riscv-compliance
+        make TARGETDIR=$SERV/riscv-target RISCV_TARGET=serv RISCV_DEVICE=rv32i RISCV_ISA=rv32i TARGET_SIM=$GITHUB_WORKSPACE/servant_x/verilator_tb-verilator/Vservant_sim
+
+    - name: run RV32Zicsr compliance tests
+      run: |
+        cd $GITHUB_WORKSPACE/riscv-compliance
+        make TARGETDIR=$SERV/riscv-target RISCV_TARGET=serv RISCV_DEVICE=rv32i RISCV_ISA=rv32Zicsr TARGET_SIM=$GITHUB_WORKSPACE/servant_x/verilator_tb-verilator/Vservant_sim
+
+    - name: run RV32Zifencei compliance tests
+      run: |
+        cd $GITHUB_WORKSPACE/riscv-compliance
+        make TARGETDIR=$SERV/riscv-target RISCV_TARGET=serv RISCV_DEVICE=rv32i RISCV_ISA=rv32Zifencei TARGET_SIM=$GITHUB_WORKSPACE/servant_x/verilator_tb-verilator/Vservant_sim
+

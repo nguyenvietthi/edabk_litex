@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "user_led0",
+					"strict" : false
+				},
+				{
+					"name" : "user_led1",
+					"strict" : false
+				},
+				{
+					"name" : "user_led2",
+					"strict" : false
+				},
+				{
+					"name" : "user_led3",
+					"strict" : false
+				},
+				{
+					"name" : "user_led4",
+					"strict" : false
+				},
+				{
+					"name" : "user_led5",
+					"strict" : false
+				},
+				{
+					"name" : "user_led6",
+					"strict" : false
+				},
+				{
+					"name" : "user_led7",
+					"strict" : false
+				},
+				{
+					"name" : "user_led8",
+					"strict" : false
+				},
+				{
+					"name" : "user_led9",
+					"strict" : false
+				},
+				{
+					"name" : "user_led10",
+					"strict" : false
+				},
+				{
+					"name" : "user_led11",
+					"strict" : false
+				},
+				{
+					"name" : "user_led12",
+					"strict" : false
+				},
+				{
+					"name" : "user_led13",
+					"strict" : false
+				},
+				{
+					"name" : "user_led14",
+					"strict" : false
+				},
+				{
+					"name" : "user_led15",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw0",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw1",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw2",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw3",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw4",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw5",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw6",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw7",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw8",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw9",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw10",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw11",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw12",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw13",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw14",
+					"strict" : false
+				},
+				{
+					"name" : "user_sw15",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

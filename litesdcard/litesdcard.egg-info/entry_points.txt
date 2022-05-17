@@ -1,0 +1,3 @@
+[console_scripts]
+litesdcard_gen = litesdcard.gen:main
+

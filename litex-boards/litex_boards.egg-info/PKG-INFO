@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: litex-boards
+Version: 0.0.0
+Summary: LiteX supported boards
+Home-page: http://enjoy-digital.fr
+Author: Florent Kermarrec
+Author-email: florent@enjoy-digital.fr
+License: BSD
+Download-URL: https://github.com/litex-hub/litex-boards
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: ~=3.6

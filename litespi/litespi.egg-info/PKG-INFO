@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: litespi
+Version: 0.0.0
+Summary: Small footprint and configurable SPI core
+Home-page: https://github.com/litex-hub
+Author: LiteSPI Developers
+License: BSD
+Download-URL: https://github.com/litex-hub/litespi
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: ~=3.6

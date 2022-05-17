@@ -1,0 +1,444 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Mon May 16 20:25:27 2022
+# Process ID: 33166
+# Current directory: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build
+# Command line: vivado -mode batch -source top.tcl
+# Log file: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/vivado.log
+# Journal file: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/vivado.jou
+#-----------------------------------------------------------
+source top.tcl
+# create_project -force -name top -part xc7k325tffg900-2
+# set_msg_config -id {Common 17-55} -new_severity {Warning}
+# read_verilog {/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.v}
+# read_xdc top.xdc
+# set_property PROCESSING_ORDER EARLY [get_files top.xdc]
+# synth_design -directive default -top top -part xc7k325tffg900-2
+Command: synth_design -directive default -top top -part xc7k325tffg900-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 33181 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1314.465 ; gain = 95.996 ; free physical = 467 ; free virtual = 19378
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.v:20]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'top' (1#1) [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.v:20]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1356.074 ; gain = 137.605 ; free physical = 466 ; free virtual = 19390
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1356.074 ; gain = 137.605 ; free physical = 422 ; free virtual = 19378
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1356.074 ; gain = 137.605 ; free physical = 422 ; free virtual = 19378
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc]
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -hierarchical -filter {mr_ff == TRUE}'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:36]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:38]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == PRE} -of_objects [get_cells -hierarchical -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}]'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:38]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff1 == TRUE}'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:40]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == C} -of_objects [get_cells -hierarchical -filter {ars_ff1 == TRUE}]'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:40]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff2 == TRUE}'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:40]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == D} -of_objects [get_cells -hierarchical -filter {ars_ff2 == TRUE}]'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:40]
+Finished Parsing XDC File [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1733.551 ; gain = 0.000 ; free physical = 139 ; free virtual = 19046
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 269 ; free virtual = 19074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 269 ; free virtual = 19074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 253 ; free virtual = 19073
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "__main___blink_r_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "user_rgb_led_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "__main___blink_g_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "user_rgb_led_g" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "__main___blink_b_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "user_rgb_led_b" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 283 ; free virtual = 19101
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "__main___blink_r_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "user_rgb_led_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "__main___blink_g_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "user_rgb_led_g" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "__main___blink_b_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "user_rgb_led_b" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 171 ; free virtual = 19008
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:53 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 191 ; free virtual = 18762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:53 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 188 ; free virtual = 18761
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:53 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 179 ; free virtual = 18760
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.v:71]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 182 ; free virtual = 18761
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 182 ; free virtual = 18761
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 183 ; free virtual = 18760
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 183 ; free virtual = 18760
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 183 ; free virtual = 18760
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 183 ; free virtual = 18760
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    24|
+|3     |LUT1   |     3|
+|4     |LUT4   |    12|
+|5     |LUT5   |   108|
+|6     |FDRE   |   100|
+|7     |IBUF   |     1|
+|8     |OBUF   |     3|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   252|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1733.551 ; gain = 515.082 ; free physical = 183 ; free virtual = 18760
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1733.551 ; gain = 137.605 ; free physical = 236 ; free virtual = 18813
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 1733.559 ; gain = 515.082 ; free physical = 246 ; free virtual = 18822
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc]
+CRITICAL WARNING: [Common 17-69] Command failed: 'N16' is not a valid site or package pin name. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:5]
+CRITICAL WARNING: [Common 17-69] Command failed: 'R11' is not a valid site or package pin name. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:9]
+CRITICAL WARNING: [Vivado 12-1815] Setting property 'IOSTANDARD' is not allowed for GT terminals. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:18]
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -hierarchical -filter {mr_ff == TRUE}'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:36]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:38]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == PRE} -of_objects [get_cells -hierarchical -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}]'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:38]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff1 == TRUE}'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:40]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == C} -of_objects [get_cells -hierarchical -filter {ars_ff1 == TRUE}]'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:40]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {ars_ff2 == TRUE}'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:40]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == D} -of_objects [get_cells -hierarchical -filter {ars_ff2 == TRUE}]'. [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc:40]
+Finished Parsing XDC File [/media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s005/build/top.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+27 Infos, 15 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:56 . Memory (MB): peak = 1733.559 ; gain = 536.918 ; free physical = 231 ; free virtual = 18797
+# report_timing_summary -file top_timing_synth.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+report_timing_summary: Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 2121.945 ; gain = 388.387 ; free physical = 271 ; free virtual = 18493
+# report_utilization -hierarchical -file top_utilization_hierarchical_synth.rpt
+report_utilization: Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2121.945 ; gain = 0.000 ; free physical = 263 ; free virtual = 18486
+# report_utilization -file top_utilization_synth.rpt
+report_utilization: Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.32 . Memory (MB): peak = 2121.945 ; gain = 0.000 ; free physical = 269 ; free virtual = 18499
+# opt_design -directive default
+Command: opt_design -directive default
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: default
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 2174.328 ; gain = 48.016 ; free physical = 303 ; free virtual = 18534
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 12b65535e
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18534
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 12b65535e
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18534
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 186c19989
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18534
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 186c19989
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18534
+INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 186c19989
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18534
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 186c19989
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18534
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18534
+Ending Logic Optimization Task | Checksum: 186c19989
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18534
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 183451c8b
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 305 ; free virtual = 18535
+INFO: [Common 17-83] Releasing license: Implementation
+16 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+# place_design -directive default
+Command: place_design -directive default
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k325t'
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'default' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 4 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 317 ; free virtual = 18544
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: c85ba415
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 317 ; free virtual = 18544
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 317 ; free virtual = 18544
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+ERROR: [Place 30-574] Poor placement for routing between an IO pin and BUFG. If this sub optimal condition is acceptable for this design, you may use the CLOCK_DEDICATED_ROUTE constraint in the .xdc file to demote this message to a WARNING. However, the use of this override is highly discouraged. These examples can be used directly in the .xdc file to override this clock rule.
+	< set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets clk100_IBUF] >
+
+	clk100_IBUF_inst (IBUF.O) is locked to IPAD_X1Y96
+	clk100_IBUF_BUFG_inst (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y31
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: bf91c147
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 311 ; free virtual = 18539
+Phase 1 Placer Initialization | Checksum: bf91c147
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 311 ; free virtual = 18539
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: bf91c147
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.328 ; gain = 0.000 ; free physical = 318 ; free virtual = 18545
+INFO: [Common 17-83] Releasing license: Implementation
+13 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Mon May 16 20:27:04 2022...

@@ -1,0 +1,3 @@
+[console_scripts]
+litedram_gen = litedram.gen:main
+

@@ -1,0 +1,3 @@
+[console_scripts]
+litepcie_gen = litepcie.gen:main
+
