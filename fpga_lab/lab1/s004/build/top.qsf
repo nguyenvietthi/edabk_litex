@@ -1,5 +1,5 @@
 set_global_assignment -name DEVICE EP4CE115F29I7
-set_global_assignment -name SYSTEMVERILOG_FILE /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab1/s004/build/top.v -library work
+set_global_assignment -name SYSTEMVERILOG_FILE /home/thinv0/edabk_litex/fpga_lab/lab1/s004/build/top.v -library work
 set_global_assignment -name top_level_entity top
 set_location_assignment -comment "user_led:0" -to user_led0 Pin_G19
 set_instance_assignment -name io_standard -comment "user_led:0" "3.3-V LVTTL" -to user_led0
