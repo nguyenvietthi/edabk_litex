@@ -56,7 +56,7 @@ class Platform(AlteraPlatform):
     default_clk_period = 1e9/100e6
 
     def __init__(self):
-        AlteraPlatform.__init__(self, "xc7a100t-csg324-1", _io, toolchain="quartus")
+        AlteraPlatform.__init__(self, "EP4CE115F29C7", _io, toolchain="quartus")
 
 # Design -------------------------------------------------------------------------------------------
 
