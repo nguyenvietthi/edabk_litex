@@ -4,7 +4,7 @@ from migen import *
 from migen.genlib.cdc import MultiReg
 
 from litex.build.generic_platform import *
-from litex.build.xilinx import XilinxPlatform
+from litex.build.altera import AlteraPlatform
 
 from tick import *
 from display import *
@@ -13,30 +13,50 @@ from core import *
 
 # IOs ----------------------------------------------------------------------------------------------
 
+# _io = [
+#     ("user_led",  0, Pins("H17"), IOStandard("LVCMOS33")),
+
+#     ("user_sw",  0, Pins("J15"), IOStandard("LVCMOS33")),
+
+#     ("user_btn_r", 0, Pins("M17"), IOStandard("LVCMOS33")),
+#     ("user_btn_l", 0, Pins("P17"), IOStandard("LVCMOS33")),
+
+#     ("clk100", 0, Pins("E3"), IOStandard("LVCMOS33")),
+
+#     ("cpu_reset", 0, Pins("C12"), IOStandard("LVCMOS33")),
+
+#     ("display_cs_n",  0, Pins("J17 J18 T9 J14 P14 T14 K2 U13"), IOStandard("LVCMOS33")),
+#     ("display_abcdefg",  0, Pins("T10 R10 K16 K13 P15 T11 L18 H15"), IOStandard("LVCMOS33")),
+# ]
+
 _io = [
-    ("user_led",  0, Pins("H17"), IOStandard("LVCMOS33")),
+    # Clk
+    ("clk50", 0, Pins("Y2"), IOStandard("3.3-V LVTTL")),
 
-    ("user_sw",  0, Pins("J15"), IOStandard("LVCMOS33")),
+    # Button
+    ("user_btn_r", 0, Pins("M23"), IOStandard("3.3-V LVTTL")),
+    ("user_btn_l", 0, Pins("M21"), IOStandard("3.3-V LVTTL")),
 
-    ("user_btn_r", 0, Pins("M17"), IOStandard("LVCMOS33")),
-    ("user_btn_l", 0, Pins("P17"), IOStandard("LVCMOS33")),
+    #cpu_reset
+    ("cpu_reset", 0, Pins("N21"), IOStandard("3.3-V LVTTL")),
 
-    ("clk100", 0, Pins("E3"), IOStandard("LVCMOS33")),
-
-    ("cpu_reset", 0, Pins("C12"), IOStandard("LVCMOS33")),
-
-    ("display_cs_n",  0, Pins("J17 J18 T9 J14 P14 T14 K2 U13"), IOStandard("LVCMOS33")),
-    ("display_abcdefg",  0, Pins("T10 R10 K16 K13 P15 T11 L18 H15"), IOStandard("LVCMOS33")),
+    # Seven Segment
+    ("seven_seg", 0, Pins("G18 F22 E17 L26 L25 J22 H22"), IOStandard("3.3-V LVTTL")),
+    ("seven_seg", 1, Pins("M24 Y22 W21 W22 W25 U23 U24"), IOStandard("3.3-V LVTTL")),
+    ("seven_seg", 2, Pins("AA25 AA26 Y25 W26 Y26 W27 W28"), IOStandard("3.3-V LVTTL")),
+    ("seven_seg", 3, Pins("V21 U21 AB20 AA21 AD24 AF23 Y19"), IOStandard("3.3-V LVTTL")),
+    ("seven_seg", 4, Pins("AB19 AA19 AG21 AH21 AE19 AF19 AE18"),  IOStandard("3.3-V LVTTL")),
+    ("seven_seg", 5, Pins("AD18 AC18 AB18 AH19 AG19 AF18 AH18"), IOStandard("3.3-V LVTTL"))
 ]
 
 # Platform -----------------------------------------------------------------------------------------
 
-class Platform(XilinxPlatform):
-    default_clk_name   = "clk100"
+class Platform(AlteraPlatform):
+    default_clk_name   = "clk50"
     default_clk_period = 1e9/100e6
 
     def __init__(self):
-        XilinxPlatform.__init__(self, "xc7a100t-csg324-1", _io, toolchain="vivado")
+        AlteraPlatform.__init__(self, "xc7a100t-csg324-1", _io, toolchain="quartus")
 
 # Design -------------------------------------------------------------------------------------------
 
@@ -69,8 +89,8 @@ class Clock(Module):
         tick = Tick(self.sys_clk_freq, 1)
         self.submodules += tick
 
-        # SevenSegmentDisplay
-        display = SevenSegmentDisplay(self.sys_clk_freq)
+        # SevenSegmentDisplay_noScanLed
+        display = SevenSegmentDisplay_noScanLed()
         self.submodules += display
 
         # Core : counts ss/mm/hh
@@ -118,9 +138,12 @@ class Clock(Module):
             display.values[5].eq(bcd_hours.tens),
 
             # Connect display to pads
-            platform.request("display_cs_n").eq(~display.cs),
-            platform.request("display_abcdefg").eq(~display.abcdefg)
+            # platform.request("display_cs_n").eq(~display.cs),
+            # platform.request("display_abcdefg").eq(~display.abcdefg)
         ]
+
+        for i in range(6):
+            self.comb += platform.request("seven_seg", i).eq(~display.abcdefg[i])
 
 module = Clock()
 

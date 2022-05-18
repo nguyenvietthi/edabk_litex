@@ -43,8 +43,20 @@ class SevenSegment(Module):
         # Combinatorial assignement
         self.comb += Case(value, cases)
 
-# SevenSegmentDisplay ------------------------------------------------------------------------------
+#SevenSegmentDisplay_noScanLed
+class SevenSegmentDisplay_noScanLed(Module):
+    def __init__(self):
+        self.values = Array(Signal(4) for i in range(6))
+        self.abcdefg = Array(Signal(7) for i in range(6))
 
+        seven_segment = list(SevenSegment() for i in range(6))
+        for i in range(6):
+            self.submodules += seven_segment[i]
+        
+        for i in range(6):
+            self.comb += self.abcdefg[i].eq(seven_segment[i].abcdefg[i])
+
+# SevenSegmentDisplay ------------------------------------------------------------------------------
 class SevenSegmentDisplay(Module):
     def __init__(self, sys_clk_freq, cs_period=0.001):
         # Module's interface
