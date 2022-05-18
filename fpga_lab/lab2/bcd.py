@@ -67,20 +67,31 @@ class BCD(Module):
 
 # BCD ----------------------------------------------------------------------------------------------
 
-# class BCD(Module):
-#     def __init__(self):
-#         # -- TO BE COMPLETED --
-#         self.my_input  = Signal()  # input
-#         self.my_output = Signal()  # output
+class Instance_BCD(Module):
+    def __init__(self):
+        # -- TO BE COMPLETED --
+        self.value    = Signal(8)  # input
+        self.hundreds = Signal(4)  # output
+        self.tens     = Signal(4)  # output
+        self.ones     = Signal(4)  # output
 
-#         # # #
+        # # #
 
-#         # Instance of the BCD migen module
-#         self.specials += Instance("bcd",
-#             i_my_input=self.my_input,
-#             o_my_output=self.my_output)
+        # Instance of the BCD migen module
+        self.specials += Instance(
+            "bcd"                    , #module name
+            i_value=self.value       , #i_ + signal name
+            o_hundreds=self.hundreds , #o_ + signal name
+            o_tens=self.tens         ,
+            o_ones=self.ones    
+            )
 
-#         # -- TO BE COMPLETED --
+# bcd bcd(
+# 	.value(__main___bcd_seconds_value),
+# 	.hundreds(__main___bcd_seconds_hundreds),
+# 	.ones(__main___bcd_seconds_ones),
+# 	.tens(__main___bcd_seconds_tens)
+# );
 
 # Main ---------------------------------------------------------------------------------------------
 
