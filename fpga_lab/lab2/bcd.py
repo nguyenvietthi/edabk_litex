@@ -5,7 +5,7 @@ from migen.fhdl import verilog
 
 # _BCD ---------------------------------------------------------------------------------------------
 
-class _BCD(Module):
+class BCD(Module):
     def __init__(self):
         # Module's interface
         self.value    = Signal(8)  # input
@@ -67,27 +67,27 @@ class _BCD(Module):
 
 # BCD ----------------------------------------------------------------------------------------------
 
-class BCD(Module):
-    def __init__(self):
-        # -- TO BE COMPLETED --
-        self.my_input  = Signal()  # input
-        self.my_output = Signal()  # output
+# class BCD(Module):
+#     def __init__(self):
+#         # -- TO BE COMPLETED --
+#         self.my_input  = Signal()  # input
+#         self.my_output = Signal()  # output
 
-        # # #
+#         # # #
 
-        # Instance of the BCD migen module
-        self.specials += Instance("bcd",
-            i_my_input=self.my_input,
-            o_my_output=self.my_output)
+#         # Instance of the BCD migen module
+#         self.specials += Instance("bcd",
+#             i_my_input=self.my_input,
+#             o_my_output=self.my_output)
 
-        # -- TO BE COMPLETED --
+#         # -- TO BE COMPLETED --
 
 # Main ---------------------------------------------------------------------------------------------
 
 if __name__ == '__main__':
     # BCD simulation
     print("BCD simulation")
-    dut = _BCD()
+    dut = BCD()
 
     def show_bcd(value, hundreds, tens, ones):
         print("value: %03d hundreds: %02d tens:%02d ones:%02d" %(value, hundreds, tens, ones))
@@ -103,7 +103,7 @@ if __name__ == '__main__':
 
     # BCD verilog generation
     print("BCD verilog generation")
-    module = _BCD()
+    module = BCD()
     ios = {module.value, module.hundreds, module.tens, module.ones}
     f = open("bcd.v", "w")
     f.write(verilog.convert(module, ios, name="bcd").main_source)
