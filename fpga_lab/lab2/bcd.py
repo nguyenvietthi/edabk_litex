@@ -79,6 +79,8 @@ class Instance_BCD(Module):
 
         # Instance of the BCD migen module
         self.specials += Instance(
+            # i_master_clk=ClockSignal(), # if using clock
+            # i_master_rst=ResetSignal(), 
             "bcd"                    , #module name
             i_value=self.value       , #i_ + signal name
             o_hundreds=self.hundreds , #o_ + signal name
