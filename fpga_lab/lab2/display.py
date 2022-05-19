@@ -46,7 +46,7 @@ class SevenSegment(Module):
 #SevenSegmentDisplay_noScanLed
 class SevenSegmentDisplay_noScanLed(Module):
     def __init__(self):
-        self.values = Array(Signal(4) for i in range(6))
+        self.values = Array(Signal(5) for i in range(6))
         self.abcdefg = Array(Signal(7) for i in range(6))
 
         seven_segment = list(SevenSegment() for i in range(6))
