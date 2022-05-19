@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Wed May 18 17:52:13 2022
+Thu May 19 10:34:31 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -14,12 +14,11 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "bcd:bcd_2"
- 10. Port Connectivity Checks: "bcd:bcd_1"
- 11. Port Connectivity Checks: "bcd:bcd"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -46,15 +45,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 18 17:52:13 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu May 19 10:34:31 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; top                                         ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
+; Total logic elements               ; 144                                         ;
+;     Total combinational functions  ; 139                                         ;
+;     Dedicated logic registers      ; 52                                          ;
+; Total registers                    ; 52                                          ;
 ; Total pins                         ; 45                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -158,10 +157,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -170,40 +170,40 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                              ; Library ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
-; ../bcd.v                         ; yes             ; User SystemVerilog HDL File  ; /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v       ; work    ;
 ; top.v                            ; yes             ; User SystemVerilog HDL File  ; /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v ; work    ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-;                                             ;            ;
-; Total combinational functions               ; 0          ;
-; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 0          ;
-;     -- 3 input functions                    ; 0          ;
-;     -- <=2 input functions                  ; 0          ;
-;                                             ;            ;
-; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 0          ;
-;     -- arithmetic mode                      ; 0          ;
-;                                             ;            ;
-; Total registers                             ; 0          ;
-;     -- Dedicated logic registers            ; 0          ;
-;     -- I/O registers                        ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 45         ;
-;                                             ;            ;
-; Embedded Multiplier 9-bit elements          ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; user_btn_r ;
-; Maximum fan-out                             ; 1          ;
-; Total fan-out                               ; 45         ;
-; Average fan-out                             ; 0.50       ;
-+---------------------------------------------+------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 144         ;
+;                                             ;             ;
+; Total combinational functions               ; 139         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 68          ;
+;     -- 3 input functions                    ; 16          ;
+;     -- <=2 input functions                  ; 55          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 100         ;
+;     -- arithmetic mode                      ; 39          ;
+;                                             ;             ;
+; Total registers                             ; 52          ;
+;     -- Dedicated logic registers            ; 52          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 45          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clk50~input ;
+; Maximum fan-out                             ; 52          ;
+; Total fan-out                               ; 701         ;
+; Average fan-out                             ; 2.49        ;
++---------------------------------------------+-------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,7 +211,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |top                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |top                ; top         ; work         ;
+; |top                       ; 139 (139)           ; 52 (52)                   ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |top                ; top         ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -221,50 +221,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 52    ;
+; Number of registers using Synchronous Clear  ; 19    ;
+; Number of registers using Synchronous Load   ; 26    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 17    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "bcd:bcd_2"                                                                                 ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; value[7..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; hundreds    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ones        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; tens        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; platform_int_rst                       ; 29      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "bcd:bcd_1"                                                                                 ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; value[7..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; hundreds    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ones        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; tens        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "bcd:bcd"                                                                                   ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; value[7..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; hundreds    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ones        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; tens        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|__main___counter[21]  ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|__main___seconds[0]   ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |top|__main___minutes[1]   ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |top|__main___hours[1]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -273,12 +259,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 45                          ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
-;         0 data inputs ; 2                           ;
+; cycloneiii_ff         ; 52                          ;
+;     ENA SCLR          ; 17                          ;
+;     SCLR              ; 2                           ;
+;     SLD               ; 26                          ;
+;     plain             ; 7                           ;
+; cycloneiii_lcell_comb ; 148                         ;
+;     arith             ; 39                          ;
+;         2 data inputs ; 39                          ;
+;     normal            ; 109                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 68                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.73                        ;
 +-----------------------+-----------------------------+
 
 
@@ -287,7 +284,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -311,102 +308,101 @@ Info: Running Quartus Prime Analysis & Synthesis
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed May 18 17:51:24 2022
+    Info: Processing started: Thu May 19 10:33:40 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v
-    Info (12023): Found entity 1: bcd File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file top.v
     Info (12023): Found entity 1: top File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 20
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at top.v(40): object "__main___values0" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 40
-Warning (10036): Verilog HDL or VHDL warning at top.v(41): object "__main___values1" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 41
-Warning (10036): Verilog HDL or VHDL warning at top.v(42): object "__main___values2" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 42
-Warning (10036): Verilog HDL or VHDL warning at top.v(43): object "__main___values3" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 43
-Warning (10036): Verilog HDL or VHDL warning at top.v(44): object "__main___values4" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 44
-Warning (10036): Verilog HDL or VHDL warning at top.v(45): object "__main___values5" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 45
-Info (12128): Elaborating entity "bcd" for hierarchy "bcd:bcd" File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 517
-Warning (10230): Verilog HDL assignment warning at bcd.v(120): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 120
-Warning (10230): Verilog HDL assignment warning at bcd.v(132): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 132
-Warning (10230): Verilog HDL assignment warning at bcd.v(144): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 144
-Warning (10230): Verilog HDL assignment warning at bcd.v(204): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 204
-Warning (10230): Verilog HDL assignment warning at bcd.v(216): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 216
-Warning (10230): Verilog HDL assignment warning at bcd.v(228): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 228
-Warning (10230): Verilog HDL assignment warning at bcd.v(288): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 288
-Warning (10230): Verilog HDL assignment warning at bcd.v(300): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 300
-Warning (10230): Verilog HDL assignment warning at bcd.v(312): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 312
-Warning (10230): Verilog HDL assignment warning at bcd.v(372): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 372
-Warning (10230): Verilog HDL assignment warning at bcd.v(384): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 384
-Warning (10230): Verilog HDL assignment warning at bcd.v(396): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 396
-Warning (10230): Verilog HDL assignment warning at bcd.v(456): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 456
-Warning (10230): Verilog HDL assignment warning at bcd.v(468): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 468
-Warning (10230): Verilog HDL assignment warning at bcd.v(480): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 480
-Warning (10230): Verilog HDL assignment warning at bcd.v(540): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 540
-Warning (10230): Verilog HDL assignment warning at bcd.v(552): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 552
-Warning (10230): Verilog HDL assignment warning at bcd.v(564): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 564
-Warning (10230): Verilog HDL assignment warning at bcd.v(624): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 624
-Warning (10230): Verilog HDL assignment warning at bcd.v(636): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 636
-Warning (10230): Verilog HDL assignment warning at bcd.v(648): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 648
-Warning (10230): Verilog HDL assignment warning at bcd.v(708): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 708
-Warning (10230): Verilog HDL assignment warning at bcd.v(720): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 720
-Warning (10230): Verilog HDL assignment warning at bcd.v(732): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/bcd.v Line: 732
+Warning (10036): Verilog HDL or VHDL warning at top.v(77): object "__main___bcd_seconds_hundreds0" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 77
+Warning (10036): Verilog HDL or VHDL warning at top.v(132): object "__main___bcd_minutes_hundreds0" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 132
+Warning (10036): Verilog HDL or VHDL warning at top.v(187): object "__main___bcd_hours_hundreds0" assigned a value but never read File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 187
+Warning (10230): Verilog HDL assignment warning at top.v(632): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 632
+Warning (10230): Verilog HDL assignment warning at top.v(637): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 637
+Warning (10230): Verilog HDL assignment warning at top.v(642): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 642
+Warning (10230): Verilog HDL assignment warning at top.v(674): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 674
+Warning (10230): Verilog HDL assignment warning at top.v(679): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 679
+Warning (10230): Verilog HDL assignment warning at top.v(684): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 684
+Warning (10230): Verilog HDL assignment warning at top.v(716): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 716
+Warning (10230): Verilog HDL assignment warning at top.v(721): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 721
+Warning (10230): Verilog HDL assignment warning at top.v(726): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 726
+Warning (10230): Verilog HDL assignment warning at top.v(758): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 758
+Warning (10230): Verilog HDL assignment warning at top.v(763): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 763
+Warning (10230): Verilog HDL assignment warning at top.v(768): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 768
+Warning (10230): Verilog HDL assignment warning at top.v(800): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 800
+Warning (10230): Verilog HDL assignment warning at top.v(805): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 805
+Warning (10230): Verilog HDL assignment warning at top.v(810): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 810
+Warning (10230): Verilog HDL assignment warning at top.v(842): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 842
+Warning (10230): Verilog HDL assignment warning at top.v(847): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 847
+Warning (10230): Verilog HDL assignment warning at top.v(852): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 852
+Warning (10230): Verilog HDL assignment warning at top.v(884): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 884
+Warning (10230): Verilog HDL assignment warning at top.v(889): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 889
+Warning (10230): Verilog HDL assignment warning at top.v(894): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 894
+Warning (10230): Verilog HDL assignment warning at top.v(926): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 926
+Warning (10230): Verilog HDL assignment warning at top.v(931): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 931
+Warning (10230): Verilog HDL assignment warning at top.v(936): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 936
+Warning (10230): Verilog HDL assignment warning at top.v(971): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 971
+Warning (10230): Verilog HDL assignment warning at top.v(976): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 976
+Warning (10230): Verilog HDL assignment warning at top.v(981): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 981
+Warning (10230): Verilog HDL assignment warning at top.v(1013): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1013
+Warning (10230): Verilog HDL assignment warning at top.v(1018): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1018
+Warning (10230): Verilog HDL assignment warning at top.v(1023): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1023
+Warning (10230): Verilog HDL assignment warning at top.v(1055): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1055
+Warning (10230): Verilog HDL assignment warning at top.v(1060): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1060
+Warning (10230): Verilog HDL assignment warning at top.v(1065): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1065
+Warning (10230): Verilog HDL assignment warning at top.v(1097): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1097
+Warning (10230): Verilog HDL assignment warning at top.v(1102): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1102
+Warning (10230): Verilog HDL assignment warning at top.v(1107): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1107
+Warning (10230): Verilog HDL assignment warning at top.v(1139): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1139
+Warning (10230): Verilog HDL assignment warning at top.v(1144): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1144
+Warning (10230): Verilog HDL assignment warning at top.v(1149): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1149
+Warning (10230): Verilog HDL assignment warning at top.v(1181): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1181
+Warning (10230): Verilog HDL assignment warning at top.v(1186): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1186
+Warning (10230): Verilog HDL assignment warning at top.v(1191): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1191
+Warning (10230): Verilog HDL assignment warning at top.v(1223): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1223
+Warning (10230): Verilog HDL assignment warning at top.v(1228): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1228
+Warning (10230): Verilog HDL assignment warning at top.v(1233): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1233
+Warning (10230): Verilog HDL assignment warning at top.v(1265): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1265
+Warning (10230): Verilog HDL assignment warning at top.v(1270): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1270
+Warning (10230): Verilog HDL assignment warning at top.v(1275): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1275
+Warning (10230): Verilog HDL assignment warning at top.v(1310): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1310
+Warning (10230): Verilog HDL assignment warning at top.v(1315): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1315
+Warning (10230): Verilog HDL assignment warning at top.v(1320): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1320
+Warning (10230): Verilog HDL assignment warning at top.v(1352): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1352
+Warning (10230): Verilog HDL assignment warning at top.v(1357): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1357
+Warning (10230): Verilog HDL assignment warning at top.v(1362): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1362
+Warning (10230): Verilog HDL assignment warning at top.v(1394): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1394
+Warning (10230): Verilog HDL assignment warning at top.v(1399): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1399
+Warning (10230): Verilog HDL assignment warning at top.v(1404): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1404
+Warning (10230): Verilog HDL assignment warning at top.v(1436): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1436
+Warning (10230): Verilog HDL assignment warning at top.v(1441): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1441
+Warning (10230): Verilog HDL assignment warning at top.v(1446): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1446
+Warning (10230): Verilog HDL assignment warning at top.v(1478): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1478
+Warning (10230): Verilog HDL assignment warning at top.v(1483): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1483
+Warning (10230): Verilog HDL assignment warning at top.v(1488): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1488
+Warning (10230): Verilog HDL assignment warning at top.v(1520): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1520
+Warning (10230): Verilog HDL assignment warning at top.v(1525): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1525
+Warning (10230): Verilog HDL assignment warning at top.v(1530): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1530
+Warning (10230): Verilog HDL assignment warning at top.v(1562): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1562
+Warning (10230): Verilog HDL assignment warning at top.v(1567): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1567
+Warning (10230): Verilog HDL assignment warning at top.v(1572): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1572
+Warning (10230): Verilog HDL assignment warning at top.v(1604): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1604
+Warning (10230): Verilog HDL assignment warning at top.v(1609): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1609
+Warning (10230): Verilog HDL assignment warning at top.v(1614): truncated value with size 4 to match size of target (3) File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 1614
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "seven_seg0[0]" is stuck at GND File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 23
-    Warning (13410): Pin "seven_seg0[1]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 23
-    Warning (13410): Pin "seven_seg0[2]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 23
-    Warning (13410): Pin "seven_seg0[3]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 23
-    Warning (13410): Pin "seven_seg0[4]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 23
-    Warning (13410): Pin "seven_seg0[5]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 23
-    Warning (13410): Pin "seven_seg0[6]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 23
-    Warning (13410): Pin "seven_seg1[0]" is stuck at GND File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 24
-    Warning (13410): Pin "seven_seg1[1]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 24
-    Warning (13410): Pin "seven_seg1[2]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 24
-    Warning (13410): Pin "seven_seg1[3]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 24
-    Warning (13410): Pin "seven_seg1[4]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 24
-    Warning (13410): Pin "seven_seg1[5]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 24
-    Warning (13410): Pin "seven_seg1[6]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 24
-    Warning (13410): Pin "seven_seg2[0]" is stuck at GND File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 25
-    Warning (13410): Pin "seven_seg2[1]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 25
-    Warning (13410): Pin "seven_seg2[2]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 25
-    Warning (13410): Pin "seven_seg2[3]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 25
-    Warning (13410): Pin "seven_seg2[4]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 25
-    Warning (13410): Pin "seven_seg2[5]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 25
-    Warning (13410): Pin "seven_seg2[6]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 25
-    Warning (13410): Pin "seven_seg3[0]" is stuck at GND File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 26
-    Warning (13410): Pin "seven_seg3[1]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 26
-    Warning (13410): Pin "seven_seg3[2]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 26
-    Warning (13410): Pin "seven_seg3[3]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 26
-    Warning (13410): Pin "seven_seg3[4]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 26
-    Warning (13410): Pin "seven_seg3[5]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 26
-    Warning (13410): Pin "seven_seg3[6]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 26
-    Warning (13410): Pin "seven_seg4[0]" is stuck at GND File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 27
-    Warning (13410): Pin "seven_seg4[1]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 27
-    Warning (13410): Pin "seven_seg4[2]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 27
-    Warning (13410): Pin "seven_seg4[3]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 27
-    Warning (13410): Pin "seven_seg4[4]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 27
-    Warning (13410): Pin "seven_seg4[5]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 27
-    Warning (13410): Pin "seven_seg4[6]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 27
-    Warning (13410): Pin "seven_seg5[0]" is stuck at GND File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 28
-    Warning (13410): Pin "seven_seg5[1]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 28
-    Warning (13410): Pin "seven_seg5[2]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 28
-    Warning (13410): Pin "seven_seg5[3]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 28
-    Warning (13410): Pin "seven_seg5[4]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 28
-    Warning (13410): Pin "seven_seg5[5]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 28
-    Warning (13410): Pin "seven_seg5[6]" is stuck at VCC File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 28
+    Warning (13410): Pin "seven_seg5[1]" is stuck at GND File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 28
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "user_btn_r" File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 21
-    Warning (15610): No output dependent on input pin "user_btn_l" File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 22
-    Warning (15610): No output dependent on input pin "clk50" File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab2/build/top.v Line: 30
-Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 189 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 144 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 385 megabytes
-    Info: Processing ended: Wed May 18 17:52:13 2022
-    Info: Elapsed time: 00:00:49
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 431 megabytes
+    Info: Processing ended: Thu May 19 10:34:31 2022
+    Info: Elapsed time: 00:00:51
+    Info: Total CPU time (on all processors): 00:00:27
 
 
