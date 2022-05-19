@@ -52,9 +52,12 @@ class SevenSegmentDisplay_noScanLed(Module):
         seven_segment = list(SevenSegment() for i in range(6))
         for i in range(6):
             self.submodules += seven_segment[i]
-        
+
         for i in range(6):
-            self.comb += self.abcdefg[i].eq(seven_segment[i].abcdefg[i])
+            self.comb += seven_segment[i].value.eq(self.values[i])
+
+        for i in range(6):
+            self.comb += self.abcdefg[i].eq(seven_segment[i].abcdefg)
 
 # SevenSegmentDisplay ------------------------------------------------------------------------------
 class SevenSegmentDisplay(Module):
