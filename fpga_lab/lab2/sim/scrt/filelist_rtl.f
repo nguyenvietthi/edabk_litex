@@ -1,6 +1,6 @@
 //Modules HDL
-bcd.v
-top.v
+../bcd.v
+../build/top.v
 //  Global Defines and Global Params
 ////////////////////////////////////////////////////////////////////////////////
 +incdir+../../include
