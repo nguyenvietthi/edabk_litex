@@ -1,0 +1,131 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Mon May 23 21:14:43 2022
+| Host         : nguyenvietthi running 64-bit Ubuntu 20.04.4 LTS
+| Command      : report_control_sets -verbose -file top_control_sets.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    59 |
+| Unused register locations in slices containing registers |   114 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            2 |
+|      4 |           11 |
+|      5 |            3 |
+|      6 |            2 |
+|      7 |            3 |
+|      8 |            4 |
+|     12 |            5 |
+|     14 |            1 |
+|    16+ |           28 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              56 |           18 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             302 |           95 |
+| Yes          | No                    | No                     |              77 |           29 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             619 |          153 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+--------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+
+|    Clock Signal   |                            Enable Signal                           |                   Set/Reset Signal                  | Slice Load Count | Bel Load Count |
++-------------------+--------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+
+|  clk100_IBUF_BUFG | adxl362_clk_rise                                                   | adxl362_spi_clk_i_1_n_0                             |                1 |              1 |
+|  clk100_IBUF_BUFG | obj_serial_tx_uartwishbonebridge_rs232phytx_next_value_ce1         | sys_rst                                             |                1 |              1 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank3_value0_re                                   | sys_rst                                             |                1 |              4 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank3_sel0_re                                     | sys_rst                                             |                1 |              4 |
+|  clk100_IBUF_BUFG | display_values3                                                    | sys_rst                                             |                1 |              4 |
+|  clk100_IBUF_BUFG | display_values0                                                    | sys_rst                                             |                1 |              4 |
+|  clk100_IBUF_BUFG | display_values5                                                    | sys_rst                                             |                1 |              4 |
+|  clk100_IBUF_BUFG | display_values4                                                    | sys_rst                                             |                1 |              4 |
+|  clk100_IBUF_BUFG |                                                                    | p_0_out0                                            |                1 |              4 |
+|  clk100_IBUF_BUFG | display_values1                                                    | sys_rst                                             |                1 |              4 |
+|  clk100_IBUF_BUFG | display_values2                                                    | sys_rst                                             |                1 |              4 |
+|  clk100_IBUF_BUFG | serial_bridge_tx_tick                                              | serial_bridge_tx_phase[31]_i_1_n_0                  |                2 |              4 |
+|  clk100_IBUF_BUFG | serial_bridge_rx_tick                                              | serial_bridge_rx_phase[31]_i_1_n_0                  |                1 |              4 |
+|  clk100_IBUF_BUFG | adxl362_count_spimaster_next_value_ce                              | sys_rst                                             |                3 |              5 |
+|  clk100_IBUF_BUFG | adxl362_mosi_sel[4]_i_1_n_0                                        | sys_rst                                             |                2 |              5 |
+|  clk100_IBUF_BUFG |                                                                    | csr_bankarray_interface1_bank_bus_dat_r[4]_i_1_n_0  |                2 |              5 |
+|  clk100_IBUF_BUFG |                                                                    | mem_adr0[5]_i_1_n_0                                 |                2 |              6 |
+|  clk100_IBUF_BUFG | display_ce                                                         | sys_rst                                             |                1 |              6 |
+|  clk100_IBUF_BUFG | serial_bridge_tx_data1_in0                                         |                                                     |                3 |              7 |
+|  clk100_IBUF_BUFG |                                                                    | display_counter[14]_i_1_n_0                         |                3 |              7 |
+|  clk100_IBUF_BUFG | dna_count[6]_i_1_n_0                                               | sys_rst                                             |                3 |              7 |
+|  clk100_IBUF_BUFG | serial_bridge_cmd_uartwishbonebridge_next_value_ce3                |                                                     |                2 |              8 |
+|  clk100_IBUF_BUFG | serial_bridge_rx_data_uartwishbonebridge_rs232phyrx_next_value_ce1 |                                                     |                2 |              8 |
+|  clk100_IBUF_BUFG | serial_bridge_length_uartwishbonebridge_next_value_ce4             |                                                     |                3 |              8 |
+|  clk100_IBUF_BUFG | serial_bridge_words_count_uartwishbonebridge_next_value_ce2        | serial_bridge_words_count[7]_i_1_n_0                |                2 |              8 |
+|  clk100_IBUF_BUFG | xadc_vccaux_status                                                 | sys_rst                                             |                4 |             12 |
+|  clk100_IBUF_BUFG | xadc_vccbram_status                                                | sys_rst                                             |                4 |             12 |
+|  clk100_IBUF_BUFG | xadc_temperature_status                                            | sys_rst                                             |                4 |             12 |
+|  clk100_IBUF_BUFG | xadc_vccint_status                                                 | sys_rst                                             |                3 |             12 |
+|  clk100_IBUF_BUFG |                                                                    | csr_bankarray_interface8_bank_bus_dat_r[11]_i_1_n_0 |                5 |             12 |
+|  clk100_IBUF_BUFG | serial_bridge_address_uartwishbonebridge_next_value_ce5            |                                                     |                6 |             14 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank0_control0_re                                 | sys_rst                                             |                3 |             16 |
+|  clk100_IBUF_BUFG |                                                                    | adxl362_spi_clk_i_1_n_0                             |                4 |             16 |
+|  clk100_IBUF_BUFG |                                                                    | csr_bankarray_interface7_bank_bus_dat_r[15]_i_1_n_0 |                6 |             16 |
+|  clk100_IBUF_BUFG |                                                                    | p_1_out[0]                                          |                3 |             16 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank0_cs0_re                                      | sys_rst                                             |                4 |             17 |
+|  clk100_IBUF_BUFG | sel                                                                | serial_bridge_count[0]_i_1_n_0                      |                6 |             24 |
+|  clk100_IBUF_BUFG |                                                                    | sys_rst                                             |               12 |             28 |
+|  clk100_IBUF_BUFG | serial_bridge_data_uartwishbonebridge_next_value_ce7               |                                                     |               13 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank2_scratch0_re                                 | sys_rst                                             |                6 |             32 |
+|  clk100_IBUF_BUFG | adxl362_clk_rise                                                   | sys_rst                                             |                7 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank6_r_width0_re                                 | sys_rst                                             |               13 |             32 |
+|  clk100_IBUF_BUFG | adxl362_mosi_latch                                                 | sys_rst                                             |                6 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank6_b_width0_re                                 | sys_rst                                             |               10 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank6_g_period0_re                                | sys_rst                                             |               10 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank6_r_period0_re                                | sys_rst                                             |                7 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank6_g_width0_re                                 | sys_rst                                             |                6 |             32 |
+|  clk100_IBUF_BUFG | adxl362_miso_latch                                                 | sys_rst                                             |                5 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank6_b_period0_re                                | sys_rst                                             |                8 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank0_mosi0_re                                    | adxl362_mosi_storage[31]_i_1_n_0                    |                6 |             32 |
+|  clk100_IBUF_BUFG | csr_bankarray_csrbank5_out0_re                                     | sys_rst                                             |                9 |             32 |
+|  clk100_IBUF_BUFG |                                                                    | serial_bridge_tx_phase[31]_i_1_n_0                  |                8 |             32 |
+|  clk100_IBUF_BUFG |                                                                    | serial_bridge_rx_phase[31]_i_1_n_0                  |                8 |             32 |
+|  clk100_IBUF_BUFG |                                                                    | csr_bankarray_interface2_bank_bus_dat_r[31]_i_1_n_0 |                6 |             32 |
+|  clk100_IBUF_BUFG |                                                                    | csr_bankarray_interface4_bank_bus_dat_r[31]_i_1_n_0 |                9 |             32 |
+|  clk100_IBUF_BUFG |                                                                    | csr_bankarray_interface6_bank_bus_dat_r[31]_i_1_n_0 |               16 |             32 |
+|  clk100_IBUF_BUFG |                                                                    | csr_bankarray_interface0_bank_bus_dat_r[31]_i_1_n_0 |               10 |             32 |
+|  clk100_IBUF_BUFG |                                                                    |                                                     |               18 |             56 |
+|  clk100_IBUF_BUFG | dna_status                                                         | sys_rst                                             |                8 |             57 |
++-------------------+--------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+
+
+
