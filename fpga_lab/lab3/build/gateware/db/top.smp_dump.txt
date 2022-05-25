@@ -1,0 +1,10 @@
+
+State Machine - |top|subfragments_state
+Name subfragments_state.110 subfragments_state.101 subfragments_state.100 subfragments_state.011 subfragments_state.010 subfragments_state.001 subfragments_state.000 
+subfragments_state.000 0 0 0 0 0 0 0 
+subfragments_state.001 0 0 0 0 0 1 1 
+subfragments_state.010 0 0 0 0 1 0 1 
+subfragments_state.011 0 0 0 1 0 0 1 
+subfragments_state.100 0 0 1 0 0 0 1 
+subfragments_state.101 0 1 0 0 0 0 1 
+subfragments_state.110 1 0 0 0 0 0 1 

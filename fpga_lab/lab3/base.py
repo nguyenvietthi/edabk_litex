@@ -57,7 +57,6 @@ _io = [
     ("user_btn", 0, Pins("M23"), IOStandard("3.3-V LVTTL")),
     ("user_btn", 1, Pins("M21"), IOStandard("3.3-V LVTTL")),
     ("user_btn", 2, Pins("N21"), IOStandard("3.3-V LVTTL")),
-    ("user_btn", 3, Pins("R24"), IOStandard("3.3-V LVTTL")),
 
     # Seven Segment
     ("seven_seg", 0, Pins("G18 F22 E17 L26 L25 J22 H22"), IOStandard("3.3-V LVTTL")),
@@ -70,7 +69,7 @@ _io = [
     ("clk50", 0, Pins("Y2"), IOStandard("3.3-V LVTTL")),
 
     # #cpu_reset
-    # ("cpu_reset", 0, Pins("N21"), IOStandard("3.3-V LVTTL")),
+    ("cpu_reset", 0, Pins("R24"), IOStandard("3.3-V LVTTL")),
 
     # Serial
     ("serial", 0,
@@ -109,13 +108,13 @@ class BaseSoC(SoCMini):
         self.submodules.serial_bridge = UARTWishboneBridge(platform.request("serial"), sys_clk_freq)
         self.add_wb_master(self.serial_bridge.wishbone)
 
-        # FPGA identification
-        self.submodules.dna = dna.DNA()
-        self.add_csr("dna")
+        # # FPGA identification
+        # self.submodules.dna = dna.DNA()
+        # self.add_csr("dna")
 
-        # FPGA Temperature/Voltage
-        self.submodules.xadc = xadc.XADC()
-        self.add_csr("xadc")
+        # # FPGA Temperature/Voltage
+        # self.submodules.xadc = xadc.XADC()
+        # self.add_csr("xadc")
 
         # Led
         user_leds = Cat(*[platform.request("user_led", i) for i in range(16)])
@@ -128,7 +127,7 @@ class BaseSoC(SoCMini):
         self.add_csr("switches")
 
         # Buttons
-        user_buttons = Cat(*[platform.request("user_btn", i) for i in range(4)])
+        user_buttons = Cat(*[platform.request("user_btn", i) for i in range(3)])
         self.submodules.buttons = Button(user_buttons)
         self.add_csr("buttons")
 
