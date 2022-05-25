@@ -91,15 +91,15 @@ static void display_test(void)
 	}
 }
 
-static void led_test(void)
-{
-	int i;
-	printf("led_test...\n");
-	for(i=0; i<32; i++) {
-		leds_out_write(i);
-		busy_wait(1);
-	}
-}
+// static void led_test(void)
+// {
+// 	int i;
+// 	printf("led_test...\n");
+// 	for(i=0; i<32; i++) {
+// 		leds_out_write(i);
+// 		busy_wait(1);
+// 	}
+// }
 
 static void console_service(void)
 {
@@ -115,8 +115,6 @@ static void console_service(void)
 		reboot();
 	else if(strcmp(token, "display") == 0)
 		display_test();
-	else if(strcmp(token, "led") == 0)
-		led_test();
 	prompt();
 }
 
@@ -134,6 +132,7 @@ int main(void)
 
 	while(1) {
 		console_service();
+		// display_test();
 	}
 
 	return 0;
