@@ -26,7 +26,7 @@ def display_time(hour, minute, second):
 print("Testing SevenSegmentDisplay...")
 while True:
     t = datetime.datetime.now()
-    display_time(t.hour, t.minute, t.second)
+    display_time(12, 34, 56)
     time.sleep(0.2)
 
 # # #
