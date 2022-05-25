@@ -140,7 +140,7 @@ class BaseSoC(SoCMini):
         # self.add_csr("adxl362")
 
         # SevenSegmentDisplay
-        self.submodules.display = SevenSegmentDisplay(sys_clk_freq)
+        self.submodules.display = SevenSegmentDisplay()
         self.add_csr("display")
         for i in range(6):
             self.comb += platform.request("seven_seg", i).eq(~self.display.abcdefg[i])
