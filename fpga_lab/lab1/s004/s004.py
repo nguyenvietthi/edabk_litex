@@ -76,7 +76,7 @@ class Switches(Module):
         for i in range(0, 8):
             led = platform.request("user_led", i)
             sw = platform.request("user_sw", i)
-            self.comb += led.eq(~sw)
+            self.comb += led.eq(~sw)  # assign user_led1 = ~user_sw1
         for i in range(8, 16):
             led = platform.request("user_led", i)
             sw = platform.request("user_sw", i)

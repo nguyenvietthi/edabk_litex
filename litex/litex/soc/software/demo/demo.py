@@ -18,7 +18,7 @@ def main():
     parser.add_argument("--mem",        default="main_ram",  help="Memory Region where code will be loaded/executed.")
     args = parser.parse_args()
 
-    # Create demo directory
+    # Create demo directoryfgf
     os.makedirs("demo", exist_ok=True)
 
     # Copy contents to demo directory
@@ -32,7 +32,7 @@ def main():
     os.system(f"export BUILD_DIR={build_path} && {'export WITH_CXX=1 &&' if args.with_cxx else ''} cd demo && make")
 
     # Copy demo.bin
-    os.system("cp demo/demo.bin ./")
+    os.system("cp demo/firmware.bin ./")
 
 if __name__ == "__main__":
     main()

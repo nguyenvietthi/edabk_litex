@@ -125,15 +125,15 @@ class BaseSoC(SoCMini):
         self.submodules.leds = Led(user_leds)
         self.add_csr("leds")
 
-        # Switches
-        user_switches = Cat(*[platform.request("user_sw", i) for i in range(16)])
-        self.submodules.switches = Switch(user_switches)
-        self.add_csr("switches")
+        # # Switches
+        # user_switches = Cat(*[platform.request("user_sw", i) for i in range(16)])
+        # self.submodules.switches = Switch(user_switches)
+        # self.add_csr("switches")
 
-        # Buttons
-        user_buttons = Cat(*[platform.request("user_btn", i) for i in range(3)])
-        self.submodules.buttons = Button(user_buttons)
-        self.add_csr("buttons")
+        # # Buttons
+        # user_buttons = Cat(*[platform.request("user_btn", i) for i in range(3)])
+        # self.submodules.buttons = Button(user_buttons)
+        # self.add_csr("buttons")
 
         # # Accelerometer
         # self.submodules.adxl362 = SPIMaster(platform.request("adxl362_spi"),

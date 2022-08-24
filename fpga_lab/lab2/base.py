@@ -103,16 +103,16 @@ class Clock(Module):
         self.submodules += btn0_press, btn1_press
 
         # Binary Coded Decimal: convert ss/mm/hh to decimal values
-        bcd_seconds = BCD()
-        bcd_minutes = BCD()
-        bcd_hours   = BCD()
+        # bcd_seconds = BCD()
+        # bcd_minutes = BCD()
+        # bcd_hours   = BCD()
 
-        # #Instance module
-        # bcd_seconds = Instance_BCD()
-        # bcd_minutes = Instance_BCD()
-        # bcd_hours   = Instance_BCD()
-        # # use the generated verilog file
-        # platform.add_source("bcd.v")
+        #Instance module
+        bcd_seconds = Instance_BCD()
+        bcd_minutes = Instance_BCD()
+        bcd_hours   = Instance_BCD()
+        # use the generated verilog file
+        platform.add_source("bcd.v")
 
         self.submodules += bcd_seconds, bcd_minutes, bcd_hours
 
