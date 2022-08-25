@@ -23,8 +23,8 @@ async_fifo
 )
 u_async_fifo
 (
-    .wreq (wreq), .wrst_n(wrst_n), .wclk(wclk),
-    .rreq(rreq), .rclk(rclk), .rrst_n(rrst_n),
+    .winc (wreq), .wrst_n(wrst_n), .wclk(wclk),
+    .rinc(rreq), .rclk(rclk), .rrst_n(rrst_n),
     .wdata(wdata), .rdata(rdata), .wfull(wfull), .rempty(rempty)
 );
 
