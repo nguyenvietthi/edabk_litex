@@ -75,7 +75,7 @@ initial begin
      @(negedge wclk); wreq = 0;
 
      @(negedge rclk); rreq = 1;
-     repeat (17) @(posedge rclk);
+     repeat (30) @(posedge rclk);
      rreq=0;
 
      #100;

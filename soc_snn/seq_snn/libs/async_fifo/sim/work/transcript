@@ -1,7 +1,7 @@
 # //  Questa Sim-64
-# //  Version 10.6 linux_x86_64 Dec 13 2016
+# //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
-# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  Copyright 1991-2018 Mentor Graphics Corporation
 # //  All Rights Reserved.
 # //
 # //  QuestaSim and its associated documentation contain trade
@@ -16,13 +16,18 @@
 # wave.do
 # invalid command name "wave.do"
 add wave -position insertpoint  \
-vsim:/async_fifo_tb/wreq \
-vsim:/async_fifo_tb/wclk \
-vsim:/async_fifo_tb/wrst_n \
-vsim:/async_fifo_tb/rreq \
-vsim:/async_fifo_tb/rclk \
-vsim:/async_fifo_tb/rrst_n \
-vsim:/async_fifo_tb/wdata \
-vsim:/async_fifo_tb/rdata \
-vsim:/async_fifo_tb/wfull \
-vsim:/async_fifo_tb/rempty
+vsim:/async_fifo_tb/u_async_fifo/wclk \
+vsim:/async_fifo_tb/u_async_fifo/wrst_n \
+vsim:/async_fifo_tb/u_async_fifo/winc \
+vsim:/async_fifo_tb/u_async_fifo/wdata \
+vsim:/async_fifo_tb/u_async_fifo/wfull \
+vsim:/async_fifo_tb/u_async_fifo/awfull \
+vsim:/async_fifo_tb/u_async_fifo/rclk \
+vsim:/async_fifo_tb/u_async_fifo/rrst_n \
+vsim:/async_fifo_tb/u_async_fifo/rinc \
+vsim:/async_fifo_tb/u_async_fifo/rdata \
+vsim:/async_fifo_tb/u_async_fifo/rempty \
+vsim:/async_fifo_tb/u_async_fifo/arempty
+find drivers -source -time {136 ps} -cause vsim:/async_fifo_tb/u_async_fifo/rempty
+dataset reload -f
+# vsim:/async_fifo_tb/u_async_fifo
