@@ -18,7 +18,6 @@
 `default_nettype none
 
 module async_fifo
-
     #(
     parameter DSIZE = 8,
     parameter ASIZE = 4,
