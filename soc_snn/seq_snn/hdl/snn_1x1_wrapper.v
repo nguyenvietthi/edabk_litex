@@ -1,4 +1,4 @@
-module snn_1x1_wrapper (
+module snn_1x1_wrapper(
     input                    clk                   ,
     input                    reset_n               ,
     input                    tick                  ,
