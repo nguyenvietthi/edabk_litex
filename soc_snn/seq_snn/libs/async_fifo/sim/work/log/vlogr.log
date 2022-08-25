@@ -1,0 +1,15 @@
+QuestaSim-64 vlog 10.6 Compiler 2016.12 Dec 13 2016
+Start time: 12:00:07 on Aug 25,2022
+vlog -f ../script/filelist_rtl.f "+cover=bcefs" -l ./log/vlogr.log 
+-- Compiling module async_fifo
+-- Scanning library directory '../../hdl'
+-- Compiling module sync_r2w
+-- Compiling module sync_w2r
+-- Compiling module wptr_full
+-- Compiling module fifomem
+-- Compiling module rptr_empty
+
+Top level modules:
+	async_fifo
+End time: 12:00:07 on Aug 25,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

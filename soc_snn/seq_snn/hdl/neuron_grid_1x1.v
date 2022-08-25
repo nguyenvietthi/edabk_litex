@@ -1,11 +1,17 @@
 module neuron_grid_1x1 #(
     parameter CORE_NUMBER = 0
 )(
-    input local_buffers_full,
     input clk,
     input reset_n,
+    input local_buffers_full,
     input tick,
     input [255:0] axon_spikes,
+    input                   param_wen          ,
+    input [$clog2(256)-1:0] param_address      ,
+    input [367:0]           param_data_in      ,
+    input                   neuron_inst_wen    ,
+    input [$clog2(256)-1:0] neuron_inst_address,
+    input [1:0]             neuron_inst_data_in,
     output error,
     output scheduler_set,
     output scheduler_clr,
@@ -50,7 +56,13 @@ neuron_grid_datapath_1x1 #(
     .done_axon(done_axon),
     .packet_out(packet_out),
     .spike_out_valid(spike_out_valid),
-    .update_potential(update_potential)
+    .update_potential(update_potential),
+    .param_wen           (param_wen          ),
+    .param_address       (param_address      ),
+    .param_data_in       (param_data_in      ),
+    .neuron_inst_wen     (neuron_inst_wen    ),
+    .neuron_inst_address (neuron_inst_address),
+    .neuron_inst_data_in (neuron_inst_data_in)    
 );
 
 endmodule

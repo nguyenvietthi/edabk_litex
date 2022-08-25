@@ -25,6 +25,12 @@ module Core_1x1 #(
     input [29:0] west_in,
     input [20:0] north_in,
     input [20:0] south_in,
+    input                   param_wen          ,
+    input [$clog2(256)-1:0] param_address      ,
+    input [367:0]           param_data_in      ,
+    input                   neuron_inst_wen    ,
+    input [$clog2(256)-1:0] neuron_inst_address,
+    input [1:0]             neuron_inst_data_in,
     output ren_out_west,
     output ren_out_east,
     output ren_out_north,
@@ -70,7 +76,13 @@ neuron_grid(
     .scheduler_clr(scheduler_clr),
     .done(done),
     .packet_out(spike_out_packet),
-    .spike_out_valid(spike_out_valid)
+    .spike_out_valid(spike_out_valid),
+    .param_wen           (param_wen          ),
+    .param_address       (param_address      ),
+    .param_data_in       (param_data_in      ),
+    .neuron_inst_wen     (neuron_inst_wen    ),
+    .neuron_inst_address (neuron_inst_address),
+    .neuron_inst_data_in (neuron_inst_data_in)
 );
 
 

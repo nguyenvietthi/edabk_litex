@@ -1,14 +1,20 @@
 module RANCNetworkGrid_1x1 (
-    input clk,
-    input reset_n,
-    input tick,
-    input input_buffer_empty,
-    input [29:0] packet_in,
-    output [7:0] packet_out,
-    output packet_out_valid,
-    output ren_to_input_buffer,
-    output token_controller_error,
-    output scheduler_error
+    input                    clk                   ,
+    input                    reset_n               ,
+    input                    tick                  ,
+    input                    input_buffer_empty    ,
+    input  [29:0]            packet_in             ,
+    input                    param_wen             ,
+    input  [$clog2(256)-1:0] param_address         ,
+    input  [367:0]           param_data_in         ,
+    input                    neuron_inst_wen       ,
+    input  [$clog2(256)-1:0] neuron_inst_address   ,
+    input  [1:0]             neuron_inst_data_in   ,
+    output [7:0]             packet_out            ,
+    output                   packet_out_valid      ,
+    output                   ren_to_input_buffer   ,
+    output                   token_controller_error,
+    output                   scheduler_error       
 );
 
 wire [29:0] west_out [0:1];
@@ -37,7 +43,13 @@ Core0
     .ren_out_east(ren_out_east[0]), .ren_out_north(ren_out_north[0]), .ren_out_south(ren_out_south[0]),
     .empty_out_west(empty_out_west[0]), .empty_out_east(empty_out_east[0]), .empty_out_north(empty_out_north[0]), .empty_out_south(empty_out_south[0]),
     .east_out(east_out[0]), .west_out(west_out[0]), .north_out(north_out[0]), .south_out(south_out[0]),
-    .token_controller_error(token_controller_error), .scheduler_error(scheduler_error)
+    .token_controller_error(token_controller_error), .scheduler_error(scheduler_error),
+    .param_wen           (param_wen          ),
+    .param_address       (param_address      ),
+    .param_data_in       (param_data_in      ),
+    .neuron_inst_wen     (neuron_inst_wen    ),
+    .neuron_inst_address (neuron_inst_address),
+    .neuron_inst_data_in (neuron_inst_data_in)
 );
 
 OutputBus #(
