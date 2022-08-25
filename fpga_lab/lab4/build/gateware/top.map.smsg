@@ -1,1 +1,0 @@
-Info (10281): Verilog HDL Declaration information at top.v(108): object "vexriscv" differs only in case from object "VexRiscv" in the same scope File: /media/nguyenvietthi/DATA/EDABK/fpga_lab/lab4/build/gateware/top.v Line: 108
