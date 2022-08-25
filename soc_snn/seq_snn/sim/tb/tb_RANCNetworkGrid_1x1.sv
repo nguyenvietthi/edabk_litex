@@ -72,6 +72,7 @@ always@(posedge clk) begin
         i <= i + 1;
     end
 end
+
 always @(negedge clk) begin
     if(numline == NUM_PICTURE) input_buffer_empty <= 1;
     else if(i == num_pic[numline]) begin
@@ -118,18 +119,20 @@ initial begin
     param_wen       = 0;
     neuron_inst_wen = 0;
 
-    for (int i = 0; i < 256; i++) begin
-        $display("%d: \n",uut.Core0.neuron_grid.datapath.neuron_parameter[i]);
-    end
+    // for (int i = 0; i < 256; i++) begin
+    //     $display("%d: \n",uut.Core0.neuron_grid.datapath.neuron_parameter[i]);
+    // end
 
     tick = 0; repeat(51) @(negedge clk);
     forever begin
-        tick = 1;
+        // tick = 1;
         index_end = index_end + i;
         i = 0;
         if(numline >= 1) output_file[numline - 1] = spike_out;
         numline = numline + 1;
         input_buffer_empty = 0;
+        repeat(500) @(negedge clk);
+        tick = 1;
         @(negedge clk);
         tick = 0;
         repeat(66050) @(negedge clk); //Tần số tick
