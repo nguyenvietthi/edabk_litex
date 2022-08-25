@@ -1,0 +1,130 @@
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim.wlf opened as dataset "vsim"
+# wave.do
+# invalid command name "wave.do"
+add wave -position insertpoint  \
+vsim:/tb_RANCNetworkGrid_1x1/uut/clk \
+vsim:/tb_RANCNetworkGrid_1x1/uut/reset_n \
+vsim:/tb_RANCNetworkGrid_1x1/uut/tick \
+vsim:/tb_RANCNetworkGrid_1x1/uut/input_buffer_empty \
+vsim:/tb_RANCNetworkGrid_1x1/uut/packet_in \
+vsim:/tb_RANCNetworkGrid_1x1/uut/param_wen \
+vsim:/tb_RANCNetworkGrid_1x1/uut/param_address \
+vsim:/tb_RANCNetworkGrid_1x1/uut/param_data_in \
+vsim:/tb_RANCNetworkGrid_1x1/uut/neuron_inst_wen \
+vsim:/tb_RANCNetworkGrid_1x1/uut/neuron_inst_address \
+vsim:/tb_RANCNetworkGrid_1x1/uut/neuron_inst_data_in
+add wave -position insertpoint  \
+vsim:/tb_RANCNetworkGrid_1x1/uut/clk \
+vsim:/tb_RANCNetworkGrid_1x1/uut/reset_n \
+vsim:/tb_RANCNetworkGrid_1x1/uut/tick \
+vsim:/tb_RANCNetworkGrid_1x1/uut/input_buffer_empty \
+vsim:/tb_RANCNetworkGrid_1x1/uut/packet_in \
+vsim:/tb_RANCNetworkGrid_1x1/uut/param_wen \
+vsim:/tb_RANCNetworkGrid_1x1/uut/param_address \
+vsim:/tb_RANCNetworkGrid_1x1/uut/param_data_in \
+vsim:/tb_RANCNetworkGrid_1x1/uut/neuron_inst_wen \
+vsim:/tb_RANCNetworkGrid_1x1/uut/neuron_inst_address \
+vsim:/tb_RANCNetworkGrid_1x1/uut/neuron_inst_data_in \
+vsim:/tb_RANCNetworkGrid_1x1/uut/packet_out \
+vsim:/tb_RANCNetworkGrid_1x1/uut/packet_out_valid \
+vsim:/tb_RANCNetworkGrid_1x1/uut/ren_to_input_buffer \
+vsim:/tb_RANCNetworkGrid_1x1/uut/token_controller_error \
+vsim:/tb_RANCNetworkGrid_1x1/uut/scheduler_error
+find drivers -source -time {1316143719 ps} -cause vsim:/tb_RANCNetworkGrid_1x1/uut/param_address
+add wave -position insertpoint  \
+vsim:/tb_RANCNetworkGrid_1x1/spike_out
+add wave -position insertpoint  \
+vsim:/tb_RANCNetworkGrid_1x1/uut/Core0/neuron_grid/controller/current_state
+find drivers -source -time {32250000 ps} -cause vsim:/tb_RANCNetworkGrid_1x1/uut/packet_out_valid
+dataset reload -f
+# vsim:/tb_RANCNetworkGrid_1x1
+dataset reload -f
+# vsim:/tb_RANCNetworkGrid_1x1
+add wave -position insertpoint  \
+vsim:/tb_RANCNetworkGrid_1x1/uut/Core0/Router/forward_north/local_buffer/empty
+dataset reload -f
+# vsim:/tb_RANCNetworkGrid_1x1/uut/Core0/Router/forward_north/local_buffer
+dataset reload -f
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/clk'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/reset_n'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/tick'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/input_buffer_empty'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/ren_to_input_buffer'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/packet_in'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/packet_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/packet_out_valid'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/token_controller_error'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/scheduler_error'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/param_wen'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/param_address'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/param_data_in'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/neuron_inst_wen'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/neuron_inst_address'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/neuron_inst_data_in'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/spike_out'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/Core0/neuron_grid/controller/current_state'. 
+# Warning in wave window restart: (vish-4014) No objects found matching '/tb_RANCNetworkGrid_1x1/uut/Core0/Router/forward_north/local_buffer/empty'. 
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/ren_to_input_buffer \
+vsim:/RANCNetworkGrid_1x1_tb/uut/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/scheduler_error
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/count_valid
+find drivers -source -time {667084791 ps} -cause vsim:/RANCNetworkGrid_1x1_tb/count_valid
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/Core0/neuron_grid/controller/current_state
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/Core0/neuron_grid/controller
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/spike_out
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/Core0/Router/forward_north
