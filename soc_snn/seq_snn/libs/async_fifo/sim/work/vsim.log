@@ -1,13 +1,13 @@
 # vsim -c async_fifo_tb -wlf vsim.wlf -solvefaildebug -assertdebug -voptargs="+acc" -l vsim.log -do "add wave -r /async_fifo_tb/*; run -all; quit" 
-# Start time: 12:00:08 on Aug 25,2022
+# Start time: 23:44:59 on Aug 25,2022
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: ../tb/async_fifo_tb.v(24): (vopt-2685) [TFMPC] - Too few port connections for 'u_async_fifo'.  Expected 12, found 10.
 # ** Warning: ../tb/async_fifo_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'arempty'.
 # ** Warning: ../tb/async_fifo_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'awfull'.
 # //  Questa Sim-64
-# //  Version 10.6 linux_x86_64 Dec 13 2016
+# //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
-# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  Copyright 1991-2018 Mentor Graphics Corporation
 # //  All Rights Reserved.
 # //
 # //  QuestaSim and its associated documentation contain trade
@@ -29,6 +29,6 @@
 # add wave -r /async_fifo_tb/*
 #  run -all
 # ** Note: $finish    : ../tb/async_fifo_tb.v(82)
-#    Time: 1 ns  Iteration: 0  Instance: /async_fifo_tb
-# End time: 12:00:29 on Aug 25,2022, Elapsed time: 0:00:21
+#    Time: 1520 ps  Iteration: 0  Instance: /async_fifo_tb
+# End time: 23:45:01 on Aug 25,2022, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 3

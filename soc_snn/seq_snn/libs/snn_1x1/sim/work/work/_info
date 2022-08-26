@@ -1,0 +1,579 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/sim/work
+T_opt
+!s110 1661444613
+VTX8QIU616IJkam@g:7:bI1
+04 22 4 work RANCNetworkGrid_1x1_tb fast 0
+=1-d46d6dc002f6-6307a205-c5caf-127c8
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;10.7c;67
+vbuffer
+Z2 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+Z3 !s110 1661444611
+!i10b 1
+!s100 3>?`WaY4=VTiWi9^cj^ik0
+IY2kmifKN^91<j7Y3_8VJk3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s105 buffer_v_unit
+S1
+R0
+Z5 w1661326920
+8../../hdl/buffer.v
+F../../hdl/buffer.v
+L0 13
+Z6 OL;L;10.7c;67
+r1
+!s85 0
+31
+Z7 !s108 1661444611.000000
+Z8 !s107 ../../hdl/RANCNetworkGrid_1x1.v|
+Z9 !s90 -f|../script/filelist_rtl.f|+cover=bcefs|-l|./log/vlogr.log|
+!i113 0
+Z10 !s102 +cover=bcefs
+Z11 o+libext+.v +libext+.vh +libext+.sv +libext+.svh +libext+.h -sv +nospecify +notimingchecks -timescale 1ns/1ps +cover=bcefs -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 !s92 +libext+.v +libext+.vh +libext+.sv +libext+.svh +libext+.h -sv +nospecify +notimingchecks -timescale 1ns/1ps -y ../../hdl +cover=bcefs -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vCore_1x1
+R2
+R3
+!i10b 1
+!s100 >]iY<KVnSJ:M=i`^SmSKK3
+I<SLf@^QoYSKmi:Cd[^O9M2
+R4
+!s105 Core_1x1_v_unit
+S1
+R0
+Z13 w1661433848
+8../../hdl/Core_1x1.v
+F../../hdl/Core_1x1.v
+Z14 L0 10
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@core_1x1
+vCounter
+R2
+R3
+!i10b 1
+!s100 @DWEm;X]K94^ZO=3Ke7:z3
+IM53I[agZ1?acZ9ed;DMaG2
+R4
+!s105 Counter_v_unit
+S1
+R0
+R5
+8../../hdl/Counter.v
+F../../hdl/Counter.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@counter
+vForwardEastWest
+R2
+R3
+!i10b 1
+!s100 7GU3KMfI_i5m3^<ff8WSe1
+Io8AVXLzPc]QdEFgAQJD?i3
+R4
+!s105 ForwardEastWest_v_unit
+S1
+R0
+R5
+8../../hdl/ForwardEastWest.v
+F../../hdl/ForwardEastWest.v
+Z15 L0 11
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@forward@east@west
+vForwardNorthSouth
+R2
+R3
+!i10b 1
+!s100 0BCd]aCVlY:X]SoH0YMWf2
+IF<__DoDZKeHjHVT1j^HGL0
+R4
+!s105 ForwardNorthSouth_v_unit
+S1
+R0
+R5
+8../../hdl/ForwardNorthSouth.v
+F../../hdl/ForwardNorthSouth.v
+L0 12
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@forward@north@south
+vFromLocal
+R2
+R3
+!i10b 1
+!s100 Kii5T]PjE1RYG6DL5oCz;0
+IMaRUcO@Gfg<=iJ^ME=MDR3
+R4
+!s105 FromLocal_v_unit
+S1
+R0
+R5
+8../../hdl/FromLocal.v
+F../../hdl/FromLocal.v
+R14
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@from@local
+vLocalIn
+R2
+R3
+!i10b 1
+!s100 4H^;MBgI`XaE1h>X4o4ZN2
+I4:E?[aAWPO:eeGbHIbN4j2
+R4
+!s105 LocalIn_v_unit
+S1
+R0
+R5
+8../../hdl/LocalIn.v
+F../../hdl/LocalIn.v
+R14
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@local@in
+vMerge2
+R2
+R3
+!i10b 1
+!s100 DmRzI:5S:3Vn8m@YDICVl2
+Io<C6=7KY?zJYUmz19=]:X0
+R4
+!s105 Merge2_v_unit
+S1
+R0
+R5
+8../../hdl/Merge2.v
+F../../hdl/Merge2.v
+R14
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@merge2
+vMerge3
+R2
+R3
+!i10b 1
+!s100 d4RZO1b^e5LG;C]eYahnK0
+ILd0:3jQRV9@eNbD2ObDgU0
+R4
+!s105 Merge3_v_unit
+S1
+R0
+R5
+8../../hdl/Merge3.v
+F../../hdl/Merge3.v
+R15
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@merge3
+vneuron_block
+R2
+R3
+!i10b 1
+!s100 Ia^6F=UK;KP=FFCd_l3C]1
+IhBD;86TVSnlThkFTTSDXD1
+R4
+!s105 neuron_block_v_unit
+S1
+R0
+R5
+8../../hdl/neuron_block.v
+F../../hdl/neuron_block.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+vneuron_grid_1x1
+R2
+R3
+!i10b 1
+!s100 c:VA;g0L:EXA7IjY=?k@f2
+IY78`F7g[<LBG52FG1XnO[0
+R4
+!s105 neuron_grid_1x1_v_unit
+S1
+R0
+R13
+8../../hdl/neuron_grid_1x1.v
+F../../hdl/neuron_grid_1x1.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+vneuron_grid_controller
+R2
+R3
+!i10b 1
+!s100 `7iH]T0n7DcV3lE=<6?dM2
+I]k1>0i>eUP@lJMm6^RJdl2
+R4
+!s105 neuron_grid_controller_v_unit
+S1
+R0
+R5
+8../../hdl/neuron_grid_controller.v
+F../../hdl/neuron_grid_controller.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+vneuron_grid_datapath_1x1
+R2
+R3
+!i10b 1
+!s100 0hAScK]3HU@KY3R1;2n8R1
+I10bH2hm`>TgAllBY4oa@<3
+R4
+!s105 neuron_grid_datapath_1x1_v_unit
+S1
+R0
+R13
+8../../hdl/neuron_grid_datapath_1x1.v
+F../../hdl/neuron_grid_datapath_1x1.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+vOutputBus
+R2
+R3
+!i10b 1
+!s100 cS]`5T2dMlNm7n93W`XQY1
+IQY;BeBFVM<Ei;<kJVc90d3
+R4
+!s105 OutputBus_v_unit
+S1
+R0
+R5
+8../../hdl/OutputBus.v
+F../../hdl/OutputBus.v
+R15
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@output@bus
+vPathDecoder2Way
+R2
+R3
+!i10b 1
+!s100 6=JY<^3ZO[jX3z`ge0_d;3
+ID^F5H0EOlKzR6gCRRK2ZB1
+R4
+!s105 PathDecoder2Way_v_unit
+S1
+R0
+R5
+8../../hdl/PathDecoder2Way.v
+F../../hdl/PathDecoder2Way.v
+L0 19
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@path@decoder2@way
+vPathDecoder3Way
+R2
+R3
+!i10b 1
+!s100 EiXXTfYgnPzN1ToZdlO1N0
+Ib6OQJU6n@0hDhQKB`[VcV2
+R4
+!s105 PathDecoder3Way_v_unit
+S1
+R0
+R5
+8../../hdl/PathDecoder3Way.v
+F../../hdl/PathDecoder3Way.v
+L0 20
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@path@decoder3@way
+vRANCNetworkGrid_1x1
+R2
+R3
+!i10b 1
+!s100 VGgUVMH2=zTXS6S:_:zC81
+IWV`NDTUeDAN4UO4SAod`a0
+R4
+!s105 RANCNetworkGrid_1x1_v_unit
+S1
+R0
+R13
+8../../hdl/RANCNetworkGrid_1x1.v
+F../../hdl/RANCNetworkGrid_1x1.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@r@a@n@c@network@grid_1x1
+vRANCNetworkGrid_1x1_tb
+R2
+R3
+!i10b 1
+!s100 i5QY6T3VSiRAM^>4<QmmI1
+I6?UIXfASL?4]7bmhia>h32
+R4
+!s105 RANCNetworkGrid_1x1_tb_sv_unit
+S1
+R0
+w1661444601
+8../tb/RANCNetworkGrid_1x1_tb.sv
+F../tb/RANCNetworkGrid_1x1_tb.sv
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../tb/RANCNetworkGrid_1x1_tb.sv|
+!s90 -f|../script/filelist_tb.f|-l|./log/vlogt.log|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@r@a@n@c@network@grid_1x1_tb
+vRouter
+R2
+R3
+!i10b 1
+!s100 ^B?M6bz]S1J^OeE^k<8KX2
+Ie21bA`BPab;MZ]Ze[5][T0
+R4
+!s105 Router_v_unit
+S1
+R0
+R5
+8../../hdl/Router.v
+F../../hdl/Router.v
+L0 9
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@router
+vScheduler
+R2
+R3
+!i10b 1
+!s100 ed4YJgCcjIBc668COW[Ae0
+IKgLF<1>37g[E0`j?4D8SH0
+R4
+!s105 Scheduler_v_unit
+S1
+R0
+R5
+8../../hdl/Scheduler.v
+F../../hdl/Scheduler.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@scheduler
+vSchedulerSRAM
+R2
+R3
+!i10b 1
+!s100 A?WLoDZ3e_]PlENj^]KkA0
+I3d9c[TJ9RncbZY]`ej?MB0
+R4
+!s105 SchedulerSRAM_v_unit
+S1
+R0
+R5
+8../../hdl/SchedulerSRAM.v
+F../../hdl/SchedulerSRAM.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R11
+R12
+R1
+n@scheduler@s@r@a@m

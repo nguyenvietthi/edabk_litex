@@ -1,7 +1,7 @@
 #!/bin/bash
 reset
 # UVMLIB=../uvm_code/uvm-1.1d #path lib of UVM
-TOP_TB=tb_RANCNetworkGrid_1x1 # name top testbench
+TOP_TB=RANCNetworkGrid_1x1_tb # name top testbench
 # prepare workspace
 alias vlb='rm -rf work; mkdir -p log; vlib work'
 
