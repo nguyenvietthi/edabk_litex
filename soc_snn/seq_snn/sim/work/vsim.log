@@ -1,5 +1,5 @@
 # vsim -c RANCNetworkGrid_1x1_tb -wlf vsim.wlf -solvefaildebug -assertdebug -voptargs="+acc" -l vsim.log -do "add wave -r /RANCNetworkGrid_1x1_tb/*; run -all; quit" 
-# Start time: 14:17:36 on Aug 26,2022
+# Start time: 17:52:10 on Aug 26,2022
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "neuron_grid_controller(fast)".
 # //  Questa Sim-64
@@ -59,13 +59,15 @@
 # Loading work.async_fifo(fast__2)
 # Loading work.fifomem(fast__2)
 # Loading work.sync_signal(fast)
+# Loading work.async_fifo(fast__3)
+# Loading work.fifomem(fast__3)
 # add wave -r /RANCNetworkGrid_1x1_tb/*
 #  run -all
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 100 of file "./../../data/tb_num_inputs.txt". (Current address [100], address range [0:99])    : ../tb/RANCNetworkGrid_1x1_tb.sv(47)
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 100 of file "./../../data/tb_num_inputs.txt". (Current address [100], address range [0:99])    : ../tb/RANCNetworkGrid_1x1_tb.sv(50)
 #    Time: 0 ps  Iteration: 0  Instance: /RANCNetworkGrid_1x1_tb
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 3059 of file "./../../data/tb_input.txt". (Current address [3058], address range [0:3057])    : ../tb/RANCNetworkGrid_1x1_tb.sv(51)
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 3059 of file "./../../data/tb_input.txt". (Current address [3058], address range [0:3057])    : ../tb/RANCNetworkGrid_1x1_tb.sv(54)
 #    Time: 0 ps  Iteration: 0  Instance: /RANCNetworkGrid_1x1_tb
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 100 of file "./../../data/simulator_output.txt". (Current address [100], address range [0:99])    : ../tb/RANCNetworkGrid_1x1_tb.sv(59)
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 100 of file "./../../data/simulator_output.txt". (Current address [100], address range [0:99])    : ../tb/RANCNetworkGrid_1x1_tb.sv(62)
 #    Time: 0 ps  Iteration: 0  Instance: /RANCNetworkGrid_1x1_tb
 # ERROR          -1
 # param           0: 551172822824383793502180389269563149509970107850046056191780639277522788185710159090130493793584274507638509568
@@ -680,10 +682,10 @@
 # OK          97
 # OK          98
 # OK          99
-# ** Note: $stop    : ../tb/RANCNetworkGrid_1x1_tb.sv(154)
-#    Time: 70220195 ns  Iteration: 1  Instance: /RANCNetworkGrid_1x1_tb
-# Break in Module RANCNetworkGrid_1x1_tb at ../tb/RANCNetworkGrid_1x1_tb.sv line 154
-# Stopped at ../tb/RANCNetworkGrid_1x1_tb.sv line 154
+# ** Note: $stop    : ../tb/RANCNetworkGrid_1x1_tb.sv(166)
+#    Time: 71000004 ns  Iteration: 1  Instance: /RANCNetworkGrid_1x1_tb
+# Break in Module RANCNetworkGrid_1x1_tb at ../tb/RANCNetworkGrid_1x1_tb.sv line 166
+# Stopped at ../tb/RANCNetworkGrid_1x1_tb.sv line 166
 #  quit
-# End time: 14:18:13 on Aug 26,2022, Elapsed time: 0:00:37
+# End time: 17:52:27 on Aug 26,2022, Elapsed time: 0:00:17
 # Errors: 0, Warnings: 3

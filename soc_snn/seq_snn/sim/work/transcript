@@ -237,3 +237,83 @@ dataset reload -f
 # vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
 dataset reload -f
 # vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/wclk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/wrst_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/awfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rclk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rrst_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rinc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rempty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/arempty
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/ren_to_input_buffer \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/scheduler_error
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/Core0/Router/forward_north/empty_east
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/Core0/Router/forward_west/empty_routing
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/Core0/Router/forward_west
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/Core0/Router/forward_west
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/Core0/Router/forward_west
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_rinc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_rempty
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_clk
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/clk
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/spike_out
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/controller/current_state

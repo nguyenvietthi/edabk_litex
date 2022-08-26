@@ -14,7 +14,8 @@ module snn_1x1_wrapper(
     input  [1:0]             neuron_inst_wdata     ,
     output                   neuron_inst_wfull     ,
     output [7:0]             packet_out            ,
-    output                   packet_out_valid      ,
+    input                    packet_out_rinc       ,
+    output                   packet_out_rempty     ,
     output                   token_controller_error,
     output                   scheduler_error       
 	
@@ -33,6 +34,10 @@ module snn_1x1_wrapper(
 
     wire                     tick_snn              ;
 
+    wire [7:0]               packet_out_tmp        ;
+    wire                     packet_out_valid      ;
+    wire                     packet_out_wfull      ;
+
 	RANCNetworkGrid_1x1 RANCNetworkGrid_1x1_ins(
 		.clk                   (clk                   ),
 		.reset_n               (reset_n               ),
@@ -45,7 +50,7 @@ module snn_1x1_wrapper(
 		.neuron_inst_wen       (neuron_inst_wen       ),
 		.neuron_inst_address   (neuron_inst_address   ),
 		.neuron_inst_data_in   (neuron_inst_data_in   ),
-		.packet_out            (packet_out            ),
+		.packet_out            (packet_out_tmp        ),
 		.packet_out_valid      (packet_out_valid      ),
 		.ren_to_input_buffer   (ren_to_input_buffer   ),
 		.token_controller_error(token_controller_error),
@@ -108,6 +113,25 @@ module snn_1x1_wrapper(
 		.rst_n2    (reset_n    ),
 		.signal_in (tick       ),
 		.signal_out(tick_snn   )
+	);
+
+	async_fifo #(
+		.DSIZE      (8      ), 
+		.ASIZE      (8      ),
+		.FALLTHROUGH("TRUE")
+	) packet_out_fifo(
+		.wclk   (clk                                 ),
+		.wrst_n (reset_n                             ),
+		.winc   (packet_out_valid & ~packet_out_wfull),
+		.wdata  (packet_out_tmp                      ),
+		.wfull  (packet_out_wfull                    ),
+		.awfull (                                    ),
+		.rclk   (sys_clk                             ),
+		.rrst_n (sys_reset_n                         ),
+		.rinc   (packet_out_rinc                     ),
+		.rdata  (packet_out                          ),
+		.rempty (packet_out_rempty                   ),
+		.arempty(                                    )
 	);
 
 endmodule

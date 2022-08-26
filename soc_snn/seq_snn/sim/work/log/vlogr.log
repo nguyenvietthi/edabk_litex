@@ -1,5 +1,5 @@
 QuestaSim-64 vlog 10.6 Compiler 2016.12 Dec 13 2016
-Start time: 14:17:35 on Aug 26,2022
+Start time: 17:52:09 on Aug 26,2022
 vlog -f ../script/filelist_rtl.f "+cover=bcefs" -l ./log/vlogr.log 
 -- Compiling module snn_1x1_wrapper
 -- Scanning library directory '../../hdl'
@@ -37,5 +37,5 @@ vlog -f ../script/filelist_rtl.f "+cover=bcefs" -l ./log/vlogr.log
 
 Top level modules:
 	snn_1x1_wrapper
-End time: 14:17:35 on Aug 26,2022, Elapsed time: 0:00:00
+End time: 17:52:09 on Aug 26,2022, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

@@ -9,17 +9,17 @@ z2
 cModel Technology
 Z0 d/data5/workspace/thinv0/edabk_litex/seq_snn/sim/work
 T_opt
-!s110 1661498256
-V@ln]7nUNiS>fQ`@8>FNn61
+!s110 1661511131
+VXPk5ieVG;LB49oRHZWVNG2
 04 22 4 work RANCNetworkGrid_1x1_tb fast 0
-=1-1866daf7dfe7-63087390-2a6aa-5977
+=1-1866daf7dfe7-6308a5db-68c1-4c2e
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
 n@_opt
 OL;O;10.6;65
 vasync_fifo
 Z2 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z3 !s110 1661498255
+Z3 !s110 1661511129
 !i10b 1
 !s100 GRA8]92L7ChdVhzA_aS0[2
 IehM:YE^4>cL<fNA5[TieU0
@@ -35,7 +35,7 @@ Z7 OL;L;10.6;65
 r1
 !s85 0
 31
-Z8 !s108 1661498255.000000
+Z8 !s108 1661511129.000000
 Z9 !s107 ../../hdl/snn_1x1_wrapper.v|
 Z10 !s90 -f|../script/filelist_rtl.f|+cover=bcefs|-l|./log/vlogr.log|
 !i113 0
@@ -551,15 +551,15 @@ R1
 n@r@a@n@c@network@grid_1x1
 vRANCNetworkGrid_1x1_tb
 R2
-R3
+!s110 1661511130
 !i10b 1
-!s100 Z[HHRkOI9_LgaM<Ql2D_83
-In7Q46GeOBb85Q=LJHUd6V2
+!s100 86]9Aao@dha[U><]1Vich1
+I9_Vi@NT;ggV>[JXBIRTfI3
 R4
 !s105 RANCNetworkGrid_1x1_tb_sv_unit
 S1
 R0
-w1661498022
+w1661511154
 8../tb/RANCNetworkGrid_1x1_tb.sv
 F../tb/RANCNetworkGrid_1x1_tb.sv
 L0 2
@@ -567,7 +567,7 @@ R7
 r1
 !s85 0
 31
-R8
+!s108 1661511130.000000
 !s107 ../tb/RANCNetworkGrid_1x1_tb.sv|
 !s90 -f|../script/filelist_tb.f|-l|./log/vlogt.log|
 !i113 0
@@ -685,13 +685,13 @@ vsnn_1x1_wrapper
 R2
 R3
 !i10b 1
-!s100 @kh4TL^cAJK^?Za6<AoBS2
-I]Sd;5ZY^4zcfM4:Df8nl<2
+!s100 P>kRUJ7Q8JFHE69_[1zeX1
+II;H=R;<ek[zd^JU?QK@n>0
 R4
 !s105 snn_1x1_wrapper_v_unit
 S1
 R0
-w1661498278
+w1661510710
 8../../hdl/snn_1x1_wrapper.v
 F../../hdl/snn_1x1_wrapper.v
 L0 1
