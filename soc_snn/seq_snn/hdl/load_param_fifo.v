@@ -1,6 +1,6 @@
 module load_param_fifo #(
     parameter DSIZE = 8,
-    parameter ASIZE = 8, //depth = 1 << 8
+    parameter ASIZE = 8 //depth = 1 << 8
 )(
     input                     wclk    ,
     input                     wrst_n  ,
@@ -11,11 +11,11 @@ module load_param_fifo #(
     input                     rrst_n  ,
     output                    write_en,	
     output  [$clog2(256)-1:0] address ,
-    output  [DSIZE:0]         data_in  
+    output  [DSIZE - 1:0]     data_in  
 );
 
-    wire [DSIZE-1:0] rdata  ,
-    wire             rempty ,
+    wire [DSIZE-1:0] rdata  ;
+    wire             rempty ;
 
     reg [$clog2(256)-1:0] count;
 
@@ -47,7 +47,7 @@ module load_param_fifo #(
 		.rinc   (1'b1   ),
 		.rdata  (rdata  ),
 		.rempty (rempty ),
-		.arempty(       ),
+		.arempty(       )
 	);
 
 endmodule

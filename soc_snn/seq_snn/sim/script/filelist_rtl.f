@@ -25,4 +25,6 @@
 //  Top Level Module
 ////////////////////////////////////////////////////////////////////////////////
 -y ../../hdl
-../../hdl/RANCNetworkGrid_1x1.v
+-y ../../libs/async_fifo/hdl
+-y ../../libs/snn_1x1/hdl
+../../hdl/snn_1x1_wrapper.v

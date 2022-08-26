@@ -1,11 +1,11 @@
 # vsim -c RANCNetworkGrid_1x1_tb -wlf vsim.wlf -solvefaildebug -assertdebug -voptargs="+acc" -l vsim.log -do "add wave -r /RANCNetworkGrid_1x1_tb/*; run -all; quit" 
-# Start time: 23:23:33 on Aug 25,2022
+# Start time: 08:40:25 on Aug 26,2022
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "neuron_grid_controller(fast)".
 # //  Questa Sim-64
-# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //  Version 10.6 linux_x86_64 Dec 13 2016
 # //
-# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  Copyright 1991-2016 Mentor Graphics Corporation
 # //  All Rights Reserved.
 # //
 # //  QuestaSim and its associated documentation contain trade
@@ -159,5 +159,5 @@
 # Break in Module RANCNetworkGrid_1x1_tb at ../tb/RANCNetworkGrid_1x1_tb.sv line 129
 # Stopped at ../tb/RANCNetworkGrid_1x1_tb.sv line 129
 #  quit
-# End time: 23:23:46 on Aug 25,2022, Elapsed time: 0:00:13
+# End time: 08:40:38 on Aug 26,2022, Elapsed time: 0:00:13
 # Errors: 0, Warnings: 3

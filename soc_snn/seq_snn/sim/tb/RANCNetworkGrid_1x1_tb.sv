@@ -5,35 +5,38 @@ module RANCNetworkGrid_1x1_tb ();
 	parameter NUM_PACKET = 3058; // số lượng input packet trong file
 	
 	
-	reg clk, reset_n, tick, input_buffer_empty;
+	reg clk, sys_clk, reset_n, tick, input_buffer_empty;
 	reg [29:0] packet_in;
 	wire [7:0] packet_out;
 	wire packet_out_valid, ren_to_input_buffer, token_controller_error, scheduler_error;
 	
-	reg                   param_wen           ;
-	reg [$clog2(256)-1:0] param_address       ;
-	reg [367:0]           param_data_in       ;
-	reg                   neuron_inst_wen     ;
-	reg [$clog2(256)-1:0] neuron_inst_address ;
-	reg [1:0]             neuron_inst_data_in ;
+	reg                   param_winc        ;
+	reg [367:0]           param_wdata       ;
+	wire                  param_wfull       ;
+
+	reg                   neuron_inst_winc ;
+	reg [1:0]             neuron_inst_wdata;
+	wire                  neuron_inst_wfull;
 	
-	RANCNetworkGrid_1x1 uut(
-	    .clk                    (clk                   ),
-	    .reset_n                (reset_n               ),
-	    .tick                   (tick                  ),
-	    .input_buffer_empty     (input_buffer_empty    ),
-	    .packet_in              (packet_in             ),
-	    .param_wen              (param_wen             ),
-	    .param_address          (param_address         ),
-	    .param_data_in          (param_data_in         ),
-	    .neuron_inst_wen        (neuron_inst_wen       ),
-	    .neuron_inst_address    (neuron_inst_address   ),
-	    .neuron_inst_data_in    (neuron_inst_data_in   ),
-	    .packet_out             (packet_out            ),
-	    .packet_out_valid       (packet_out_valid      ),
-	    .ren_to_input_buffer    (ren_to_input_buffer   ),
-	    .token_controller_error (token_controller_error),
-	    .scheduler_error        (scheduler_error       )
+	snn_1x1_wrapper uut(
+		.clk                    (clk                   ),
+		.reset_n                (reset_n               ),
+		.sys_clk                (sys_clk               ),
+		.sys_reset_n            (reset_n               ),
+		.tick                   (tick                  ),
+		.input_buffer_empty     (input_buffer_empty    ),
+		.packet_in              (packet_in             ),
+		.param_winc             (param_winc            ),
+		.param_wdata            (param_wdata           ),
+		.param_wfull            (param_wfull           ),
+		.neuron_inst_winc       (neuron_inst_winc      ),
+		.neuron_inst_wdata      (neuron_inst_wdata     ),
+		.neuron_inst_wfull      (neuron_inst_wfull     ),
+		.packet_out             (packet_out            ),
+		.packet_out_valid       (packet_out_valid      ),
+		.ren_to_input_buffer    (ren_to_input_buffer   ),
+		.token_controller_error (token_controller_error),
+		.scheduler_error        (scheduler_error       )
 	);
 	// đọc số lượng packet trong mỗi tick
 	reg [6:0] num_pic [0:NUM_PICTURE - 1];
@@ -56,6 +59,11 @@ module RANCNetworkGrid_1x1_tb ();
 	    forever #5 clk = ~clk;
 	end
 
+	initial begin
+	    sys_clk = 0;
+	    forever #3 sys_clk = ~sys_clk;
+	end
+
 	reg [7:0] count_valid;
 	int begin_packet_addr;
 	reg [NUM_OUTPUT - 1:0] spike_out;
@@ -68,8 +76,8 @@ module RANCNetworkGrid_1x1_tb ();
 		end
 	end
 
-	always @(uut.Core0.neuron_grid.controller.current_state ) begin 
-		if(uut.Core0.neuron_grid.controller.current_state == 0) begin 
+	always @(uut.RANCNetworkGrid_1x1_ins.Core0.neuron_grid.controller.current_state ) begin 
+		if(uut.RANCNetworkGrid_1x1_ins.Core0.neuron_grid.controller.current_state == 0) begin 
 			if(spike_out == output_soft[pic_index]) begin 
 				$display("OK %d", pic_index);
 			end else begin 
@@ -83,32 +91,42 @@ module RANCNetworkGrid_1x1_tb ();
 		reset_n = 0;
 		tick = 0;
 		input_buffer_empty = 1;
-		param_wen       = 0;
-    	neuron_inst_wen = 0;
     	begin_packet_addr = 0;
     	pic_index = -1;
+    	param_winc = 0;
+    	neuron_inst_winc = 0;
 		@(negedge clk); 
 		reset_n = 1;
 		repeat(10) @(negedge clk);
-    	param_wen = 1;
 
 	    for (int i = 0; i < 256; i++) begin
-	        @(negedge clk);
-	        param_address = i;
-	        param_data_in = neuron_parameter[i];
+	        @(negedge sys_clk);
+	        // param_address = i;
+	        param_wdata = neuron_parameter[i];
+	        param_winc = 1;
+	        @(negedge sys_clk);
+	        param_winc = 0;
+	    end
+
+	    repeat(50) @(negedge clk);
+		for (int i = 0; i < 256; i++) begin
+	        $display("param %d: %d", i, uut.RANCNetworkGrid_1x1_ins.Core0.neuron_grid.datapath.neuron_parameter[i]);
+	    end
+
+	    for (int i = 0; i < 256; i++) begin
+	        @(negedge sys_clk);
+	        neuron_inst_wdata = neuron_instructions[i];
+	        neuron_inst_winc = 1;
+	        @(negedge sys_clk);
+	        neuron_inst_winc = 0;
+	    end
+
+	    repeat(50) @(negedge clk);
+		for (int i = 0; i < 256; i++) begin
+	        $display("inst %d: %d", i, uut.RANCNetworkGrid_1x1_ins.Core0.neuron_grid.datapath.neuron_instructions[i]);
 	    end
 	
-	    @(negedge clk);
-	    param_wen       = 0;
-	    neuron_inst_wen = 1;
-	    for (int i = 0; i < 256; i++) begin
-	        @(negedge clk);
-	        neuron_inst_address = i;
-	        neuron_inst_data_in = neuron_instructions[i];
-	    end
-	    @(negedge clk);
-	    param_wen       = 0;
-	    neuron_inst_wen = 0;
+	    repeat(20) @(negedge clk);
 
 	    for (int i = 0; i < NUM_PICTURE; i++) begin
 	    	@(posedge clk);
