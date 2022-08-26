@@ -1,0 +1,41 @@
+QuestaSim-64 vlog 10.6 Compiler 2016.12 Dec 13 2016
+Start time: 14:17:35 on Aug 26,2022
+vlog -f ../script/filelist_rtl.f "+cover=bcefs" -l ./log/vlogr.log 
+-- Compiling module snn_1x1_wrapper
+-- Scanning library directory '../../hdl'
+-- Compiling module load_param_fifo
+-- Scanning library directory '../../libs/async_fifo/hdl'
+-- Compiling module async_fifo
+-- Compiling module sync_r2w
+-- Compiling module sync_w2r
+-- Compiling module wptr_full
+-- Compiling module fifomem
+-- Compiling module rptr_empty
+-- Scanning library directory '../../libs/snn_1x1/hdl'
+-- Compiling module RANCNetworkGrid_1x1
+-- Compiling module Core_1x1
+-- Compiling module OutputBus
+-- Compiling module Scheduler
+-- Compiling module neuron_grid_1x1
+-- Compiling module Router
+-- Compiling module SchedulerSRAM
+-- Compiling module Counter
+-- Compiling module neuron_grid_controller
+-- Compiling module neuron_grid_datapath_1x1
+-- Compiling module FromLocal
+-- Compiling module ForwardEastWest
+-- Compiling module ForwardNorthSouth
+-- Compiling module LocalIn
+-- Compiling module neuron_block
+-- Compiling module buffer
+-- Compiling module Merge2
+-- Compiling module PathDecoder3Way
+-- Compiling module Merge3
+-- Compiling module PathDecoder2Way
+-- Scanning library directory '../../libs/sync_signal/hdl'
+-- Compiling module sync_signal
+
+Top level modules:
+	snn_1x1_wrapper
+End time: 14:17:35 on Aug 26,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

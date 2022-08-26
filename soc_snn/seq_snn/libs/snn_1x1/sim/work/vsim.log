@@ -1,0 +1,163 @@
+# vsim -c RANCNetworkGrid_1x1_tb -wlf vsim.wlf -solvefaildebug -assertdebug -voptargs="+acc" -l vsim.log -do "add wave -r /RANCNetworkGrid_1x1_tb/*; run -all; quit" 
+# Start time: 08:40:25 on Aug 26,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "neuron_grid_controller(fast)".
+# //  Questa Sim-64
+# //  Version 10.6 linux_x86_64 Dec 13 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.RANCNetworkGrid_1x1_tb(fast)
+# Loading work.RANCNetworkGrid_1x1(fast)
+# Loading work.Core_1x1(fast)
+# Loading work.Scheduler(fast)
+# Loading work.SchedulerSRAM(fast)
+# Loading work.Counter(fast)
+# Loading work.neuron_grid_1x1(fast)
+# Loading work.neuron_grid_controller(fast)
+# Loading work.neuron_grid_datapath_1x1(fast)
+# Loading work.neuron_block(fast)
+# Loading work.Router(fast)
+# Loading work.FromLocal(fast)
+# Loading work.buffer(fast)
+# Loading work.ForwardEastWest(fast)
+# Loading work.Merge2(fast)
+# Loading work.PathDecoder3Way(fast)
+# Loading work.buffer(fast__1)
+# Loading work.ForwardEastWest(fast__1)
+# Loading work.PathDecoder3Way(fast__1)
+# Loading work.ForwardNorthSouth(fast)
+# Loading work.Merge3(fast)
+# Loading work.PathDecoder2Way(fast)
+# Loading work.buffer(fast__2)
+# Loading work.ForwardNorthSouth(fast__1)
+# Loading work.PathDecoder2Way(fast__1)
+# Loading work.LocalIn(fast)
+# Loading work.Merge2(fast__1)
+# Loading work.OutputBus(fast)
+# add wave -r /RANCNetworkGrid_1x1_tb/*
+#  run -all
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 100 of file "./../../data/tb_num_inputs.txt". (Current address [100], address range [0:99])    : ../tb/RANCNetworkGrid_1x1_tb.sv(40)
+#    Time: 0 ps  Iteration: 0  Instance: /RANCNetworkGrid_1x1_tb
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 3059 of file "./../../data/tb_input.txt". (Current address [3058], address range [0:3057])    : ../tb/RANCNetworkGrid_1x1_tb.sv(44)
+#    Time: 0 ps  Iteration: 0  Instance: /RANCNetworkGrid_1x1_tb
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 100 of file "./../../data/simulator_output.txt". (Current address [100], address range [0:99])    : ../tb/RANCNetworkGrid_1x1_tb.sv(52)
+#    Time: 0 ps  Iteration: 0  Instance: /RANCNetworkGrid_1x1_tb
+# ERROR          -1
+# OK           0
+# OK           1
+# OK           2
+# OK           3
+# OK           4
+# OK           5
+# OK           6
+# OK           7
+# OK           8
+# OK           9
+# OK          10
+# OK          11
+# OK          12
+# OK          13
+# OK          14
+# OK          15
+# OK          16
+# OK          17
+# OK          18
+# OK          19
+# OK          20
+# OK          21
+# OK          22
+# OK          23
+# OK          24
+# OK          25
+# OK          26
+# OK          27
+# OK          28
+# OK          29
+# OK          30
+# OK          31
+# OK          32
+# OK          33
+# OK          34
+# OK          35
+# OK          36
+# OK          37
+# OK          38
+# OK          39
+# OK          40
+# OK          41
+# OK          42
+# OK          43
+# OK          44
+# OK          45
+# OK          46
+# OK          47
+# OK          48
+# OK          49
+# OK          50
+# OK          51
+# OK          52
+# OK          53
+# OK          54
+# OK          55
+# OK          56
+# OK          57
+# OK          58
+# OK          59
+# OK          60
+# OK          61
+# OK          62
+# OK          63
+# OK          64
+# OK          65
+# OK          66
+# OK          67
+# OK          68
+# OK          69
+# OK          70
+# OK          71
+# OK          72
+# OK          73
+# OK          74
+# OK          75
+# OK          76
+# OK          77
+# OK          78
+# OK          79
+# OK          80
+# OK          81
+# OK          82
+# OK          83
+# OK          84
+# OK          85
+# OK          86
+# OK          87
+# OK          88
+# OK          89
+# OK          90
+# OK          91
+# OK          92
+# OK          93
+# OK          94
+# OK          95
+# OK          96
+# OK          97
+# OK          98
+# OK          99
+# ** Note: $stop    : ../tb/RANCNetworkGrid_1x1_tb.sv(129)
+#    Time: 70098405 ns  Iteration: 1  Instance: /RANCNetworkGrid_1x1_tb
+# Break in Module RANCNetworkGrid_1x1_tb at ../tb/RANCNetworkGrid_1x1_tb.sv line 129
+# Stopped at ../tb/RANCNetworkGrid_1x1_tb.sv line 129
+#  quit
+# End time: 08:40:38 on Aug 26,2022, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 3

@@ -27,4 +27,5 @@
 -y ../../hdl
 -y ../../libs/async_fifo/hdl
 -y ../../libs/snn_1x1/hdl
+-y ../../libs/sync_signal/hdl
 ../../hdl/snn_1x1_wrapper.v

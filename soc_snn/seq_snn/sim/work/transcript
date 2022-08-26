@@ -1,0 +1,239 @@
+# //  Questa Sim-64
+# //  Version 10.6 linux_x86_64 Dec 13 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim.wlf opened as dataset "vsim"
+# wave.do
+# invalid command name "wave.do"
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/ren_to_input_buffer \
+vsim:/RANCNetworkGrid_1x1_tb/uut/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/scheduler_error
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/ren_to_input_buffer \
+vsim:/RANCNetworkGrid_1x1_tb/uut/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/scheduler_error
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/ren_to_input_buffer \
+vsim:/RANCNetworkGrid_1x1_tb/uut/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/scheduler_error
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/count
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_neuron_inst_fifo/count
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_data_in
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/wclk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/wrst_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/rclk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/rrst_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/write_en \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/data_in
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/count
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/ren_to_input_buffer \
+vsim:/RANCNetworkGrid_1x1_tb/uut/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/scheduler_error
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo/count
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_neuron_inst_fifo/count
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_neuron_inst_fifo
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_param_fifo
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sys_reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/scheduler_error
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/sync_tick_signal/signal_out
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/ren_to_input_buffer
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/wclk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/wrst_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/winc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/wdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/wfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/awfull \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rclk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rrst_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rinc \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rdata \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/rempty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo/arempty
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/load_packet_fifo
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/param_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/neuron_inst_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/ren_to_input_buffer \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/scheduler_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/west_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/east_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/north_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/south_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/ren_out_west \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/ren_out_east \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/ren_out_north \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/ren_out_south \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/empty_out_west \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/empty_out_east \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/empty_out_north \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/empty_out_south \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/token_controller_error_output \
+vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins/scheduler_error_output
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
+dataset reload -f
+# ** Note: (vish-4074) File vsim.wlf is still open, viewing file in live viewing mode.
+# 
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins
+dataset reload -f
+# vsim:/RANCNetworkGrid_1x1_tb/uut/RANCNetworkGrid_1x1_ins

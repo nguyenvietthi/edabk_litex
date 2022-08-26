@@ -1,0 +1,34 @@
+# //  Questa Sim-64
+# //  Version 10.6 linux_x86_64 Dec 13 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim.wlf opened as dataset "vsim"
+# wave.do
+# invalid command name "wave.do"
+add wave -position insertpoint  \
+vsim:/RANCNetworkGrid_1x1_tb/uut/clk \
+vsim:/RANCNetworkGrid_1x1_tb/uut/reset_n \
+vsim:/RANCNetworkGrid_1x1_tb/uut/tick \
+vsim:/RANCNetworkGrid_1x1_tb/uut/input_buffer_empty \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/param_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_wen \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_address \
+vsim:/RANCNetworkGrid_1x1_tb/uut/neuron_inst_data_in \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out \
+vsim:/RANCNetworkGrid_1x1_tb/uut/packet_out_valid \
+vsim:/RANCNetworkGrid_1x1_tb/uut/ren_to_input_buffer \
+vsim:/RANCNetworkGrid_1x1_tb/uut/token_controller_error \
+vsim:/RANCNetworkGrid_1x1_tb/uut/scheduler_error

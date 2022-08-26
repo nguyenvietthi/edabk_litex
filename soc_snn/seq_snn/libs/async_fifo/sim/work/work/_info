@@ -1,0 +1,196 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/async_fifo/sim/work
+T_opt
+!s110 1661445899
+V>k6M6`c<eD9<[4Wz:6FjK2
+04 13 4 work async_fifo_tb fast 0
+=1-d46d6dc002f6-6307a70b-926ed-12cc6
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;10.7c;67
+vasync_fifo
+Z2 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+Z3 !s110 1661445896
+!i10b 1
+!s100 j^Qdh_01RXWMJJn^9_TbX2
+IR@Vf=8fS?WF9aeXGfG@nV0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s105 async_fifo_v_unit
+S1
+R0
+Z5 w1661433848
+8../../hdl/async_fifo.v
+F../../hdl/async_fifo.v
+Z6 L0 20
+Z7 OL;L;10.7c;67
+r1
+!s85 0
+31
+Z8 !s108 1661445896.000000
+Z9 !s107 ../../hdl/async_fifo.v|
+Z10 !s90 -f|../script/filelist_rtl.f|+cover=bcefs|-l|./log/vlogr.log|
+!i113 0
+Z11 !s102 +cover=bcefs
+Z12 o+libext+.v +libext+.vh +libext+.sv +libext+.svh +libext+.h -sv +nospecify +notimingchecks -timescale 1ns/1ps +cover=bcefs -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 +libext+.v +libext+.vh +libext+.sv +libext+.svh +libext+.h -sv +nospecify +notimingchecks -timescale 1ns/1ps -y ../../hdl +cover=bcefs -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vasync_fifo_tb
+R3
+!i10b 1
+!s100 dil`0ddUdS551m0k_kUAV3
+I7geEkf=CZPiGW;>VXc]AL0
+R4
+R0
+w1661445892
+8../tb/async_fifo_tb.v
+F../tb/async_fifo_tb.v
+L0 6
+R7
+r1
+!s85 0
+31
+R8
+!s107 ../tb/async_fifo_tb.v|
+!s90 -f|../script/filelist_tb.f|-l|./log/vlogt.log|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vfifomem
+R2
+R3
+!i10b 1
+!s100 k6C_b8BH4>daebHV6bE_Y0
+ITCUfkL[9Ycl:on^BTnNeb3
+R4
+!s105 fifomem_v_unit
+S1
+R0
+R5
+8../../hdl/fifomem.v
+F../../hdl/fifomem.v
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+R13
+R1
+vrptr_empty
+R2
+R3
+!i10b 1
+!s100 <4XR1<JAcVMd:Fh<CP36V3
+I`87Phm_CDe0M=RUU[GkQe0
+R4
+!s105 rptr_empty_v_unit
+S1
+R0
+R5
+8../../hdl/rptr_empty.v
+F../../hdl/rptr_empty.v
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+R13
+R1
+vsync_r2w
+R2
+R3
+!i10b 1
+!s100 6`SGITBdoRY>L2FU2P1?50
+IM1lOz:^B_zW>ligNcX2LH1
+R4
+!s105 sync_r2w_v_unit
+S1
+R0
+R5
+8../../hdl/sync_r2w.v
+F../../hdl/sync_r2w.v
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+R13
+R1
+vsync_w2r
+R2
+R3
+!i10b 1
+!s100 o06<oQazONa:<O]d4T6DW3
+Iggo_W]Uc@B6JNZzfWaPn70
+R4
+!s105 sync_w2r_v_unit
+S1
+R0
+R5
+8../../hdl/sync_w2r.v
+F../../hdl/sync_w2r.v
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+R13
+R1
+vwptr_full
+R2
+R3
+!i10b 1
+!s100 0RZz9Q>HjO4oCb^>7:gl?2
+IN>ALeVI`n]h0k1_2;EnnB2
+R4
+!s105 wptr_full_v_unit
+S1
+R0
+R5
+8../../hdl/wptr_full.v
+F../../hdl/wptr_full.v
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+R13
+R1

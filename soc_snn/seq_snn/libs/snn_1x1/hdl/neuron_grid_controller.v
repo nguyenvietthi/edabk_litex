@@ -1,6 +1,4 @@
 module neuron_grid_controller(
-    
-
     input tick,
     input done_neuron, done_axon,
     input clk,
@@ -14,11 +12,7 @@ module neuron_grid_controller(
     output reg update_potential,
     output reg done,
     output reg error
-
 );
-
-
-
 
 localparam IDLE     = 0;
 localparam GET_DATA = 1;
