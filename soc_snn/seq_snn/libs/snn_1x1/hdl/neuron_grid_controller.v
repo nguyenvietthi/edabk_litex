@@ -11,7 +11,8 @@ module neuron_grid_controller(
     output reg new_neuron,
     output reg update_potential,
     output reg done,
-    output reg error
+    output reg error,
+    output     wait_packets
 );
 
 localparam IDLE     = 0;
@@ -22,6 +23,8 @@ localparam UPDATE   = 4;
 localparam END      = 5;
 
 reg [2:0] current_state, next_state;
+
+assign wait_packets = current_state == IDLE;
 
 always @(*) begin
     initial_axon_num = 0;

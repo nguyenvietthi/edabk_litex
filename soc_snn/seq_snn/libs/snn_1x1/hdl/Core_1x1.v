@@ -44,12 +44,48 @@ module Core_1x1 #(
     output [20:0] north_out,
     output [20:0] south_out,
     output token_controller_error,
-    output scheduler_error                  
+    output scheduler_error, 
+    output     wait_packets,
+    output reg tick_ready                  
 );
     
     wire [255:0] axon_spikes;
-    wire [29:0] spike_out_packet;
-    wire [11:0] scheduler_packet;
+    wire [29:0]  spike_out_packet;
+    wire [11:0]  scheduler_packet;
+    wire         scheduler_wen;
+
+    reg [7:0] packet_count;
+    reg [7:0] packet_to_router_count;
+
+    always @(negedge clk or negedge reset_n) begin
+        if(~reset_n) begin
+            packet_count <= 0;
+        end else if(ren_out_west) begin 
+            packet_count <= packet_count + 1;
+        end else if (tick_ready) begin
+            packet_count <= 0;
+        end
+    end
+
+    always @(negedge clk or negedge reset_n) begin
+        if(~reset_n) begin
+            packet_to_router_count <= 0;
+        end else if (scheduler_wen) begin
+            packet_to_router_count <= packet_to_router_count +1;
+        end else if (tick_ready) begin
+            packet_to_router_count <= 0;
+        end
+    end
+
+    always @(negedge clk or negedge reset_n) begin
+        if(~reset_n) begin
+            tick_ready <= 0;
+        end else if (packet_to_router_count == packet_count && packet_to_router_count != 0) begin
+            tick_ready <= 1;
+        end else if (tick_ready) begin
+            tick_ready <= 0;
+        end
+    end
     
 Scheduler Scheduler (
     .clk(clk),
@@ -82,7 +118,8 @@ neuron_grid(
     .param_data_in       (param_data_in      ),
     .neuron_inst_wen     (neuron_inst_wen    ),
     .neuron_inst_address (neuron_inst_address),
-    .neuron_inst_data_in (neuron_inst_data_in)
+    .neuron_inst_data_in (neuron_inst_data_in), 
+    .wait_packets (wait_packets)
 );
 
 

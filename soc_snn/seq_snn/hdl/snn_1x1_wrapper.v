@@ -17,7 +17,9 @@ module snn_1x1_wrapper(
     input                    packet_out_rinc       ,
     output                   packet_out_rempty     ,
     output                   token_controller_error,
-    output                   scheduler_error       
+    output                   scheduler_error       ,
+    output                   wait_packets          ,
+    output                   tick_ready                 
 	
 );
     wire                     param_wen             ;
@@ -54,7 +56,9 @@ module snn_1x1_wrapper(
 		.packet_out_valid      (packet_out_valid      ),
 		.ren_to_input_buffer   (ren_to_input_buffer   ),
 		.token_controller_error(token_controller_error),
-		.scheduler_error       (scheduler_error       )
+		.scheduler_error       (scheduler_error       ),
+		.wait_packets          (wait_packets          ),
+		.tick_ready            (tick_ready            )
 	);
 
 	load_param_fifo #(

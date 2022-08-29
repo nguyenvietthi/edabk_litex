@@ -23,6 +23,9 @@ module RANCNetworkGrid_1x1_tb ();
     wire   [7:0]             packet_out            ;
     reg                      packet_out_rinc       ;
     wire                     packet_out_rempty     ;   
+
+    wire                     wait_packets;
+    wire                     tick_ready  ;
 	
 	snn_1x1_wrapper uut(
 		.clk                   (clk                   ),
@@ -43,7 +46,9 @@ module RANCNetworkGrid_1x1_tb ();
 		.packet_out_rinc       (packet_out_rinc       ),
 		.packet_out_rempty     (packet_out_rempty     ),
 		.token_controller_error(token_controller_error),
-		.scheduler_error       (scheduler_error       )
+		.scheduler_error       (scheduler_error       ),
+		.wait_packets          (wait_packets          ),
+		.tick_ready            (tick_ready            )
 	);
 	// đọc số lượng packet trong mỗi tick
 	reg [6:0] num_pic [0:NUM_PICTURE - 1];
@@ -68,7 +73,7 @@ module RANCNetworkGrid_1x1_tb ();
 
 	initial begin
 	    sys_clk = 0;
-	    forever #4 sys_clk = ~sys_clk;
+	    forever #3 sys_clk = ~sys_clk;
 	end
 
 	reg [7:0] count_valid;
@@ -83,8 +88,8 @@ module RANCNetworkGrid_1x1_tb ();
 		end
 	end
 
-	always @(uut.RANCNetworkGrid_1x1_ins.Core0.neuron_grid.controller.current_state  or packet_out_rempty) begin 
-		if(uut.RANCNetworkGrid_1x1_ins.Core0.neuron_grid.controller.current_state == 0 && packet_out_rempty) begin 
+	always @(wait_packets or packet_out_rempty) begin 
+		if(wait_packets && packet_out_rempty) begin 
 			if(spike_out == output_soft[pic_index]) begin 
 				$display("OK %d", pic_index);
 			end else begin 
@@ -149,7 +154,8 @@ module RANCNetworkGrid_1x1_tb ();
 	    	end
 	    	// input_buffer_empty = 1;
 	    	begin_packet_addr = begin_packet_addr + num_pic[i];
-			repeat(1000) @(posedge sys_clk);
+			// repeat(70) @(posedge sys_clk);
+			wait(tick_ready);
 			tick = 1;
 			@(posedge sys_clk);
 			tick = 0;

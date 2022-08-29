@@ -23,7 +23,6 @@ module Merge2#(
     output reg wen
     );
     
-    
     always@(negedge clk, negedge reset_n) begin
         if (~reset_n) begin
             read_en_a <= 0;

@@ -17,7 +17,8 @@ module neuron_grid_1x1 #(
     output scheduler_clr,
     output done,
     output [29:0] packet_out,
-    output spike_out_valid
+    output spike_out_valid,
+    output     wait_packets
 );
 
 
@@ -36,7 +37,8 @@ neuron_grid_controller controller(
     .new_neuron(new_neuron),
     .update_potential(update_potential),
     .done(done),
-    .error(error)
+    .error(error),
+    .wait_packets (wait_packets)
 );
 
 neuron_grid_datapath_1x1 #(

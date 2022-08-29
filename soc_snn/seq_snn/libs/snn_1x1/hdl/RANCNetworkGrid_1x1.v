@@ -14,7 +14,9 @@ module RANCNetworkGrid_1x1 (
     output                   packet_out_valid      ,
     output                   ren_to_input_buffer   ,
     output                   token_controller_error,
-    output                   scheduler_error       
+    output                   scheduler_error       ,
+    output                   wait_packets          ,
+    output                   tick_ready                     
 );
 
 wire [29:0] west_out [0:1];
@@ -49,7 +51,9 @@ Core0
     .param_data_in       (param_data_in      ),
     .neuron_inst_wen     (neuron_inst_wen    ),
     .neuron_inst_address (neuron_inst_address),
-    .neuron_inst_data_in (neuron_inst_data_in)
+    .neuron_inst_data_in (neuron_inst_data_in), 
+    .wait_packets        (wait_packets       ), 
+    .tick_ready          (tick_ready         )
 );
 
 OutputBus #(
