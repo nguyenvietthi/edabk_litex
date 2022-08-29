@@ -80,11 +80,11 @@ module Core_1x1 #(
     always @(negedge clk or negedge reset_n) begin
         if(~reset_n) begin
             tick_ready <= 0;
-        end else if (packet_to_router_count == packet_count && packet_to_router_count != 0) begin
-            tick_ready <= 1;
         end else if (tick_ready) begin
             tick_ready <= 0;
-        end
+        end else if (packet_to_router_count == packet_count && packet_to_router_count != 0) begin
+            tick_ready <= 1;
+        end 
     end
     
 Scheduler Scheduler (
