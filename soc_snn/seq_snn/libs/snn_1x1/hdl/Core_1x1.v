@@ -82,7 +82,7 @@ module Core_1x1 #(
             tick_ready <= 0;
         end else if (tick_ready) begin
             tick_ready <= 0;
-        end else if (packet_to_router_count == packet_count && packet_to_router_count != 0) begin
+        end else if (packet_to_router_count == packet_count - 1 && scheduler_wen && packet_to_router_count != 0) begin
             tick_ready <= 1;
         end 
     end
