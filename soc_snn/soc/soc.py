@@ -27,9 +27,9 @@ from liteeth.phy import LiteEthPHY
 
 from litepcie.phy.s7pciephy import S7PCIEPHY
 from litepcie.software import generate_litepcie_software
+from litex.soc.interconnect import wishbone
 
-from soc_snn.soc.edabk_snn import edabk_snn
-
+from edabk_snn import edabk_snn
 # CRG ----------------------------------------------------------------------------------------------
 
 class _CRG(Module):
@@ -67,16 +67,43 @@ class BaseSoC(SoCCore):
         # SDCard -----------------------------------------------------------------------------------
         # Simply integrate SDCard through LiteX's add_sdcard method.
         if with_sdcard:
-            self.add_sdcard(self.platform.request("sdcard"))
+            # Wishbone Control -------------------------------------------------------------------------
+            # Create Wishbone Control Slave interface, expose it and connect it to the SoC.
+            wb_ctrl = wishbone.Interface()
+            self.add_wb_master(wb_ctrl)
+            platform.add_extension(wb_ctrl.get_ios("wb_ctrl"))
+            self.comb += wb_ctrl.connect_to_pads(self.platform.request("wb_ctrl"), mode="slave")
+            # Wishbone DMA -----------------------------------------------------------------------------
+            # Create Wishbone DMA Master interface and expose it.
+            wb_dma = wishbone.Interface(data_width=32)
+            platform.add_extension(wb_ctrl.get_ios("wb_dma"))
+            self.comb += wb_dma.connect_to_pads(self.platform.request("wb_dma"), mode="master")
+
+            # Create DMA Bus Handler (DMAs will be added by add_sdcard to it) and connect it to Wishbone DMA.
+            self.submodules.dma_bus = SoCBusHandler(
+                name             = "SoCDMABusHandler",
+                standard         = "wishbone",
+                data_width       = 32,
+                address_width    = 32,
+            )
+            self.dma_bus.add_slave("dma", slave=wb_dma, region=SoCRegion(origin=0x00000000, size=0x100000000))
+
+        # SDCard -----------------------------------------------------------------------------------
+        # Simply integrate SDCard through LiteX's add_sdcard method.
+        self.add_sdcard(name="sdcard")
+
+        # IRQ
+        irq_pad = platform.request("irq")
+        self.comb += irq_pad.eq(self.sdirq.irq)
 
         # EDABK SNN---------------------------------------------------------------------------------
         # SNN clk, Generate 100MHz from PLL.
         self.clock_domains.cd_snn_clk = ClockDomain()
         self.crg.pll.create_clkout(self.cd_snn_clk, 100e6)
         snn_clk = ClockSignal("snn_clk")
-        platform.add_platform_command("set_property SEVERITY {{Warning}} [get_drc_checks REQP-52]")
+        # platform.add_platform_command("set_property SEVERITY {{Warning}} [get_drc_checks REQP-52]")
 
-        self.submodules.edabk_snn_module = edabk_snn()
+        self.submodules.edabk_snn_module = edabk_snn(self.platform)
         self.add_csr("edabk_snn")
         self.comb += self.edabk_snn_module.clk.eq(snn_clk)
         self.comb += self.edabk_snn_module.sys_clk.eq(ClockSignal())
@@ -171,7 +198,7 @@ def main():
     target_group.add_argument("--load",           action="store_true", help="Load bitstream.")
     target_group.add_argument("--sys-clk-freq",   default=125e6,       help="System clock frequency.")
     target_group.add_argument("--with-ethernet",  action="store_true", help="Enable Ethernet support.")
-    target_group.add_argument("--with-sdcard  ",  action="store_true", help="Enable SDcard support.")
+    target_group.add_argument("--with-sdcard",    action="store_true", help="Enable SDcard support.")
     target_group.add_argument("--with-spi-flash", action="store_true", help="Enable SPI Flash (MMAPed).")
     target_group.add_argument("--with-pcie",      action="store_true", help="Enable PCIe support.")
     target_group.add_argument("--driver",         action="store_true", help="Generate PCIe driver.")

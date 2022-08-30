@@ -33,7 +33,7 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
         self.tick_ready             = CSRStatus(name="tick_ready", description="Tick ready", size=1, reset=0x0)
 
         self.specials += Instance(
-            "edabk_snn_ins"                                              ,
+            "snn_1x1_wrapper"                                            ,
             i_clk                    = self.clk                          ,
             i_reset_n                = ResetSignal()                     ,
             i_sys_clk                = self.sys_clk                      ,
