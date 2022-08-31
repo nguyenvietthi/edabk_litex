@@ -12,11 +12,24 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
 
         self.clk          = Signal()
         self.sys_clk      = Signal()
+        self.param_wdata  = Signal(384)
+
         self.tick         = CSRStorage(name="tick",description='Send tick to SNN', reset=0x0, size=1)
         
         self.packet       = CSRStorage(name="packet_wdata",description='Packet data send SNN', reset=0x0, size=30)
 
-        self.param        = CSRStorage(name="param_wdata",description='param data send SNN', reset=0x0, size=368)
+        self.param0       = CSRStorage(name="param_wdata0",description='Param data0 send SNN', reset=0x0, size=32)
+        self.param1       = CSRStorage(name="param_wdata1",description='Param data1 send SNN', reset=0x0, size=32)
+        self.param2       = CSRStorage(name="param_wdata2",description='Param data2 send SNN', reset=0x0, size=32)
+        self.param3       = CSRStorage(name="param_wdata3",description='Param data3 send SNN', reset=0x0, size=32)
+        self.param4       = CSRStorage(name="param_wdata4",description='Param data4 send SNN', reset=0x0, size=32)
+        self.param5       = CSRStorage(name="param_wdata5",description='Param data5 send SNN', reset=0x0, size=32)
+        self.param6       = CSRStorage(name="param_wdata6",description='Param data6 send SNN', reset=0x0, size=32)
+        self.param7       = CSRStorage(name="param_wdata7",description='Param data7 send SNN', reset=0x0, size=32)
+        self.param8       = CSRStorage(name="param_wdata8",description='Param data8 send SNN', reset=0x0, size=32)
+        self.param9       = CSRStorage(name="param_wdata9",description='Param data9 send SNN', reset=0x0, size=32)
+        self.param10      = CSRStorage(name="param_wdata10",description='Param data10 send SNN', reset=0x0, size=32)
+        self.param11      = CSRStorage(name="param_wdata11",description='Param data11 send SNN', reset=0x0, size=16)
 
         self.neuron_inst  = CSRStorage(name="neuron_inst_wdata",description='neuron_inst data send SNN', reset=0x0, size=2)
 
@@ -34,6 +47,20 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
             CSRField(name="tick_ready", description="Tick ready", size=1, reset=0x0),
         ], description="SNN status")
 
+        self.comb += self.param_wdata.eq(Cat(self.param0.storage, 
+            self.param1.storage , 
+            self.param2.storage , 
+            self.param3.storage , 
+            self.param4.storage , 
+            self.param5.storage , 
+            self.param6.storage , 
+            self.param7.storage , 
+            self.param8.storage , 
+            self.param9.storage , 
+            self.param10.storage,
+            self.param11.storage 
+        ))
+
         # self.packet_wfull = CSRStatus(name="packet_wfull", description="flag full", size=1, reset=0x0)
         # self.param_wfull = CSRStatus(name="param_wfull", description="flag full", size=1, reset=0x0)
         # self.neuron_inst_wfull = CSRStatus(name="neuron_inst_wfull", description="flag full", size=1, reset=0x0)
@@ -44,23 +71,23 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
         # self.tick_ready             = CSRStatus(name="tick_ready", description="Tick ready", size=1, reset=0x0)
 
         self.specials += Instance(
-            "snn_1x1_wrapper"                                            ,
-            i_clk                    = self.clk                          ,
-            i_reset_n                = ResetSignal()                     ,
-            i_sys_clk                = self.sys_clk                      ,
-            i_sys_reset_n            = ResetSignal()                     ,
-            i_tick                   = self.tick.re                      ,
-            i_packet_winc            = self.packet.re                    ,
-            i_packet_wdata           = self.packet.storage               ,
+            "snn_1x1_wrapper"                                                       ,
+            i_clk                    = self.clk                                     ,
+            i_reset_n                = ResetSignal()                                ,
+            i_sys_clk                = self.sys_clk                                 ,
+            i_sys_reset_n            = ResetSignal()                                ,
+            i_tick                   = self.tick.re                                 ,
+            i_packet_winc            = self.packet.re                               ,
+            i_packet_wdata           = self.packet.storage                          ,
             o_packet_wfull           = self.snn_status.fields.packet_wfull          ,
-            i_param_winc             = self.param.re                     ,
-            i_param_wdata            = self.param.storage                ,
+            i_param_winc             = self.param11.re                              ,
+            i_param_wdata            = self.param_wdata                             ,
             o_param_wfull            = self.snn_status.fields.param_wfull           ,
-            i_neuron_inst_winc       = self.neuron_inst.re               ,
-            i_neuron_inst_wdata      = self.neuron_inst.storage          ,
+            i_neuron_inst_winc       = self.neuron_inst.re                          ,
+            i_neuron_inst_wdata      = self.neuron_inst.storage                     ,
             o_neuron_inst_wfull      = self.snn_status.fields.neuron_inst_wfull     ,
-            o_packet_out             = self.packet_out.dat_w             ,
-            i_packet_out_rinc        = self.packet_out_rinc.re           ,
+            o_packet_out             = self.packet_out.dat_w                        ,
+            i_packet_out_rinc        = self.packet_out_rinc.re                      ,
             o_packet_out_rempty      = self.snn_status.fields.packet_out_rempty     ,
             o_token_controller_error = self.snn_status.fields.token_controller_error,
             o_scheduler_error        = self.snn_status.fields.scheduler_error       ,
