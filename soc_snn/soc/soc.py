@@ -29,6 +29,8 @@ from litepcie.phy.s7pciephy import S7PCIEPHY
 from litepcie.software import generate_litepcie_software
 from litex.soc.interconnect import wishbone
 
+from litex.soc.integration.soc import SoCBusHandler, SoCRegion
+
 from edabk_snn import edabk_snn
 # CRG ----------------------------------------------------------------------------------------------
 
@@ -88,13 +90,13 @@ class BaseSoC(SoCCore):
             )
             self.dma_bus.add_slave("dma", slave=wb_dma, region=SoCRegion(origin=0x00000000, size=0x100000000))
 
-        # SDCard -----------------------------------------------------------------------------------
-        # Simply integrate SDCard through LiteX's add_sdcard method.
-        self.add_sdcard(name="sdcard")
+            # SDCard -----------------------------------------------------------------------------------
+            # Simply integrate SDCard through LiteX's add_sdcard method.
+            self.add_sdcard(name="sdcard")
 
-        # IRQ
-        irq_pad = platform.request("irq")
-        self.comb += irq_pad.eq(self.sdirq.irq)
+            # IRQ
+            # irq_pad = platform.request("irq")
+            # self.comb += irq_pad.eq(self.sdirq.irq)
 
         # EDABK SNN---------------------------------------------------------------------------------
         # SNN clk, Generate 100MHz from PLL.
