@@ -15,22 +15,33 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
         self.tick         = CSRStorage(name="tick",description='Send tick to SNN', reset=0x0, size=1)
         
         self.packet       = CSRStorage(name="packet_wdata",description='Packet data send SNN', reset=0x0, size=30)
-        self.packet_wfull = CSRStatus(name="packet_wfull", description="flag full", size=1, reset=0x0)
 
-        self.param       = CSRStorage(name="param_wdata",description='param data send SNN', reset=0x0, size=368)
-        self.param_wfull = CSRStatus(name="param_wfull", description="flag full", size=1, reset=0x0)
+        self.param        = CSRStorage(name="param_wdata",description='param data send SNN', reset=0x0, size=368)
 
-        self.neuron_inst       = CSRStorage(name="neuron_inst_wdata",description='neuron_inst data send SNN', reset=0x0, size=2)
-        self.neuron_inst_wfull = CSRStatus(name="neuron_inst_wfull", description="flag full", size=1, reset=0x0)
+        self.neuron_inst  = CSRStorage(name="neuron_inst_wdata",description='neuron_inst data send SNN', reset=0x0, size=2)
 
-        self.packet_out_rinc   = CSRStorage(name="packet_out_rinc",description='Enable signal read packet out data', reset=0x0, size=1)
-        self.packet_out        = CSRStorage(name="packet_out",description='Packet out data', reset=0x0, size=8, write_from_dev=True)
-        self.packet_out_rempty = CSRStatus(name="packet_out_rempty", description="Packet out data is empty", size=1, reset=0x0)
+        self.packet_out_rinc = CSRStorage(name="packet_out_rinc",description='Enable signal read packet out data', reset=0x0, size=1)
+        self.packet_out      = CSRStorage(name="packet_out",description='Packet out data', reset=0x0, size=8, write_from_dev=True)
 
-        self.token_controller_error = CSRStatus(name="token_controller_error", description="Token controller error", size=1, reset=0x0)
-        self.scheduler_error        = CSRStatus(name="scheduler_error", description="Scheduler error", size=1, reset=0x0)
-        self.wait_packets           = CSRStatus(name="wait_packets", description="wait for packet to put on snn /Time to read packetout", size=1, reset=0x0)
-        self.tick_ready             = CSRStatus(name="tick_ready", description="Tick ready", size=1, reset=0x0)
+        self.snn_status = CSRStatus(size=32, fields=[
+            CSRField(name="packet_wfull", description="flag full", size=1, reset=0x0),
+            CSRField(name="param_wfull", description="flag full", size=1, reset=0x0),
+            CSRField(name="neuron_inst_wfull", description="flag full", size=1, reset=0x0),
+            CSRField(name="packet_out_rempty", description="Packet out data is empty", size=1, reset=0x0),
+            CSRField(name="token_controller_error", description="Token controller error", size=1, reset=0x0),
+            CSRField(name="scheduler_error", description="Scheduler error", size=1, reset=0x0),
+            CSRField(name="wait_packets", description="wait for packet to put on snn /Time to read packetout", size=1, reset=0x0),
+            CSRField(name="tick_ready", description="Tick ready", size=1, reset=0x0),
+        ], description="SNN status")
+
+        # self.packet_wfull = CSRStatus(name="packet_wfull", description="flag full", size=1, reset=0x0)
+        # self.param_wfull = CSRStatus(name="param_wfull", description="flag full", size=1, reset=0x0)
+        # self.neuron_inst_wfull = CSRStatus(name="neuron_inst_wfull", description="flag full", size=1, reset=0x0)
+        # self.packet_out_rempty = CSRStatus(name="packet_out_rempty", description="Packet out data is empty", size=1, reset=0x0)
+        # self.token_controller_error = CSRStatus(name="token_controller_error", description="Token controller error", size=1, reset=0x0)
+        # self.scheduler_error        = CSRStatus(name="scheduler_error", description="Scheduler error", size=1, reset=0x0)
+        # self.wait_packets           = CSRStatus(name="wait_packets", description="wait for packet to put on snn /Time to read packetout", size=1, reset=0x0)
+        # self.tick_ready             = CSRStatus(name="tick_ready", description="Tick ready", size=1, reset=0x0)
 
         self.specials += Instance(
             "snn_1x1_wrapper"                                            ,
@@ -41,20 +52,20 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
             i_tick                   = self.tick.re                      ,
             i_packet_winc            = self.packet.re                    ,
             i_packet_wdata           = self.packet.storage               ,
-            o_packet_wfull           = self.packet_wfull.status          ,
+            o_packet_wfull           = self.snn_status.fields.packet_wfull          ,
             i_param_winc             = self.param.re                     ,
             i_param_wdata            = self.param.storage                ,
-            o_param_wfull            = self.param_wfull.status           ,
+            o_param_wfull            = self.snn_status.fields.param_wfull           ,
             i_neuron_inst_winc       = self.neuron_inst.re               ,
             i_neuron_inst_wdata      = self.neuron_inst.storage          ,
-            o_neuron_inst_wfull      = self.neuron_inst_wfull.status     ,
+            o_neuron_inst_wfull      = self.snn_status.fields.neuron_inst_wfull     ,
             o_packet_out             = self.packet_out.dat_w             ,
             i_packet_out_rinc        = self.packet_out_rinc.re           ,
-            o_packet_out_rempty      = self.packet_out_rempty.status     ,
-            o_token_controller_error = self.token_controller_error.status,
-            o_scheduler_error        = self.scheduler_error.status       ,
-            o_wait_packets           = self.wait_packets.status          ,
-            o_tick_ready             = self.tick_ready.status             
+            o_packet_out_rempty      = self.snn_status.fields.packet_out_rempty     ,
+            o_token_controller_error = self.snn_status.fields.token_controller_error,
+            o_scheduler_error        = self.snn_status.fields.scheduler_error       ,
+            o_wait_packets           = self.snn_status.fields.wait_packets          ,
+            o_tick_ready             = self.snn_status.fields.tick_ready             
         )
 
         platform.add_source_dir("../seq_snn/hdl")

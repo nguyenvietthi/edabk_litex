@@ -56,8 +56,8 @@ class _CRG(Module):
 # BaseSoC ------------------------------------------------------------------------------------------
 
 class BaseSoC(SoCCore):
-    def __init__(self, sys_clk_freq=int(125e6), with_ethernet=False, with_led_chaser=True,
-                 with_spi_flash=False, with_pcie=False, with_sata=False, with_sdcard =True, **kwargs):
+    def __init__(self, sys_clk_freq=int(125e6), with_ethernet=False, with_sdcard=False, with_led_chaser=True,
+                 with_spi_flash=False, with_pcie=False, with_sata=False, **kwargs):
         platform = xilinx_kc705.Platform()
 
         # CRG --------------------------------------------------------------------------------------
@@ -69,35 +69,8 @@ class BaseSoC(SoCCore):
         # SDCard -----------------------------------------------------------------------------------
         # Simply integrate SDCard through LiteX's add_sdcard method.
         if with_sdcard:
-            # Wishbone Control -------------------------------------------------------------------------
-            # Create Wishbone Control Slave interface, expose it and connect it to the SoC.
-            wb_ctrl = wishbone.Interface()
-            self.add_wb_master(wb_ctrl)
-            platform.add_extension(wb_ctrl.get_ios("wb_ctrl"))
-            self.comb += wb_ctrl.connect_to_pads(self.platform.request("wb_ctrl"), mode="slave")
-            # Wishbone DMA -----------------------------------------------------------------------------
-            # Create Wishbone DMA Master interface and expose it.
-            wb_dma = wishbone.Interface(data_width=32)
-            platform.add_extension(wb_ctrl.get_ios("wb_dma"))
-            self.comb += wb_dma.connect_to_pads(self.platform.request("wb_dma"), mode="master")
-
-            # Create DMA Bus Handler (DMAs will be added by add_sdcard to it) and connect it to Wishbone DMA.
-            self.submodules.dma_bus = SoCBusHandler(
-                name             = "SoCDMABusHandler",
-                standard         = "wishbone",
-                data_width       = 32,
-                address_width    = 32,
-            )
-            self.dma_bus.add_slave("dma", slave=wb_dma, region=SoCRegion(origin=0x00000000, size=0x100000000))
-
-            # SDCard -----------------------------------------------------------------------------------
-            # Simply integrate SDCard through LiteX's add_sdcard method.
-            self.add_sdcard(name="sdcard")
-
-            # IRQ
-            # irq_pad = platform.request("irq")
-            # self.comb += irq_pad.eq(self.sdirq.irq)
-
+            self.add_sdcard()
+            
         # EDABK SNN---------------------------------------------------------------------------------
         # SNN clk, Generate 100MHz from PLL.
         self.clock_domains.cd_snn_clk = ClockDomain()
@@ -105,10 +78,10 @@ class BaseSoC(SoCCore):
         snn_clk = ClockSignal("snn_clk")
         # platform.add_platform_command("set_property SEVERITY {{Warning}} [get_drc_checks REQP-52]")
 
-        self.submodules.edabk_snn_module = edabk_snn(self.platform)
+        self.submodules.edabk_snn = edabk_snn(self.platform)
         self.add_csr("edabk_snn")
-        self.comb += self.edabk_snn_module.clk.eq(snn_clk)
-        self.comb += self.edabk_snn_module.sys_clk.eq(ClockSignal())
+        self.comb += self.edabk_snn.clk.eq(snn_clk)
+        self.comb += self.edabk_snn.sys_clk.eq(ClockSignal())
 
         # DDR3 SDRAM -------------------------------------------------------------------------------
         if not self.integrated_main_ram_size:
@@ -182,13 +155,6 @@ class BaseSoC(SoCCore):
             self.submodules.leds = LedChaser(
                 pads         = platform.request_all("user_led"),
                 sys_clk_freq = sys_clk_freq)
-
-        # Documentation generation -----------------------------------------------------------------
-        def generate_doc(self, board_name):
-            from litex.soc.doc import generate_docs
-            doc_dir = os.path.join("build", board_name, "doc")
-            generate_docs(self, doc_dir)
-            os.system("sphinx-build -M html {}/ {}/_build".format(doc_dir, doc_dir))
 
 # Build --------------------------------------------------------------------------------------------
 
