@@ -1,7 +1,7 @@
-[> Bare Metal Demo App
+[> Run compile
 ----------------------
+python3 firmware.py --build-path='../build/xilinx_kc705'
 
-This directory provides a minimal bare metal demo app that demonstrates how to easily create a bare metal C application and load it/run it on the CPU of a SoC.
 
 [> Build and Load over LiteX-Term
 ---------------------------------
