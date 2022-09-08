@@ -87,6 +87,7 @@ static void help(void)
 	puts("Available commands:");
 	puts("help               - Show this command");
 	puts("reboot             - Reboot CPU");
+	puts("show_sd_info       - Show SDCard info");
 #ifdef CSR_LEDS_BASE
 	puts("led                - Led demo");
 #endif
@@ -186,6 +187,8 @@ static void console_service(void)
 		help();
 	else if(strcmp(token, "reboot") == 0)
 		reboot_cmd();
+	else if(strcmp(token, "show_sd_info") == 0)
+		show_SD_info();
 #ifdef CSR_LEDS_BASE
 	else if(strcmp(token, "led") == 0)
 		led_cmd();
@@ -207,7 +210,14 @@ int main(void)
 	irq_setmask(0);
 	irq_setie(1);
 #endif
+	printf("Initializing UART...\n");
 	uart_init();
+	printf("Initializing SDCard...\n");
+	if(sd_init()) {
+		printf("SDCard init successfully!\n");
+	} else {
+		printf("SDCard init failed!\n");
+	}
 
 	help();
 	prompt();
