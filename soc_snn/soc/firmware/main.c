@@ -153,7 +153,8 @@ static void helloc_cmd(void)
 {
 	printf("Hello C demo...\n");
 	helloc();
-	read_file("thinv0");
+	char data[111111];
+	read_file("thinv0", data);
 }
 
 #ifdef WITH_CXX

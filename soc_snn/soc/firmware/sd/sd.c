@@ -29,7 +29,7 @@ int sd_eject(void){
 	return 1;
 }
 
-int read_file(const char* path) {
+int read_file(const char* path, char* data) {
   fatfs_set_ops_sdcard();
 
 	UINT* br;
@@ -52,6 +52,9 @@ int read_file(const char* path) {
   printf("Successfully read file: %s\n", path);
 
 	f_close(fptr);
+
+  data = buff;
+  
   sdcard_decode_csd();
 
 	return 1;

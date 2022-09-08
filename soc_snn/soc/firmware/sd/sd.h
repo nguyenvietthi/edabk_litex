@@ -3,6 +3,6 @@
 
 int sd_init(void);
 int sd_eject(void);
-int read_file(const char* path);
+int read_file(const char* path, char* data);
 
 #endif 
