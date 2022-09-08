@@ -52,6 +52,7 @@ int read_file(const char* path) {
   printf("Successfully read file: %s\n", path);
 
 	f_close(fptr);
+  sdcard_decode_csd();
 
 	return 1;
 }
