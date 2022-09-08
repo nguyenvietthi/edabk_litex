@@ -1,8 +1,7 @@
 #ifndef __SD
 #define __SD
 
-#include <stdio.h>
-
-void helsdsadsadsaloc(void);
-
+int sd_init(void);
+int sd_eject(void);
+int read_file(const char* path);
 #endif 
