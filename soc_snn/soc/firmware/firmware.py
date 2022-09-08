@@ -22,7 +22,7 @@ def main():
     os.makedirs("firmware", exist_ok=True)
 
     # Copy contents to demo directory
-    os.system(f"cp {os.path.abspath(os.path.dirname(__file__))}/* firmware")
+    os.system(f"cp -r {os.path.abspath(os.path.dirname(__file__))}/* firmware")
 
     # Update memory region.
     replace_in_file("firmware/linker.ld", "main_ram", args.mem)

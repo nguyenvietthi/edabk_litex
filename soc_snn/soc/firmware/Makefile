@@ -3,14 +3,12 @@ BUILD_DIR?=../build/
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
-OBJECTS   = donut.o helloc.o crt0.o main.o
+OBJECTS   = donut.o crt0.o main.o edabk_snn.o
 ifdef WITH_CXX
 	OBJECTS += hellocpp.o
 endif
 
-
 all: firmware.bin
-
 
 %.bin: %.elf
 	$(OBJCOPY) -O binary $< $@
@@ -43,6 +41,9 @@ VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY)
 
 %.o: %.cpp
 	$(compilexx)
+
+%.o: ./edabk_snn/%.c
+	$(compile)
 
 %.o: %.c
 	$(compile)

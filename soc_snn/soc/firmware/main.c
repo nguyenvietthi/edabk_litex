@@ -12,6 +12,8 @@
 
 #include <liblitesdcard/sdcard.h>
 
+#include "edabk_snn/edabk_snn.h"
+
 /*-----------------------------------------------------------------------*/
 /* Uart                                                                  */
 /*-----------------------------------------------------------------------*/
@@ -144,7 +146,7 @@ static void donut_cmd(void)
 	donut();
 }
 
-extern void helloc(void);
+// extern void helloc(void);
 
 static void helloc_cmd(void)
 {
