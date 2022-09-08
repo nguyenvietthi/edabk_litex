@@ -4,6 +4,7 @@ include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
 OBJECTS   = donut.o crt0.o main.o edabk_snn.o sd.o
+CXXFLAGS += -DSDCARD_DEBUG
 ifdef WITH_CXX
 	OBJECTS += hellocpp.o
 endif
@@ -25,7 +26,7 @@ firmware.elf: $(OBJECTS)
 		-Wl,--whole-archive \
 		-Wl,--gc-sections \
 		-Wl,-Map,$@.map \
-		$(LIBS:lib%=-l%)
+		$(LIBS:lib%=-l%) -DSDCARD_DEBUG
 
 ifneq ($(OS),Windows_NT)
 	chmod -x $@

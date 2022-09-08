@@ -1,6 +1,5 @@
 // This file is Copyright (c) 2020 Florent Kermarrec <florent@enjoy-digital.fr>
 // License: BSD
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -155,6 +154,10 @@ static void helloc_cmd(void)
 	helloc();
 	char data[111111];
 	read_file("thinv0", data);
+	// sdcard_decode_csd()
+	sd_init();
+	show_SD_info();
+	// printf("%d", SDCARD_DEBUG);
 }
 
 #ifdef WITH_CXX

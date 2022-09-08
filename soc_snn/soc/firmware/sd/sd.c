@@ -3,7 +3,7 @@
 #include <liblitesdcard/sdcard.h>
 #include <libfatfs/ff.h>			
 #include <libfatfs/diskio.h>
-
+#define SDCARD_DEBUG
 
 static FATFS  fatfs;
 
@@ -11,6 +11,8 @@ int sd_init(void){
 	FRESULT rc;
 	TCHAR *Path = "0:/";
 	rc = f_mount(&fatfs,Path,0);
+    sdcard_decode_csd();
+
 	if (rc) {
 		printf(" ERROR : f_mount returned %d\r\n", rc);
 		return 0;
@@ -27,6 +29,11 @@ int sd_eject(void){
 		return 0;
 	}
 	return 1;
+}
+
+void show_SD_info(void){
+  sdcard_decode_cid();
+  sdcard_decode_csd();
 }
 
 int read_file(const char* path, char* data) {
@@ -55,7 +62,5 @@ int read_file(const char* path, char* data) {
 
   data = buff;
   
-  sdcard_decode_csd();
-
 	return 1;
 }
