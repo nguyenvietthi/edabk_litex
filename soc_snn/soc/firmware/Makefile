@@ -3,7 +3,7 @@ BUILD_DIR?=../build/
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
-OBJECTS   = donut.o crt0.o main.o edabk_snn.o
+OBJECTS   = donut.o crt0.o main.o edabk_snn.o sd.o
 ifdef WITH_CXX
 	OBJECTS += hellocpp.o
 endif
@@ -43,6 +43,9 @@ VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY)
 	$(compilexx)
 
 %.o: ./edabk_snn/%.c
+	$(compile)
+
+%.o: ./sd/%.c
 	$(compile)
 
 %.o: %.c

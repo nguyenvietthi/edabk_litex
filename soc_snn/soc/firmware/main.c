@@ -13,6 +13,7 @@
 #include <liblitesdcard/sdcard.h>
 
 #include "edabk_snn/edabk_snn.h"
+#include "sd/sd.h"
 
 /*-----------------------------------------------------------------------*/
 /* Uart                                                                  */
@@ -152,6 +153,7 @@ static void helloc_cmd(void)
 {
 	printf("Hello C demo...\n");
 	helloc();
+	helsdsadsadsaloc();
 }
 
 #ifdef WITH_CXX
