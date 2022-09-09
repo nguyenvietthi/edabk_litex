@@ -89,7 +89,7 @@ void load_packet_in(void){
 	
 	#ifdef DEBUG
 	for(int i = 0; i < 22; i++){
-		printf("packet in %d: %x\n", i,packet_in[i]);
+		printf("packet in %d: %x\n", i ,packet_in[i]);
 	}
 	#endif
 
