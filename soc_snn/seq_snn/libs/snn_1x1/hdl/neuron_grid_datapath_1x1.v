@@ -13,7 +13,7 @@ module neuron_grid_datapath_1x1 #(
     input local_buffers_full                   ,
     input [255:0] axon_spikes                  ,
     input initial_axon_num                     ,
-    input inc_axon_num                         ,
+        input inc_axon_num                         ,
     input initial_neuron_num                   ,
     input inc_neuron_num                       ,
     input new_neuron                           ,
@@ -87,15 +87,17 @@ module neuron_grid_datapath_1x1 #(
     always @(negedge clk or negedge reset_n) begin
         if(update_potential && ~param_wen && reset_n) begin
             neuron_parameter[neuron_num][111:103] <= potential_out;
-        end
-    end
-
-//write neuron parameter, neuron instructions to CSRAM
-    always @(posedge clk) begin
-        if (param_wen) begin
+        end else if (param_wen) begin
             neuron_parameter[param_address] <= param_data_in;
         end 
     end
+
+// //write neuron parameter, neuron instructions to CSRAM
+//     always @(negedge clk) begin
+//         if (param_wen) begin
+//             neuron_parameter[param_address] <= param_data_in;
+//         end 
+//     end
 
     always @(posedge clk) begin
         if (neuron_inst_wen) begin
