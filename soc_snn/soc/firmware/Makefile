@@ -26,7 +26,7 @@ firmware.elf: $(OBJECTS)
 		-Wl,--whole-archive \
 		-Wl,--gc-sections \
 		-Wl,-Map,$@.map \
-		$(LIBS:lib%=-l%) -DSDCARD_DEBUG
+		$(LIBS:lib%=-l%) 
 
 ifneq ($(OS),Windows_NT)
 	chmod -x $@
@@ -44,7 +44,7 @@ VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY)
 	$(compilexx)
 
 %.o: ./edabk_snn/%.c
-	$(compile)
+	$(compile) -DDEBUG
 
 %.o: ./sd/%.c
 	$(compile)

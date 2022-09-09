@@ -8,11 +8,10 @@
 static FATFS  fatfs;
 
 int sd_init(void){
+  fatfs_set_ops_sdcard();
 	FRESULT rc;
 	TCHAR *Path = "0:/";
 	rc = f_mount(&fatfs,Path,0);
-    sdcard_decode_csd();
-
 	if (rc) {
 		printf(" ERROR : f_mount returned %d\r\n", rc);
 		return 0;
@@ -21,6 +20,7 @@ int sd_init(void){
 }
 
 int sd_eject(void){
+  fatfs_set_ops_sdcard();
 	FRESULT rc;
 	TCHAR *Path = "0:/";
 	rc = f_mount(0,Path,1);
