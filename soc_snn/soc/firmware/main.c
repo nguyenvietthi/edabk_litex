@@ -152,13 +152,9 @@ static void donut_cmd(void)
 static void helloc_cmd(void)
 {
 	printf("Hello C demo...\n");
-	helloc();
-	char data[111111];
-	read_file("thinv0", data);
-	// sdcard_decode_csd()
-	sd_init();
-	show_SD_info();
-	// printf("%d", SDCARD_DEBUG);
+	load_neuron_parameter();
+load_neuron_inst();
+load_packet_in();
 }
 
 #ifdef WITH_CXX
