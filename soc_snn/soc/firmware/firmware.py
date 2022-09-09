@@ -18,7 +18,7 @@ def main():
     parser.add_argument("--mem",        default="main_ram",  help="Memory Region where code will be loaded/executed.")
     args = parser.parse_args()
 
-    os.system("clear")
+    os.system("reset")
 
     # Create demo directory
     os.makedirs("firmware", exist_ok=True)
