@@ -1,0 +1,459 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SDCORE &#8212; LiteX SoC Project  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/default.js"></script>
+    <script type="text/javascript" src="_static/WaveDrom.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SDIRQ" href="sdirq.html" />
+    <link rel="prev" title="SDBLOCK2MEM" href="sdblock2mem.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sdcore">
+<h1>SDCORE<a class="headerlink" href="#sdcore" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="register-listing-for-sdcore">
+<h2>Register Listing for SDCORE<a class="headerlink" href="#register-listing-for-sdcore" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="55%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Register</th>
+<th class="head">Address</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#sdcore-cmd-argument"><span class="std std-ref">SDCORE_CMD_ARGUMENT</span></a></td>
+<td><a class="reference internal" href="#sdcore-cmd-argument"><span class="std std-ref">0xf0003000</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#sdcore-cmd-command"><span class="std std-ref">SDCORE_CMD_COMMAND</span></a></td>
+<td><a class="reference internal" href="#sdcore-cmd-command"><span class="std std-ref">0xf0003004</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#sdcore-cmd-send"><span class="std std-ref">SDCORE_CMD_SEND</span></a></td>
+<td><a class="reference internal" href="#sdcore-cmd-send"><span class="std std-ref">0xf0003008</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#sdcore-cmd-response3"><span class="std std-ref">SDCORE_CMD_RESPONSE3</span></a></td>
+<td><a class="reference internal" href="#sdcore-cmd-response3"><span class="std std-ref">0xf000300c</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#sdcore-cmd-response2"><span class="std std-ref">SDCORE_CMD_RESPONSE2</span></a></td>
+<td><a class="reference internal" href="#sdcore-cmd-response2"><span class="std std-ref">0xf0003010</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#sdcore-cmd-response1"><span class="std std-ref">SDCORE_CMD_RESPONSE1</span></a></td>
+<td><a class="reference internal" href="#sdcore-cmd-response1"><span class="std std-ref">0xf0003014</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#sdcore-cmd-response0"><span class="std std-ref">SDCORE_CMD_RESPONSE0</span></a></td>
+<td><a class="reference internal" href="#sdcore-cmd-response0"><span class="std std-ref">0xf0003018</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#sdcore-cmd-event"><span class="std std-ref">SDCORE_CMD_EVENT</span></a></td>
+<td><a class="reference internal" href="#sdcore-cmd-event"><span class="std std-ref">0xf000301c</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#sdcore-data-event"><span class="std std-ref">SDCORE_DATA_EVENT</span></a></td>
+<td><a class="reference internal" href="#sdcore-data-event"><span class="std std-ref">0xf0003020</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#sdcore-block-length"><span class="std std-ref">SDCORE_BLOCK_LENGTH</span></a></td>
+<td><a class="reference internal" href="#sdcore-block-length"><span class="std std-ref">0xf0003024</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#sdcore-block-count"><span class="std std-ref">SDCORE_BLOCK_COUNT</span></a></td>
+<td><a class="reference internal" href="#sdcore-block-count"><span class="std std-ref">0xf0003028</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="sdcore-cmd-argument">
+<h3>SDCORE_CMD_ARGUMENT<a class="headerlink" href="#sdcore-cmd-argument" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x0 = 0xf0003000</cite></p>
+<blockquote>
+<div><p>SDCard Cmd Argument.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cmd_argument[31:0]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdcore-cmd-command">
+<h3>SDCORE_CMD_COMMAND<a class="headerlink" href="#sdcore-cmd-command" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x4 = 0xf0003004</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cmd_type",  "bits": 2},
+        {"bits": 3},
+        {"name": "data_type",  "bits": 2},
+        {"bits": 1},
+        {"name": "cmd",  "bits": 6},
+        {"bits": 18}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="22%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[1:0]</td>
+<td>CMD_TYPE</td>
+<td>Core/PHY Cmd transfer type.</td>
+</tr>
+<tr class="row-odd"><td>[6:5]</td>
+<td>DATA_TYPE</td>
+<td>Core/PHY Data transfer type.</td>
+</tr>
+<tr class="row-even"><td>[13:8]</td>
+<td>CMD</td>
+<td>SDCard Cmd.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sdcore-cmd-send">
+<h3>SDCORE_CMD_SEND<a class="headerlink" href="#sdcore-cmd-send" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x8 = 0xf0003008</cite></p>
+<blockquote>
+<div><p>Run Cmd/Data transfer.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cmd_send", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdcore-cmd-response3">
+<h3>SDCORE_CMD_RESPONSE3<a class="headerlink" href="#sdcore-cmd-response3" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0xc = 0xf000300c</cite></p>
+<blockquote>
+<div><p>Bits 96-127 of <cite>SDCORE_CMD_RESPONSE</cite>. SDCard Cmd Response.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cmd_response[127:96]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdcore-cmd-response2">
+<h3>SDCORE_CMD_RESPONSE2<a class="headerlink" href="#sdcore-cmd-response2" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x10 = 0xf0003010</cite></p>
+<blockquote>
+<div><p>Bits 64-95 of <cite>SDCORE_CMD_RESPONSE</cite>.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cmd_response[95:64]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdcore-cmd-response1">
+<h3>SDCORE_CMD_RESPONSE1<a class="headerlink" href="#sdcore-cmd-response1" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x14 = 0xf0003014</cite></p>
+<blockquote>
+<div><p>Bits 32-63 of <cite>SDCORE_CMD_RESPONSE</cite>.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cmd_response[63:32]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdcore-cmd-response0">
+<h3>SDCORE_CMD_RESPONSE0<a class="headerlink" href="#sdcore-cmd-response0" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x18 = 0xf0003018</cite></p>
+<blockquote>
+<div><p>Bits 0-31 of <cite>SDCORE_CMD_RESPONSE</cite>.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cmd_response[31:0]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdcore-cmd-event">
+<h3>SDCORE_CMD_EVENT<a class="headerlink" href="#sdcore-cmd-event" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x1c = 0xf000301c</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "done",  "bits": 1},
+        {"name": "error",  "bits": 1},
+        {"name": "timeout",  "bits": 1},
+        {"name": "crc",  "bits": 1},
+        {"bits": 28}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="16%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[0]</td>
+<td>DONE</td>
+<td>Cmd transfer has been executed.</td>
+</tr>
+<tr class="row-odd"><td>[1]</td>
+<td>ERROR</td>
+<td>Cmd transfer has failed due to error(s).</td>
+</tr>
+<tr class="row-even"><td>[2]</td>
+<td>TIMEOUT</td>
+<td>Timeout error.</td>
+</tr>
+<tr class="row-odd"><td>[3]</td>
+<td>CRC</td>
+<td>CRC Error.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sdcore-data-event">
+<h3>SDCORE_DATA_EVENT<a class="headerlink" href="#sdcore-data-event" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x20 = 0xf0003020</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "done",  "bits": 1},
+        {"name": "error",  "bits": 1},
+        {"name": "timeout",  "bits": 1},
+        {"name": "crc",  "bits": 1},
+        {"bits": 28}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="15%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[0]</td>
+<td>DONE</td>
+<td>Data transfer has been executed.</td>
+</tr>
+<tr class="row-odd"><td>[1]</td>
+<td>ERROR</td>
+<td>Data transfer has failed due to error(s).</td>
+</tr>
+<tr class="row-even"><td>[2]</td>
+<td>TIMEOUT</td>
+<td>Timeout Error.</td>
+</tr>
+<tr class="row-odd"><td>[3]</td>
+<td>CRC</td>
+<td>CRC Error.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sdcore-block-length">
+<h3>SDCORE_BLOCK_LENGTH<a class="headerlink" href="#sdcore-block-length" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x24 = 0xf0003024</cite></p>
+<blockquote>
+<div><p>Data transfer Block Length (in bytes).</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "block_length[9:0]", "bits": 10},
+        {"bits": 22},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdcore-block-count">
+<h3>SDCORE_BLOCK_COUNT<a class="headerlink" href="#sdcore-block-count" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0003000 + 0x28 = 0xf0003028</cite></p>
+<blockquote>
+<div><p>Data transfer Block Count.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "block_count[31:0]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LiteX SoC Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="interrupts.html">Interrupt Controller</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="edabk_snn.html">EDABK_SNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctrl.html">CTRL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddrphy.html">DDRPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifier_mem.html">IDENTIFIER_MEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leds.html">LEDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdblock2mem.html">SDBLOCK2MEM</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SDCORE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdirq.html">SDIRQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdmem2block.html">SDMEM2BLOCK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdphy.html">SDPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdram.html">SDRAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer0.html">TIMER0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">UART</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="sdblock2mem.html" title="previous chapter">SDBLOCK2MEM</a></li>
+      <li>Next: <a href="sdirq.html" title="next chapter">SDIRQ</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Anonymous.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/sdcore.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

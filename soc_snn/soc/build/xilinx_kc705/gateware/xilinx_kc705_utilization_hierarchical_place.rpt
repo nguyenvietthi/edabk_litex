@@ -1,0 +1,121 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Fri Sep  9 20:44:42 2022
+| Host         : nguyenvietthi running 64-bit Ubuntu 20.04.4 LTS
+| Command      : report_utilization -hierarchical -file xilinx_kc705_utilization_hierarchical_place.rpt
+| Design       : xilinx_kc705
+| Device       : 7k325tffg900-2
+| Design State : Fully Placed
+--------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------------+--------------------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
+|            Instance           |                Module                | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | DSP48 Blocks |
++-------------------------------+--------------------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
+| xilinx_kc705                  |                                (top) |      24209 |      17959 |    6248 |    2 | 13589 |     19 |     75 |            4 |
+|   (xilinx_kc705)              |                                (top) |       6273 |       6119 |     152 |    2 |  6370 |     18 |     67 |            0 |
+|   VexRiscv                    |                             VexRiscv |       2738 |       2738 |       0 |    0 |  1280 |      1 |      8 |            4 |
+|     (VexRiscv)                |                             VexRiscv |       1585 |       1585 |       0 |    0 |  1112 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache    |                     InstructionCache |        601 |        601 |       0 |    0 |   103 |      1 |      1 |            0 |
+|     dataCache_1               |                            DataCache |        553 |        553 |       0 |    0 |    65 |      0 |      5 |            0 |
+|   snn_1x1_wrapper             |                      snn_1x1_wrapper |      15199 |       9103 |    6096 |    0 |  5939 |      0 |      0 |            0 |
+|     RANCNetworkGrid_1x1_ins   |                  RANCNetworkGrid_1x1 |      12344 |       8392 |    3952 |    0 |  5447 |      0 |      0 |            0 |
+|       Core0                   |                             Core_1x1 |      12281 |       8329 |    3952 |    0 |  5392 |      0 |      0 |            0 |
+|         (Core0)               |                             Core_1x1 |         18 |         18 |       0 |    0 |    17 |      0 |      0 |            0 |
+|         Router                |                               Router |       1639 |       1639 |       0 |    0 |  1106 |      0 |      0 |            0 |
+|           forward_east        |                   ForwardEastWest_21 |        132 |        132 |       0 |    0 |   260 |      0 |      0 |            0 |
+|             Merge             |                            Merge2_40 |         42 |         42 |       0 |    0 |    33 |      0 |      0 |            0 |
+|             north_buffer      |            buffer__parameterized0_41 |         55 |         55 |       0 |    0 |   112 |      0 |      0 |            0 |
+|             routing_buffer    |                            buffer_42 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             south_buffer      |            buffer__parameterized0_43 |         32 |         32 |       0 |    0 |   112 |      0 |      0 |            0 |
+|           forward_north       |                 ForwardNorthSouth_22 |         65 |         65 |       0 |    0 |   143 |      0 |      0 |            0 |
+|             local_buffer      |            buffer__parameterized1_37 |         36 |         36 |       0 |    0 |    67 |      0 |      0 |            0 |
+|             merge             |                            Merge3_38 |          9 |          9 |       0 |    0 |    24 |      0 |      0 |            0 |
+|             routing_buffer    |            buffer__parameterized0_39 |         20 |         20 |       0 |    0 |    52 |      0 |      0 |            0 |
+|           forward_south       | ForwardNorthSouth__parameterized0_23 |         55 |         55 |       0 |    0 |    95 |      0 |      0 |            0 |
+|             local_buffer      |            buffer__parameterized1_34 |         23 |         23 |       0 |    0 |    67 |      0 |      0 |            0 |
+|             merge             |                            Merge3_35 |         30 |         30 |       0 |    0 |    25 |      0 |      0 |            0 |
+|             routing_buffer    |            buffer__parameterized0_36 |          2 |          2 |       0 |    0 |     3 |      0 |      0 |            0 |
+|           forward_west        |   ForwardEastWest__parameterized0_24 |         75 |         75 |       0 |    0 |   260 |      0 |      0 |            0 |
+|             Merge             |                            Merge2_30 |          7 |          7 |       0 |    0 |    33 |      0 |      0 |            0 |
+|             north_buffer      |            buffer__parameterized0_31 |         33 |         33 |       0 |    0 |   112 |      0 |      0 |            0 |
+|             routing_buffer    |                            buffer_32 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             south_buffer      |            buffer__parameterized0_33 |         32 |         32 |       0 |    0 |   112 |      0 |      0 |            0 |
+|           from_local          |                         FromLocal_25 |        117 |        117 |       0 |    0 |   314 |      0 |      0 |            0 |
+|             buffer_east       |                            buffer_28 |         44 |         44 |       0 |    0 |   157 |      0 |      0 |            0 |
+|             buffer_west       |                            buffer_29 |         73 |         73 |       0 |    0 |   157 |      0 |      0 |            0 |
+|           local_in            |                           LocalIn_26 |       1195 |       1195 |       0 |    0 |    34 |      0 |      0 |            0 |
+|             Merge             |            Merge2__parameterized0_27 |       1195 |       1195 |       0 |    0 |    34 |      0 |      0 |            0 |
+|         Scheduler             |                            Scheduler |       5173 |       5173 |       0 |    0 |  4128 |      0 |      0 |            0 |
+|           SRAM                |                        SchedulerSRAM |       1093 |       1093 |       0 |    0 |  4096 |      0 |      0 |            0 |
+|           counter             |                              Counter |       4080 |       4080 |       0 |    0 |    32 |      0 |      0 |            0 |
+|         neuron_grid           |                      neuron_grid_1x1 |       5451 |       1499 |    3952 |    0 |   141 |      0 |      0 |            0 |
+|           controller          |               neuron_grid_controller |        179 |        179 |       0 |    0 |     4 |      0 |      0 |            0 |
+|           datapath            |             neuron_grid_datapath_1x1 |       5272 |       1320 |    3952 |    0 |   137 |      0 |      0 |            0 |
+|             (datapath)        |             neuron_grid_datapath_1x1 |       4720 |        768 |    3952 |    0 |   128 |      0 |      0 |            0 |
+|             neuron_block      |                         neuron_block |        552 |        552 |       0 |    0 |     9 |      0 |      0 |            0 |
+|       OutputBus               |                            OutputBus |         63 |         63 |       0 |    0 |    55 |      0 |      0 |            0 |
+|         (OutputBus)           |                            OutputBus |          2 |          2 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         Router_tb             |               Router__parameterized0 |         61 |         61 |       0 |    0 |    55 |      0 |      0 |            0 |
+|           forward_east        |                      ForwardEastWest |          9 |          9 |       0 |    0 |     9 |      0 |      0 |            0 |
+|             Merge             |                            Merge2_18 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             north_buffer      |            buffer__parameterized0_19 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             south_buffer      |            buffer__parameterized0_20 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|           forward_north       |                    ForwardNorthSouth |         28 |         28 |       0 |    0 |    19 |      0 |      0 |            0 |
+|             local_buffer      |            buffer__parameterized1_15 |          5 |          5 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             merge             |                            Merge3_16 |         19 |         19 |       0 |    0 |    13 |      0 |      0 |            0 |
+|             routing_buffer    |            buffer__parameterized0_17 |          4 |          4 |       0 |    0 |     3 |      0 |      0 |            0 |
+|           forward_south       |    ForwardNorthSouth__parameterized0 |         10 |         10 |       0 |    0 |     9 |      0 |      0 |            0 |
+|             local_buffer      |               buffer__parameterized1 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             merge             |                               Merge3 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             routing_buffer    |            buffer__parameterized0_14 |          4 |          4 |       0 |    0 |     3 |      0 |      0 |            0 |
+|           forward_west        |      ForwardEastWest__parameterized0 |          9 |          9 |       0 |    0 |     9 |      0 |      0 |            0 |
+|             Merge             |                               Merge2 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             north_buffer      |               buffer__parameterized0 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             south_buffer      |            buffer__parameterized0_13 |          3 |          3 |       0 |    0 |     3 |      0 |      0 |            0 |
+|           from_local          |                            FromLocal |          4 |          4 |       0 |    0 |     6 |      0 |      0 |            0 |
+|             buffer_east       |                               buffer |          2 |          2 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             buffer_west       |                            buffer_12 |          2 |          2 |       0 |    0 |     3 |      0 |      0 |            0 |
+|           local_in            |                              LocalIn |          1 |          1 |       0 |    0 |     3 |      0 |      0 |            0 |
+|             Merge             |               Merge2__parameterized0 |          1 |          1 |       0 |    0 |     3 |      0 |      0 |            0 |
+|     load_neuron_inst_fifo     |      load_param_fifo__parameterized0 |         61 |         45 |      16 |    0 |    80 |      0 |      0 |            0 |
+|       (load_neuron_inst_fifo) |      load_param_fifo__parameterized0 |          6 |          6 |       0 |    0 |     8 |      0 |      0 |            0 |
+|       async_fifo_ins          |           async_fifo__parameterized0 |         55 |         39 |      16 |    0 |    72 |      0 |      0 |            0 |
+|         fifomem               |              fifomem__parameterized0 |         18 |          2 |      16 |    0 |     0 |      0 |      0 |            0 |
+|         rptr_empty            |                         rptr_empty_8 |         18 |         18 |       0 |    0 |    18 |      0 |      0 |            0 |
+|         sync_r2w              |                           sync_r2w_9 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
+|         sync_w2r              |                          sync_w2r_10 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
+|         wptr_full             |                         wptr_full_11 |         19 |         19 |       0 |    0 |    18 |      0 |      0 |            0 |
+|     load_packet_fifo          |           async_fifo__parameterized1 |        227 |         67 |     160 |    0 |   102 |      0 |      0 |            0 |
+|       fifomem                 |              fifomem__parameterized1 |        190 |         30 |     160 |    0 |    30 |      0 |      0 |            0 |
+|       rptr_empty              |                         rptr_empty_4 |         16 |         16 |       0 |    0 |    18 |      0 |      0 |            0 |
+|       sync_r2w                |                           sync_r2w_5 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
+|       sync_w2r                |                           sync_w2r_6 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
+|       wptr_full               |                          wptr_full_7 |         21 |         21 |       0 |    0 |    18 |      0 |      0 |            0 |
+|     load_param_fifo           |                      load_param_fifo |       2532 |        564 |    1968 |    0 |   236 |      0 |      0 |            0 |
+|       (load_param_fifo)       |                      load_param_fifo |         70 |         70 |       0 |    0 |    72 |      0 |      0 |            0 |
+|       async_fifo_ins          |                           async_fifo |       2462 |        494 |    1968 |    0 |   164 |      0 |      0 |            0 |
+|         fifomem               |                              fifomem |       2336 |        368 |    1968 |    0 |     0 |      0 |      0 |            0 |
+|         rptr_empty            |                         rptr_empty_0 |         83 |         83 |       0 |    0 |    89 |      0 |      0 |            0 |
+|         sync_r2w              |                           sync_r2w_1 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
+|         sync_w2r              |                           sync_w2r_2 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
+|         wptr_full             |                          wptr_full_3 |         43 |         43 |       0 |    0 |    39 |      0 |      0 |            0 |
+|     packet_out_fifo           |           async_fifo__parameterized2 |         34 |         34 |       0 |    0 |    72 |      0 |      0 |            0 |
+|       rptr_empty              |                           rptr_empty |         18 |         18 |       0 |    0 |    18 |      0 |      0 |            0 |
+|       sync_r2w                |                             sync_r2w |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
+|       sync_w2r                |                             sync_w2r |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
+|       wptr_full               |                            wptr_full |         16 |         16 |       0 |    0 |    18 |      0 |      0 |            0 |
+|     sync_tick_signal          |                          sync_signal |          1 |          1 |       0 |    0 |     2 |      0 |      0 |            0 |
++-------------------------------+--------------------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

@@ -1,0 +1,276 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SDMEM2BLOCK &#8212; LiteX SoC Project  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/default.js"></script>
+    <script type="text/javascript" src="_static/WaveDrom.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SDPHY" href="sdphy.html" />
+    <link rel="prev" title="SDIRQ" href="sdirq.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sdmem2block">
+<h1>SDMEM2BLOCK<a class="headerlink" href="#sdmem2block" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="register-listing-for-sdmem2block">
+<h2>Register Listing for SDMEM2BLOCK<a class="headerlink" href="#register-listing-for-sdmem2block" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Register</th>
+<th class="head">Address</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#sdmem2block-dma-base1"><span class="std std-ref">SDMEM2BLOCK_DMA_BASE1</span></a></td>
+<td><a class="reference internal" href="#sdmem2block-dma-base1"><span class="std std-ref">0xf0004000</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#sdmem2block-dma-base0"><span class="std std-ref">SDMEM2BLOCK_DMA_BASE0</span></a></td>
+<td><a class="reference internal" href="#sdmem2block-dma-base0"><span class="std std-ref">0xf0004004</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#sdmem2block-dma-length"><span class="std std-ref">SDMEM2BLOCK_DMA_LENGTH</span></a></td>
+<td><a class="reference internal" href="#sdmem2block-dma-length"><span class="std std-ref">0xf0004008</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#sdmem2block-dma-enable"><span class="std std-ref">SDMEM2BLOCK_DMA_ENABLE</span></a></td>
+<td><a class="reference internal" href="#sdmem2block-dma-enable"><span class="std std-ref">0xf000400c</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#sdmem2block-dma-done"><span class="std std-ref">SDMEM2BLOCK_DMA_DONE</span></a></td>
+<td><a class="reference internal" href="#sdmem2block-dma-done"><span class="std std-ref">0xf0004010</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#sdmem2block-dma-loop"><span class="std std-ref">SDMEM2BLOCK_DMA_LOOP</span></a></td>
+<td><a class="reference internal" href="#sdmem2block-dma-loop"><span class="std std-ref">0xf0004014</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#sdmem2block-dma-offset"><span class="std std-ref">SDMEM2BLOCK_DMA_OFFSET</span></a></td>
+<td><a class="reference internal" href="#sdmem2block-dma-offset"><span class="std std-ref">0xf0004018</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="sdmem2block-dma-base1">
+<h3>SDMEM2BLOCK_DMA_BASE1<a class="headerlink" href="#sdmem2block-dma-base1" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0004000 + 0x0 = 0xf0004000</cite></p>
+<blockquote>
+<div><p>Bits 32-63 of <cite>SDMEM2BLOCK_DMA_BASE</cite>.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "dma_base[63:32]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdmem2block-dma-base0">
+<h3>SDMEM2BLOCK_DMA_BASE0<a class="headerlink" href="#sdmem2block-dma-base0" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0004000 + 0x4 = 0xf0004004</cite></p>
+<blockquote>
+<div><p>Bits 0-31 of <cite>SDMEM2BLOCK_DMA_BASE</cite>.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "dma_base[31:0]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdmem2block-dma-length">
+<h3>SDMEM2BLOCK_DMA_LENGTH<a class="headerlink" href="#sdmem2block-dma-length" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0004000 + 0x8 = 0xf0004008</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "dma_length[31:0]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdmem2block-dma-enable">
+<h3>SDMEM2BLOCK_DMA_ENABLE<a class="headerlink" href="#sdmem2block-dma-enable" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0004000 + 0xc = 0xf000400c</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "dma_enable", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdmem2block-dma-done">
+<h3>SDMEM2BLOCK_DMA_DONE<a class="headerlink" href="#sdmem2block-dma-done" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0004000 + 0x10 = 0xf0004010</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "dma_done", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdmem2block-dma-loop">
+<h3>SDMEM2BLOCK_DMA_LOOP<a class="headerlink" href="#sdmem2block-dma-loop" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0004000 + 0x14 = 0xf0004014</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "dma_loop", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sdmem2block-dma-offset">
+<h3>SDMEM2BLOCK_DMA_OFFSET<a class="headerlink" href="#sdmem2block-dma-offset" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0004000 + 0x18 = 0xf0004018</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "dma_offset[31:0]", "bits": 32}
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LiteX SoC Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="interrupts.html">Interrupt Controller</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="edabk_snn.html">EDABK_SNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctrl.html">CTRL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddrphy.html">DDRPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifier_mem.html">IDENTIFIER_MEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leds.html">LEDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdblock2mem.html">SDBLOCK2MEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcore.html">SDCORE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdirq.html">SDIRQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SDMEM2BLOCK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdphy.html">SDPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdram.html">SDRAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer0.html">TIMER0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">UART</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="sdirq.html" title="previous chapter">SDIRQ</a></li>
+      <li>Next: <a href="sdphy.html" title="next chapter">SDPHY</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Anonymous.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/sdmem2block.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

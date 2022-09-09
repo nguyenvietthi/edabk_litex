@@ -1,0 +1,518 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DDRPHY &#8212; LiteX SoC Project  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/default.js"></script>
+    <script type="text/javascript" src="_static/WaveDrom.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="IDENTIFIER_MEM" href="identifier_mem.html" />
+    <link rel="prev" title="CTRL" href="ctrl.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ddrphy">
+<h1>DDRPHY<a class="headerlink" href="#ddrphy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="register-listing-for-ddrphy">
+<h2>Register Listing for DDRPHY<a class="headerlink" href="#register-listing-for-ddrphy" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Register</th>
+<th class="head">Address</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-rst"><span class="std std-ref">DDRPHY_RST</span></a></td>
+<td><a class="reference internal" href="#ddrphy-rst"><span class="std std-ref">0xf0001000</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-dly-sel"><span class="std std-ref">DDRPHY_DLY_SEL</span></a></td>
+<td><a class="reference internal" href="#ddrphy-dly-sel"><span class="std std-ref">0xf0001004</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-half-sys8x-taps"><span class="std std-ref">DDRPHY_HALF_SYS8X_TAPS</span></a></td>
+<td><a class="reference internal" href="#ddrphy-half-sys8x-taps"><span class="std std-ref">0xf0001008</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-wlevel-en"><span class="std std-ref">DDRPHY_WLEVEL_EN</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wlevel-en"><span class="std std-ref">0xf000100c</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-wlevel-strobe"><span class="std std-ref">DDRPHY_WLEVEL_STROBE</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wlevel-strobe"><span class="std std-ref">0xf0001010</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-cdly-rst"><span class="std std-ref">DDRPHY_CDLY_RST</span></a></td>
+<td><a class="reference internal" href="#ddrphy-cdly-rst"><span class="std std-ref">0xf0001014</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-cdly-inc"><span class="std std-ref">DDRPHY_CDLY_INC</span></a></td>
+<td><a class="reference internal" href="#ddrphy-cdly-inc"><span class="std std-ref">0xf0001018</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-rdly-dq-rst"><span class="std std-ref">DDRPHY_RDLY_DQ_RST</span></a></td>
+<td><a class="reference internal" href="#ddrphy-rdly-dq-rst"><span class="std std-ref">0xf000101c</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-rdly-dq-inc"><span class="std std-ref">DDRPHY_RDLY_DQ_INC</span></a></td>
+<td><a class="reference internal" href="#ddrphy-rdly-dq-inc"><span class="std std-ref">0xf0001020</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-rdly-dq-bitslip-rst"><span class="std std-ref">DDRPHY_RDLY_DQ_BITSLIP_RST</span></a></td>
+<td><a class="reference internal" href="#ddrphy-rdly-dq-bitslip-rst"><span class="std std-ref">0xf0001024</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-rdly-dq-bitslip"><span class="std std-ref">DDRPHY_RDLY_DQ_BITSLIP</span></a></td>
+<td><a class="reference internal" href="#ddrphy-rdly-dq-bitslip"><span class="std std-ref">0xf0001028</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-wdly-dq-rst"><span class="std std-ref">DDRPHY_WDLY_DQ_RST</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wdly-dq-rst"><span class="std std-ref">0xf000102c</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-wdly-dq-inc"><span class="std std-ref">DDRPHY_WDLY_DQ_INC</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wdly-dq-inc"><span class="std std-ref">0xf0001030</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-wdly-dqs-rst"><span class="std std-ref">DDRPHY_WDLY_DQS_RST</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wdly-dqs-rst"><span class="std std-ref">0xf0001034</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-wdly-dqs-inc"><span class="std std-ref">DDRPHY_WDLY_DQS_INC</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wdly-dqs-inc"><span class="std std-ref">0xf0001038</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-wdly-dq-bitslip-rst"><span class="std std-ref">DDRPHY_WDLY_DQ_BITSLIP_RST</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wdly-dq-bitslip-rst"><span class="std std-ref">0xf000103c</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-wdly-dq-bitslip"><span class="std std-ref">DDRPHY_WDLY_DQ_BITSLIP</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wdly-dq-bitslip"><span class="std std-ref">0xf0001040</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#ddrphy-rdphase"><span class="std std-ref">DDRPHY_RDPHASE</span></a></td>
+<td><a class="reference internal" href="#ddrphy-rdphase"><span class="std std-ref">0xf0001044</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#ddrphy-wrphase"><span class="std std-ref">DDRPHY_WRPHASE</span></a></td>
+<td><a class="reference internal" href="#ddrphy-wrphase"><span class="std std-ref">0xf0001048</span></a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="ddrphy-rst">
+<h3>DDRPHY_RST<a class="headerlink" href="#ddrphy-rst" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x0 = 0xf0001000</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "rst", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-dly-sel">
+<h3>DDRPHY_DLY_SEL<a class="headerlink" href="#ddrphy-dly-sel" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x4 = 0xf0001004</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "dly_sel[7:0]", "bits": 8},
+        {"bits": 24},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-half-sys8x-taps">
+<h3>DDRPHY_HALF_SYS8X_TAPS<a class="headerlink" href="#ddrphy-half-sys8x-taps" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x8 = 0xf0001008</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "half_sys8x_taps[4:0]", "attr": 'reset: 6', "bits": 5},
+        {"bits": 27},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wlevel-en">
+<h3>DDRPHY_WLEVEL_EN<a class="headerlink" href="#ddrphy-wlevel-en" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0xc = 0xf000100c</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wlevel_en", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wlevel-strobe">
+<h3>DDRPHY_WLEVEL_STROBE<a class="headerlink" href="#ddrphy-wlevel-strobe" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x10 = 0xf0001010</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wlevel_strobe", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-cdly-rst">
+<h3>DDRPHY_CDLY_RST<a class="headerlink" href="#ddrphy-cdly-rst" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x14 = 0xf0001014</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cdly_rst", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-cdly-inc">
+<h3>DDRPHY_CDLY_INC<a class="headerlink" href="#ddrphy-cdly-inc" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x18 = 0xf0001018</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "cdly_inc", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-rdly-dq-rst">
+<h3>DDRPHY_RDLY_DQ_RST<a class="headerlink" href="#ddrphy-rdly-dq-rst" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x1c = 0xf000101c</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "rdly_dq_rst", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-rdly-dq-inc">
+<h3>DDRPHY_RDLY_DQ_INC<a class="headerlink" href="#ddrphy-rdly-dq-inc" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x20 = 0xf0001020</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "rdly_dq_inc", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-rdly-dq-bitslip-rst">
+<h3>DDRPHY_RDLY_DQ_BITSLIP_RST<a class="headerlink" href="#ddrphy-rdly-dq-bitslip-rst" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x24 = 0xf0001024</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "rdly_dq_bitslip_rst", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-rdly-dq-bitslip">
+<h3>DDRPHY_RDLY_DQ_BITSLIP<a class="headerlink" href="#ddrphy-rdly-dq-bitslip" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x28 = 0xf0001028</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "rdly_dq_bitslip", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wdly-dq-rst">
+<h3>DDRPHY_WDLY_DQ_RST<a class="headerlink" href="#ddrphy-wdly-dq-rst" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x2c = 0xf000102c</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wdly_dq_rst", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wdly-dq-inc">
+<h3>DDRPHY_WDLY_DQ_INC<a class="headerlink" href="#ddrphy-wdly-dq-inc" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x30 = 0xf0001030</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wdly_dq_inc", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wdly-dqs-rst">
+<h3>DDRPHY_WDLY_DQS_RST<a class="headerlink" href="#ddrphy-wdly-dqs-rst" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x34 = 0xf0001034</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wdly_dqs_rst", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wdly-dqs-inc">
+<h3>DDRPHY_WDLY_DQS_INC<a class="headerlink" href="#ddrphy-wdly-dqs-inc" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x38 = 0xf0001038</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wdly_dqs_inc", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wdly-dq-bitslip-rst">
+<h3>DDRPHY_WDLY_DQ_BITSLIP_RST<a class="headerlink" href="#ddrphy-wdly-dq-bitslip-rst" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x3c = 0xf000103c</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wdly_dq_bitslip_rst", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wdly-dq-bitslip">
+<h3>DDRPHY_WDLY_DQ_BITSLIP<a class="headerlink" href="#ddrphy-wdly-dq-bitslip" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x40 = 0xf0001040</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wdly_dq_bitslip", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-rdphase">
+<h3>DDRPHY_RDPHASE<a class="headerlink" href="#ddrphy-rdphase" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x44 = 0xf0001044</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "rdphase[1:0]", "attr": 'reset: 1', "bits": 2},
+        {"bits": 30},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ddrphy-wrphase">
+<h3>DDRPHY_WRPHASE<a class="headerlink" href="#ddrphy-wrphase" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0001000 + 0x48 = 0xf0001048</cite></p>
+<blockquote>
+<div>
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "wrphase[1:0]", "attr": 'reset: 2', "bits": 2},
+        {"bits": 30},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LiteX SoC Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="interrupts.html">Interrupt Controller</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="edabk_snn.html">EDABK_SNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctrl.html">CTRL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DDRPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifier_mem.html">IDENTIFIER_MEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leds.html">LEDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdblock2mem.html">SDBLOCK2MEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcore.html">SDCORE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdirq.html">SDIRQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdmem2block.html">SDMEM2BLOCK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdphy.html">SDPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdram.html">SDRAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer0.html">TIMER0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">UART</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="ctrl.html" title="previous chapter">CTRL</a></li>
+      <li>Next: <a href="identifier_mem.html" title="next chapter">IDENTIFIER_MEM</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Anonymous.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/ddrphy.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
