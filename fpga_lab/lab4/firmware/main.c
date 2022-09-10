@@ -80,16 +80,16 @@ static void help(void)
 // 	ctrl_reset_write(1);
 // }
 
-static void display_test(void)
-{
-	int i;
-	printf("display_test...\n");
-	for(i=0; i<6; i++) {
-		display_sel_write(i);
-		display_value_write(i);
-		display_write_write(1);
-	}
-}
+// static void display_test(void)
+// {
+// 	int i;
+// 	printf("display_test...\n");
+// 	for(i=0; i<6; i++) {
+// 		display_sel_write(i);
+// 		display_value_write(i);
+// 		display_write_write(1);
+// 	}
+// }
 
 // static void led_test(void)
 // {
@@ -115,20 +115,26 @@ static void display_test(void)
 // 		reboot();
 // 	else if(strcmp(token, "display") == 0)
 // 		display_test();
+// 	else if(strcmp(token, "led") == 0)
+// 		led_test();
 // 	prompt();
 // }
 
 int main(void){
-	// uart_init();
+// {
+// #ifdef CONFIG_CPU_HAS_INTERRUPT
+// 	irq_setmask(0);
+// 	irq_setie(1);
+// #endif
+// 	uart_init();
 
-	// puts("\nLab004 - CPU testing software built "__DATE__" "__TIME__"\n");
-	// help();
+	// puts("\nLab004 - CPU testing software built \n");
+	help();
 	// prompt();
 
-	while(1) {
-		// console_service();
-		leds_out_write(1);
-	}
+	// while(1) {
+	// 	console_service();
+	// }
 
 	return 0;
 }

@@ -320,7 +320,7 @@ uint16_t sdcard_decode_rca(void) {
 	return (r[3] >> 16) & 0xffff;
 }
 
-#ifdef SDCARD_DEBUG
+// #ifdef SDCARD_DEBUG
 void sdcard_decode_cid(void) {
 	uint32_t r[SD_CMD_RESPONSE_SIZE/4];
 	csr_rd_buf_uint32(CSR_SDCORE_CMD_RESPONSE_ADDR,
@@ -374,7 +374,7 @@ void sdcard_decode_csd(void) {
 		((r[2] >> 16) + ((r[1] & 0xff) << 16) + 1) * 512 / (1024 * 1024)
 	);
 }
-#endif
+// #endif
 
 /*-----------------------------------------------------------------------*/
 /* SDCard user functions                                                 */

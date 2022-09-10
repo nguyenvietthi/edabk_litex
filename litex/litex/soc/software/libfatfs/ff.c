@@ -6358,7 +6358,7 @@ FRESULT f_fdisk (
 
 
 
-#if FF_USE_STRFUNC
+// #if FF_USE_STRFUNC
 #if FF_USE_LFN && FF_LFN_UNICODE && (FF_STRF_ENCODE < 0 || FF_STRF_ENCODE > 3)
 #error Wrong FF_STRF_ENCODE setting
 #endif
@@ -6814,7 +6814,7 @@ int f_printf (
 }
 
 #endif /* !FF_FS_READONLY */
-#endif /* FF_USE_STRFUNC */
+// #endif /* FF_USE_STRFUNC */
 
 
 

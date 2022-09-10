@@ -7,7 +7,7 @@
 void load_neuron_parameter(void){
     char param_string[23809];
 	uint16_t index = 0;
-    read_file("csram.mem", param_string);
+    read_file("snn/csram.txt", param_string);
 	
 	uint32_t param[256][12];
 	char value[9];
@@ -31,8 +31,8 @@ void load_neuron_parameter(void){
 
     do {
 		if (!edabk_snn_snn_status_param_wfull_read()) {
-			edabk_snn_param_wdata0_write  (param[index][11]) ;
-			edabk_snn_param_wdata1_write  (param[index][10]) ;			
+			edabk_snn_param_wdata0_write  (param[index][11]);
+			edabk_snn_param_wdata1_write  (param[index][10]);			
 			edabk_snn_param_wdata2_write  (param[index][9]) ;			
 			edabk_snn_param_wdata3_write  (param[index][8]) ;			
 			edabk_snn_param_wdata4_write  (param[index][7]) ;			
@@ -41,8 +41,8 @@ void load_neuron_parameter(void){
 			edabk_snn_param_wdata7_write  (param[index][4]) ;			
 			edabk_snn_param_wdata8_write  (param[index][3]) ;			
 			edabk_snn_param_wdata9_write  (param[index][2]) ;			
-			edabk_snn_param_wdata10_write (param[index][1]);			
-			edabk_snn_param_wdata11_write (param[index][0]);			
+			edabk_snn_param_wdata10_write (param[index][1]) ;			
+			edabk_snn_param_wdata11_write (param[index][0]) ;			
 			index++;
 		}
 	} while (index < 256);

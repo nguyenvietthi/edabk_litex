@@ -3,7 +3,7 @@ BUILD_DIR=../build/
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
-OBJECTS=isr.o main.o isr.o crt0.o
+OBJECTS=isr.o main.o
 
 all: firmware.bin
 
@@ -23,16 +23,11 @@ firmware.elf: $(OBJECTS)
 		$(LIBS:lib%=-l%)
 	chmod -x $@
 
-# pull in dependency info for *existing* .o files
--include $(OBJECTS:.o=.d)
+main.o: main.c
+	$(compile)
 
-isr.o: CFLAGS   += -w
-
-VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY)
-
-
-%.o: %.cpp
-	$(compilexx)
+crt0.o: $(CPU_DIRECTORY)/crt0.S
+	$(assemble)
 
 %.o: %.c
 	$(compile)
@@ -41,7 +36,6 @@ VPATH = $(BIOS_DIRECTORY):$(BIOS_DIRECTORY)/cmds:$(CPU_DIRECTORY)
 	$(assemble)
 
 clean:
-	$(RM) $(OBJECTS) demo.elf demo.bin .*~ *~
+	$(RM) $(OBJECTS) $(OBJECTS:.o=.d) firmware.elf firmware.bin .*~ *~
 
-.PHONY: all clean
-
+.PHONY: all main.o clean load
