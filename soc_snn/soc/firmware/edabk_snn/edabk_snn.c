@@ -23,7 +23,7 @@ void load_neuron_parameter(void){
 		f_gets((char*)param_string, sizeof(param_string), fptr);// read current line
 		f_lseek(fptr, line_index);// move to the next line
 		// printf("param: %s\n", param_string);
-		line_index = line_index + 93;
+		line_index = line_index + 94;
 		char value[9];
 		for (int j = 0; j < 12; j++){
 			if(j == 0){
