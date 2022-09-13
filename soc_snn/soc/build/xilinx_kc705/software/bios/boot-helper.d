@@ -1,2 +1,2 @@
 boot-helper.o: \
- /media/nguyenvietthi/DATA/EDABK/litex/litex/soc/cores/cpu/vexriscv/boot-helper.S
+ /home/thinv0/litex/litex/litex/soc/cores/cpu/vexriscv/boot-helper.S

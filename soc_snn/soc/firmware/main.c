@@ -75,7 +75,7 @@ static char *get_token(char **str)
 
 static void prompt(void)
 {
-	printf("\e[92;1mlitex-demo-app\e[0m> ");
+	printf("\e[92;1medabk-snn-app\e[0m> ");
 }
 
 /*-----------------------------------------------------------------------*/
@@ -208,30 +208,56 @@ int main(void)
 	irq_setie(1);
 #endif
 	printf("Initializing UART...\n");
-	// fatfs_set_ops_sdcard();
-	// sdcardboot();
-	// sd_init();
 	uart_init();
-	// sdcard_init();
-		show_SD_info();
-
-	// fatfs_set_ops_sdcard();
+	fatfs_set_ops_sdcard();
 	printf("Initializing SDCard...\n");
 	if(sd_init()) {
 		printf("SDCard init successfully!\n");
-		show_SD_info();
-
-		char *data;
-		uint8_t buf[512];
-		// read_file("csram.txt", data);
-		read_line("csram.txt");
-		// sdcard_read(0,1, buf);
-		// printf("%d %d %d %d\n", buf[0], buf[1], buf[2], buf[3]);
-
-		// load_neuron_parameter();
 	} else {
 		printf("SDCard init failed!\n");
 	}
+
+	load_neuron_parameter();
+	load_neuron_inst();
+		while(1){
+
+		if (readchar_nonblock()) {
+  			getchar();
+  		break;}
+  	}
+	load_packet_in();
+
+		
+
+	while(!edabk_snn_snn_status_tick_ready_read()){
+
+		if (readchar_nonblock()) {
+  		getchar();
+  		break;
+  	}
+	}
+	printf("Tick ready!!!!!!!!\n");
+	edabk_snn_tick_write(1);
+	printf("tick = %x\n", edabk_snn_tick_read());
+
+	while(!edabk_snn_snn_status_wait_packets_read){
+	printf("Waiting!!!!!!!!\n");
+	}
+	printf("OK!!!!!!!!\n");
+
+	while (1)
+	{
+		if(!edabk_snn_snn_status_packet_out_rempty_read()){
+			printf("packet out: %x\n", edabk_snn_packet_out_read());
+			edabk_snn_packet_out_rinc_write(1);
+
+		}
+		if (readchar_nonblock()) {
+  		getchar();
+  		break;
+  	}
+	}
+	
 
 	help();
 	prompt();

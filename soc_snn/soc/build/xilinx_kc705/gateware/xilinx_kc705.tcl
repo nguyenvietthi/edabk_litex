@@ -6,38 +6,38 @@ set_msg_config -id {Common 17-55} -new_severity {Warning}
 
 # Add Sources
 
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/hdl/load_param_fifo.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/hdl/snn_1x1_wrapper.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/async_fifo/hdl/async_fifo.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/async_fifo/hdl/fifomem.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/async_fifo/hdl/rptr_empty.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/async_fifo/hdl/sync_ptr.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/async_fifo/hdl/sync_r2w.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/async_fifo/hdl/sync_w2r.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/async_fifo/hdl/wptr_full.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/buffer.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/Core_1x1.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/Counter.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/ForwardEastWest.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/ForwardNorthSouth.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/FromLocal.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/LocalIn.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/Merge2.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/Merge3.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/neuron_block.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/neuron_grid_1x1.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/neuron_grid_controller.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/neuron_grid_datapath_1x1.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/OutputBus.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/PathDecoder2Way.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/PathDecoder3Way.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/RANCNetworkGrid_1x1.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/Router.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/Scheduler.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/snn_1x1/hdl/SchedulerSRAM.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/seq_snn/libs/sync_signal/hdl/sync_signal.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
-read_verilog {/media/nguyenvietthi/DATA/EDABK/soc_snn/soc/build/xilinx_kc705/gateware/xilinx_kc705.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/hdl/load_param_fifo.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/hdl/snn_1x1_wrapper.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/async_fifo/hdl/async_fifo.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/async_fifo/hdl/rptr_empty.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/async_fifo/hdl/sync_ptr.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/async_fifo/hdl/sync_r2w.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/async_fifo/hdl/sync_w2r.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/async_fifo/hdl/wptr_full.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/async_fifo/hdl/fifomem.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/neuron_grid_controller.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/neuron_grid_1x1.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/neuron_block.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/buffer.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/SchedulerSRAM.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/Scheduler.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/Router.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/RANCNetworkGrid_1x1.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/PathDecoder3Way.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/PathDecoder2Way.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/OutputBus.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/Merge3.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/Merge2.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/LocalIn.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/FromLocal.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/ForwardNorthSouth.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/ForwardEastWest.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/Counter.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/Core_1x1.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/snn_1x1/hdl/neuron_grid_datapath_1x1.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/seq_snn/libs/sync_signal/hdl/sync_signal.v}
+read_verilog {/home/thinv0/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
+read_verilog {/home/thinv0/edabk_litex/soc_snn/soc/build/xilinx_kc705/gateware/xilinx_kc705.v}
 
 # Add EDIFs
 

@@ -1,5 +1,4 @@
-crc16.o: \
- /media/nguyenvietthi/DATA/EDABK/litex/litex/soc/software/libbase/crc16.c \
- /media/nguyenvietthi/DATA/EDABK/litex/litex/soc/software/libbase/crc.h
+crc16.o: /home/thinv0/litex/litex/litex/soc/software/libbase/crc16.c \
+ /home/thinv0/litex/litex/litex/soc/software/libbase/crc.h
 
-/media/nguyenvietthi/DATA/EDABK/litex/litex/soc/software/libbase/crc.h:
+/home/thinv0/litex/litex/litex/soc/software/libbase/crc.h:

@@ -9,5 +9,5 @@ includedir = picolibc/riscv64-unknown-elf/include
 libdir = picolibc/riscv64-unknown-elf/lib
 
 [properties]
-cross_file = ['/media/nguyenvietthi/DATA/EDABK/soc_snn/soc/build/xilinx_kc705/software/libc/cross.txt']
+cross_file = ['/home/thinv0/edabk_litex/soc_snn/soc/build/xilinx_kc705/software/libc/cross.txt']
 

@@ -8,11 +8,9 @@
 static FATFS  fatfs;
 
 int sd_init(void){
-  	fatfs_set_ops_sdcard();
 	FRESULT rc;
 	TCHAR *Path = "0:/";
 	rc = f_mount(&fatfs,Path,0);
-	printf("=> %x\n", rc);
 	if (rc) {
 		printf(" ERROR : f_mount returned %d\r\n", rc);
 		return 0;
@@ -21,7 +19,6 @@ int sd_init(void){
 }
 
 int sd_eject(void){
-  	fatfs_set_ops_sdcard();
 	FRESULT rc;
 	TCHAR *Path = "0:/";
 	rc = f_mount(0,Path,1);
@@ -38,8 +35,6 @@ void show_SD_info(void){
 }
 
 int read_file(const char* path, char* data) {
-  	
-	fatfs_set_ops_sdcard();
 	UINT* br;
 	FIL fptr[1];
 	FRESULT op = f_open(fptr, path, FA_READ);
@@ -59,26 +54,9 @@ int read_file(const char* path, char* data) {
 	f_read(fptr, (void*) buff, fptr->obj.objsize, br);
 
  	printf("Successfully read file: %s\n", path);
-	// printf("text: %s\n", buff);
 	f_close(fptr);
 
   	data = buff;
   
 	return 1;
-}
-
-
-void read_line(const char* path){
-	fatfs_set_ops_sdcard();
-	FIL fptr[1];
-	FRESULT op = f_open(fptr, path, FA_READ);
-	char string[93];
-	char var[93];
-	int index = 93;
-	while ((f_eof(fptr) == 0)){
-		f_gets((char*)string, sizeof(string), fptr);// read current line
-		f_lseek(fptr, index);// move to the next line
-		index = index + 93;
-		printf("%s\n", string);
-	}
 }

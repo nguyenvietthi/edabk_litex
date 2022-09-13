@@ -84,7 +84,7 @@ class BaseSoC(SoCCore):
         self.comb += self.edabk_snn.sys_clk.eq(ClockSignal())
 
         # DDR3 SDRAM -------------------------------------------------------------------------------
-        if not self.integrated_main_ram_size:
+        if 1==1:
             self.submodules.ddrphy = s7ddrphy.K7DDRPHY(platform.request("ddram"),
                 memtype      = "DDR3",
                 nphases      = 4,

@@ -1,95 +1,94 @@
-readline.o: \
- /media/nguyenvietthi/DATA/EDABK/litex/litex/soc/software/bios/readline.c \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdlib.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h \
- /media/nguyenvietthi/DATA/EDABK/soc_snn/soc/build/xilinx_kc705/software/include/../libc/picolibc.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/features.h \
- /media/nguyenvietthi/DATA/EDABK/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/float.h \
- /media/nguyenvietthi/DATA/EDABK/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/stddef.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/cdefs.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_default_types.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/stdlib.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/alloca.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio/stdio.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/inttypes.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_intsup.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdint.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_stdint.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_locale.h \
- /media/nguyenvietthi/DATA/EDABK/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/stdarg.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_types.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_types.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/string.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/strings.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/string.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/ctype.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/limits.h \
- /media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/syslimits.h \
- /media/nguyenvietthi/DATA/EDABK/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include-fixed/limits.h \
- /media/nguyenvietthi/DATA/EDABK/litex/litex/soc/software/bios/readline.h \
- /media/nguyenvietthi/DATA/EDABK/litex/litex/soc/software/bios/complete.h
+readline.o: /home/thinv0/litex/litex/litex/soc/software/bios/readline.c \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdlib.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h \
+ /home/thinv0/edabk_litex/soc_snn/soc/build/xilinx_kc705/software/include/../libc/picolibc.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/features.h \
+ /home/thinv0/edabk_litex/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/float.h \
+ /home/thinv0/edabk_litex/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/stddef.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/cdefs.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_default_types.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/stdlib.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/alloca.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio/stdio.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/inttypes.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_intsup.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdint.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_stdint.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_locale.h \
+ /home/thinv0/edabk_litex/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/stdarg.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_types.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_types.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/string.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/strings.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/string.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/ctype.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/limits.h \
+ /home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/syslimits.h \
+ /home/thinv0/edabk_litex/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include-fixed/limits.h \
+ /home/thinv0/litex/litex/litex/soc/software/bios/readline.h \
+ /home/thinv0/litex/litex/litex/soc/software/bios/complete.h
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdlib.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdlib.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/ieeefp.h:
 
-/media/nguyenvietthi/DATA/EDABK/soc_snn/soc/build/xilinx_kc705/software/include/../libc/picolibc.h:
+/home/thinv0/edabk_litex/soc_snn/soc/build/xilinx_kc705/software/include/../libc/picolibc.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/_ansi.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/newlib.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/config.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/features.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/features.h:
 
-/media/nguyenvietthi/DATA/EDABK/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/float.h:
+/home/thinv0/edabk_litex/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/float.h:
 
-/media/nguyenvietthi/DATA/EDABK/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/stddef.h:
+/home/thinv0/edabk_litex/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/stddef.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/cdefs.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/cdefs.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_default_types.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_default_types.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/stdlib.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/stdlib.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/alloca.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/alloca.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio/stdio.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/tinystdio/stdio.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/inttypes.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/inttypes.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_intsup.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_intsup.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdint.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/stdint.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_stdint.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_stdint.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_locale.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_locale.h:
 
-/media/nguyenvietthi/DATA/EDABK/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/stdarg.h:
+/home/thinv0/edabk_litex/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include/stdarg.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_types.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/_types.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_types.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/machine/_types.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/string.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/string.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/strings.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/strings.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/string.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/string.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/ctype.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/ctype.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/limits.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/limits.h:
 
-/media/nguyenvietthi/DATA/EDABK/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/syslimits.h:
+/home/thinv0/litex/pythondata-software-picolibc/pythondata_software_picolibc/data/newlib/libc/include/sys/syslimits.h:
 
-/media/nguyenvietthi/DATA/EDABK/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include-fixed/limits.h:
+/home/thinv0/edabk_litex/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/lib/gcc/riscv64-unknown-elf/8.1.0/include-fixed/limits.h:
 
-/media/nguyenvietthi/DATA/EDABK/litex/litex/soc/software/bios/readline.h:
+/home/thinv0/litex/litex/litex/soc/software/bios/readline.h:
 
-/media/nguyenvietthi/DATA/EDABK/litex/litex/soc/software/bios/complete.h:
+/home/thinv0/litex/litex/litex/soc/software/bios/complete.h:

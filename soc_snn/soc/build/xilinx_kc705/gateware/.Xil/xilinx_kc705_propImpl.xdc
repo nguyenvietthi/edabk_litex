@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/media/nguyenvietthi/DATA/EDABK/soc_snn/soc/build/xilinx_kc705/gateware/xilinx_kc705.xdc rfile:../xilinx_kc705.xdc id:1 order:EARLY} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/thinv0/edabk_litex/soc_snn/soc/build/xilinx_kc705/gateware/xilinx_kc705.xdc rfile:../xilinx_kc705.xdc id:1 order:EARLY} [current_design]
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property LOC AB7 [get_ports {cpu_reset}]
 set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]

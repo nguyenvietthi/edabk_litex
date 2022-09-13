@@ -35,6 +35,7 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
 
         self.packet_out_rinc = CSRStorage(name="packet_out_rinc",description='Enable signal read packet out data', reset=0x0, size=1)
         self.packet_out      = CSRStorage(name="packet_out",description='Packet out data', reset=0x0, size=8, write_from_dev=True)
+        self.packet_in      = CSRStorage(name="packet_in",description='packet_in data', reset=0x0, size=30, write_from_dev=True)
 
         self.snn_status = CSRStatus(size=32, fields=[
             CSRField(name="packet_wfull", description="flag full", size=1, reset=0x0),
@@ -69,13 +70,15 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
         # self.scheduler_error        = CSRStatus(name="scheduler_error", description="Scheduler error", size=1, reset=0x0)
         # self.wait_packets           = CSRStatus(name="wait_packets", description="wait for packet to put on snn /Time to read packetout", size=1, reset=0x0)
         # self.tick_ready             = CSRStatus(name="tick_ready", description="Tick ready", size=1, reset=0x0)
+        self.comb += self.packet_in.we.eq(1)
+        self.comb += self.packet_out.we.eq(1)
 
         self.specials += Instance(
             "snn_1x1_wrapper"                                                       ,
             i_clk                    = self.clk                                     ,
-            i_reset_n                = ResetSignal()                                ,
+            i_reset_n                = ~ResetSignal()                               ,
             i_sys_clk                = self.sys_clk                                 ,
-            i_sys_reset_n            = ResetSignal()                                ,
+            i_sys_reset_n            = ~ResetSignal()                               ,
             i_tick                   = self.tick.re                                 ,
             i_packet_winc            = self.packet.re                               ,
             i_packet_wdata           = self.packet.storage                          ,
@@ -92,7 +95,8 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
             o_token_controller_error = self.snn_status.fields.token_controller_error,
             o_scheduler_error        = self.snn_status.fields.scheduler_error       ,
             o_wait_packets           = self.snn_status.fields.wait_packets          ,
-            o_tick_ready             = self.snn_status.fields.tick_ready             
+            o_tick_ready             = self.snn_status.fields.tick_ready            ,
+            o_packet_in              = self.packet_in.dat_w
         )
 
         platform.add_source_dir("../seq_snn/hdl")
