@@ -31,12 +31,12 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
         self.param10      = CSRStorage(name="param_wdata10",description='Param data10 send SNN', reset=0x0, size=32)
         self.param11      = CSRStorage(name="param_wdata11",description='Param data11 send SNN', reset=0x0, size=16)
 
-        self.neuron_inst  = CSRStorage(name="neuron_inst_wdata",description='neuron_inst data send SNN', reset=0x0, size=2)
+        self.neuron_inst     = CSRStorage(name="neuron_inst_wdata",description='neuron_inst data send SNN', reset=0x0, size=2)
 
         self.packet_out_rinc = CSRStorage(name="packet_out_rinc",description='Enable signal read packet out data', reset=0x0, size=1)
         self.packet_out      = CSRStorage(name="packet_out",description='Packet out data', reset=0x0, size=8, write_from_dev=True)
-        self.packet_in      = CSRStorage(name="packet_in",description='packet_in data', reset=0x0, size=30, write_from_dev=True)
-
+        self.tick_ready      = CSRStorage(name="tick_ready", description="Tick ready", size=1, reset=0x0, write_from_dev=True)
+        
         self.snn_status = CSRStatus(size=32, fields=[
             CSRField(name="packet_wfull", description="flag full", size=1, reset=0x0),
             CSRField(name="param_wfull", description="flag full", size=1, reset=0x0),
@@ -44,8 +44,7 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
             CSRField(name="packet_out_rempty", description="Packet out data is empty", size=1, reset=0x0),
             CSRField(name="token_controller_error", description="Token controller error", size=1, reset=0x0),
             CSRField(name="scheduler_error", description="Scheduler error", size=1, reset=0x0),
-            CSRField(name="wait_packets", description="wait for packet to put on snn /Time to read packetout", size=1, reset=0x0),
-            CSRField(name="tick_ready", description="Tick ready", size=1, reset=0x0),
+            CSRField(name="wait_packets", description="wait for packet to put on snn /Time to read packetout", size=1, reset=0x0)
         ], description="SNN status")
 
         self.comb += self.param_wdata.eq(Cat(self.param0.storage, 
@@ -62,16 +61,8 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
             self.param11.storage 
         ))
 
-        # self.packet_wfull = CSRStatus(name="packet_wfull", description="flag full", size=1, reset=0x0)
-        # self.param_wfull = CSRStatus(name="param_wfull", description="flag full", size=1, reset=0x0)
-        # self.neuron_inst_wfull = CSRStatus(name="neuron_inst_wfull", description="flag full", size=1, reset=0x0)
-        # self.packet_out_rempty = CSRStatus(name="packet_out_rempty", description="Packet out data is empty", size=1, reset=0x0)
-        # self.token_controller_error = CSRStatus(name="token_controller_error", description="Token controller error", size=1, reset=0x0)
-        # self.scheduler_error        = CSRStatus(name="scheduler_error", description="Scheduler error", size=1, reset=0x0)
-        # self.wait_packets           = CSRStatus(name="wait_packets", description="wait for packet to put on snn /Time to read packetout", size=1, reset=0x0)
-        # self.tick_ready             = CSRStatus(name="tick_ready", description="Tick ready", size=1, reset=0x0)
-        self.comb += self.packet_in.we.eq(1)
         self.comb += self.packet_out.we.eq(1)
+        self.comb += self.tick_ready.dat_w.eq(1)
 
         self.specials += Instance(
             "snn_1x1_wrapper"                                                       ,
@@ -95,8 +86,7 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
             o_token_controller_error = self.snn_status.fields.token_controller_error,
             o_scheduler_error        = self.snn_status.fields.scheduler_error       ,
             o_wait_packets           = self.snn_status.fields.wait_packets          ,
-            o_tick_ready             = self.snn_status.fields.tick_ready            ,
-            o_packet_in              = self.packet_in.dat_w
+            o_tick_ready             = self.tick_ready.we  
         )
 
         platform.add_source_dir("../seq_snn/hdl")

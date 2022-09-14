@@ -45,7 +45,9 @@ Register Listing for EDABK_SNN
 +------------------------------------------------------------------+-------------------------------------------------+
 | :ref:`EDABK_SNN_PACKET_OUT <EDABK_SNN_PACKET_OUT>`               | :ref:`0xf0000040 <EDABK_SNN_PACKET_OUT>`        |
 +------------------------------------------------------------------+-------------------------------------------------+
-| :ref:`EDABK_SNN_SNN_STATUS <EDABK_SNN_SNN_STATUS>`               | :ref:`0xf0000044 <EDABK_SNN_SNN_STATUS>`        |
+| :ref:`EDABK_SNN_TICK_READY <EDABK_SNN_TICK_READY>`               | :ref:`0xf0000044 <EDABK_SNN_TICK_READY>`        |
++------------------------------------------------------------------+-------------------------------------------------+
+| :ref:`EDABK_SNN_SNN_STATUS <EDABK_SNN_SNN_STATUS>`               | :ref:`0xf0000048 <EDABK_SNN_SNN_STATUS>`        |
 +------------------------------------------------------------------+-------------------------------------------------+
 
 EDABK_SNN_TICK
@@ -343,10 +345,28 @@ EDABK_SNN_PACKET_OUT
         }
 
 
-EDABK_SNN_SNN_STATUS
+EDABK_SNN_TICK_READY
 ^^^^^^^^^^^^^^^^^^^^
 
 `Address: 0xf0000000 + 0x44 = 0xf0000044`
+
+    Tick ready
+
+    .. wavedrom::
+        :caption: EDABK_SNN_TICK_READY
+
+        {
+            "reg": [
+                {"name": "tick_ready", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
+EDABK_SNN_SNN_STATUS
+^^^^^^^^^^^^^^^^^^^^
+
+`Address: 0xf0000000 + 0x48 = 0xf0000048`
 
     SNN status
 
@@ -362,8 +382,7 @@ EDABK_SNN_SNN_STATUS
                 {"name": "token_controller_error",  "bits": 1},
                 {"name": "scheduler_error",  "bits": 1},
                 {"name": "wait_packets",  "bits": 1},
-                {"name": "tick_ready",  "bits": 1},
-                {"bits": 24}
+                {"bits": 25}
             ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
         }
 
@@ -384,7 +403,5 @@ EDABK_SNN_SNN_STATUS
 | [5]   | SCHEDULER_ERROR        | Scheduler error                                       |
 +-------+------------------------+-------------------------------------------------------+
 | [6]   | WAIT_PACKETS           | wait for packet to put on snn /Time to read packetout |
-+-------+------------------------+-------------------------------------------------------+
-| [7]   | TICK_READY             | Tick ready                                            |
 +-------+------------------------+-------------------------------------------------------+
 

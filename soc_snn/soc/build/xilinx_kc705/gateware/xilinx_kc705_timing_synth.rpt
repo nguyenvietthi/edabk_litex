@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date         : Tue Sep 13 17:31:35 2022
+| Date         : Wed Sep 14 09:53:33 2022
 | Host         : pc182-linux running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_timing_summary -file xilinx_kc705_timing_synth.rpt
 | Design       : xilinx_kc705
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.722        0.000                      0                76719       -0.229     -118.907                   5104                76719        0.264        0.000                       0                 20939  
+      0.722        0.000                      0                77108       -0.193     -116.333                   5120                77108        0.264        0.000                       0                 20963  
 
 
 Timing constraints are not met.
@@ -156,10 +156,10 @@ Clock                     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total
 -----                     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 clk200_p                    4.308        0.000                      0                    7        0.066        0.000                      0                    7        1.100        0.000                       0                    10  
   builder_mmcm_fb                                                                                                                                                       3.929        0.000                       0                     2  
-  main_crg_clkout0          1.432        0.000                      0                38229       -0.229     -112.463                   4895                38229        3.232        0.000                       0                 10779  
+  main_crg_clkout0          1.432        0.000                      0                38662       -0.193     -109.889                   4911                38662        3.232        0.000                       0                 10828  
   main_crg_clkout1                                                                                                                                                      0.592        0.000                       0                   237  
   main_crg_clkout2          1.436        0.000                      0                   14       -0.028       -0.028                      1                   14        0.264        0.000                       0                    10  
-  main_s7mmcm_clkout        0.722        0.000                      0                38305       -0.049       -6.416                    208                38305        4.232        0.000                       0                  9901  
+  main_s7mmcm_clkout        0.722        0.000                      0                38259       -0.049       -6.416                    208                38259        4.232        0.000                       0                  9876  
 
 
 ------------------------------------------------------------------------------------------------
@@ -178,7 +178,7 @@ From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS
 
 Path Group         From Clock         To Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
 ----------         ----------         --------               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
-**async_default**  main_crg_clkout0   main_crg_clkout0         6.925        0.000                      0                  164        0.235        0.000                      0                  164  
+**async_default**  main_crg_clkout0   main_crg_clkout0         6.925        0.000                      0                  166        0.235        0.000                      0                  166  
 
 
 ------------------------------------------------------------------------------------------------
@@ -356,7 +356,7 @@ From Clock:  main_crg_clkout0
   To Clock:  main_crg_clkout0
 
 Setup :            0  Failing Endpoints,  Worst Slack        1.432ns,  Total Violation        0.000ns
-Hold  :         4895  Failing Endpoints,  Worst Slack       -0.229ns,  Total Violation     -112.463ns
+Hold  :         4911  Failing Endpoints,  Worst Slack       -0.193ns,  Total Violation     -109.889ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.232ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
@@ -397,7 +397,7 @@ Slack (MET) :             1.432ns  (required time - arrival time)
                                                       0.077     2.125 r  MMCME2_ADV/CLKOUT0
                          net (fo=1, unplaced)         0.466     2.591    main_crg_clkout0
                          BUFG (Prop_bufg_I_O)         0.093     2.684 r  BUFG/O
-                         net (fo=10780, unplaced)     0.466     3.150    sys_clk
+                         net (fo=10829, unplaced)     0.466     3.150    sys_clk
                          FDPE                                         r  FDPE/C
   -------------------------------------------------------------------    -------------------
                          FDPE (Prop_fdpe_C_Q)         0.223     3.373 r  FDPE/Q
@@ -416,7 +416,7 @@ Slack (MET) :             1.432ns  (required time - arrival time)
                                                       0.073     3.841 r  MMCME2_ADV/CLKOUT0
                          net (fo=1, unplaced)         0.442     4.283    main_crg_clkout0
                          BUFG (Prop_bufg_I_O)         0.083     4.366 r  BUFG/O
-                         net (fo=10780, unplaced)     0.321     4.687    sys_clk
+                         net (fo=10829, unplaced)     0.321     4.687    sys_clk
                          FDPE                                         r  FDPE_1/C
                          clock pessimism              0.318     5.005    
                          clock uncertainty           -0.064     4.940    
@@ -433,15 +433,15 @@ Slack (MET) :             1.432ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (VIOLATED) :        -0.229ns  (arrival time - required time)
-  Source:                 main_k7ddrphy_rst_storage_reg/C
-                            (rising edge-triggered cell FDRE clocked by main_crg_clkout0  {rise@0.000ns fall@4.000ns period=8.000ns})
+Slack (VIOLATED) :        -0.193ns  (arrival time - required time)
+  Source:                 FDPE_1/C
+                            (rising edge-triggered cell FDPE clocked by main_crg_clkout0  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            OSERDESE2/RST
                             (rising edge-triggered cell OSERDESE2 clocked by main_crg_clkout0  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             main_crg_clkout0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (main_crg_clkout0 rise@0.000ns - main_crg_clkout0 rise@0.000ns)
-  Data Path Delay:        0.523ns  (logic 0.164ns (31.336%)  route 0.359ns (68.664%))
+  Data Path Delay:        0.559ns  (logic 0.164ns (29.335%)  route 0.395ns (70.665%))
   Logic Levels:           1  (LUT2=1)
   Clock Path Skew:        0.145ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.571ns
@@ -462,13 +462,13 @@ Slack (VIOLATED) :        -0.229ns  (arrival time - required time)
                                                       0.050     0.809 r  MMCME2_ADV/CLKOUT0
                          net (fo=1, unplaced)         0.231     1.040    main_crg_clkout0
                          BUFG (Prop_bufg_I_O)         0.026     1.066 r  BUFG/O
-                         net (fo=10780, unplaced)     0.098     1.164    sys_clk
-                         FDRE                                         r  main_k7ddrphy_rst_storage_reg/C
+                         net (fo=10829, unplaced)     0.098     1.164    sys_clk
+                         FDPE                                         r  FDPE_1/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.100     1.264 r  main_k7ddrphy_rst_storage_reg/Q
-                         net (fo=28, unplaced)        0.128     1.393    main_k7ddrphy_rst_storage
-                         LUT2 (Prop_lut2_I1_O)        0.064     1.457 r  OSERDESE2_3_i_5/O
-                         net (fo=187, unplaced)       0.231     1.688    RST0
+                         FDPE (Prop_fdpe_C_Q)         0.100     1.264 r  FDPE_1/Q
+                         net (fo=8728, unplaced)      0.164     1.428    sys_rst
+                         LUT2 (Prop_lut2_I1_O)        0.064     1.492 r  OSERDESE2_i_1/O
+                         net (fo=171, unplaced)       0.231     1.723    RST0
     OLOGIC_X1Y74         OSERDESE2                                    r  OSERDESE2/RST
   -------------------------------------------------------------------    -------------------
 
@@ -484,16 +484,16 @@ Slack (VIOLATED) :        -0.229ns  (arrival time - required time)
                                                       0.053     1.055 r  MMCME2_ADV/CLKOUT0
                          net (fo=1, unplaced)         0.243     1.298    main_crg_clkout0
                          BUFG (Prop_bufg_I_O)         0.030     1.328 r  BUFG/O
-                         net (fo=10780, unplaced)     0.243     1.571    sys_clk
+                         net (fo=10829, unplaced)     0.243     1.571    sys_clk
     OLOGIC_X1Y74         OSERDESE2                                    r  OSERDESE2/CLKDIV
                          clock pessimism             -0.262     1.309    
     OLOGIC_X1Y74         OSERDESE2 (Hold_oserdese2_CLKDIV_RST)
                                                       0.607     1.916    OSERDESE2
   -------------------------------------------------------------------
                          required time                         -1.916    
-                         arrival time                           1.688    
+                         arrival time                           1.723    
   -------------------------------------------------------------------
-                         slack                                 -0.229    
+                         slack                                 -0.193    
 
 
 
@@ -509,8 +509,8 @@ Sources:            { MMCME2_ADV/CLKOUT0 }
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
 Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.095         8.000       5.905                storage_3_reg/CLKARDCLK
 Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       8.000       205.360              MMCME2_ADV/CLKOUT0
-Low Pulse Width   Slow    RAMD64E/CLK         n/a            0.768         4.000       3.232                snn_1x1_wrapper/load_param_fifo/async_fifo_ins/fifomem/mem_reg_192_255_81_83/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            0.768         4.000       3.232                snn_1x1_wrapper/load_param_fifo/async_fifo_ins/fifomem/mem_reg_192_255_81_83/RAMA/CLK
+Low Pulse Width   Slow    RAMD64E/CLK         n/a            0.768         4.000       3.232                snn_1x1_wrapper/load_param_fifo/async_fifo_ins/fifomem/mem_reg_192_255_90_92/RAMB/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            0.768         4.000       3.232                snn_1x1_wrapper/load_param_fifo/async_fifo_ins/fifomem/mem_reg_192_255_90_92/RAMB/CLK
 
 
 
@@ -710,7 +710,7 @@ PW    :            0  Failing Endpoints,  Worst Slack        4.232ns,  Total Vio
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack (MET) :             0.722ns  (required time - arrival time)
-  Source:                 snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_num_reg[0]_rep__2/C
+  Source:                 snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_num_reg[0]_rep__1/C
                             (falling edge-triggered cell FDCE clocked by main_s7mmcm_clkout  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_block/integrated_potential_reg[0]/CE
                             (rising edge-triggered cell FDCE clocked by main_s7mmcm_clkout  {rise@0.000ns fall@5.000ns period=10.000ns})
@@ -742,10 +742,10 @@ Slack (MET) :             0.722ns  (required time - arrival time)
                                                       0.077     7.125 f  MMCME2_ADV/CLKOUT3
                          net (fo=1, unplaced)         0.466     7.591    main_s7mmcm_clkout
                          BUFG (Prop_bufg_I_O)         0.093     7.684 f  BUFG_3/O
-                         net (fo=9899, unplaced)      0.584     8.268    snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/clk
-                         FDCE                                         r  snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_num_reg[0]_rep__2/C  (IS_INVERTED)
+                         net (fo=9874, unplaced)      0.584     8.268    snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/snn_clk_clk
+                         FDCE                                         r  snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_num_reg[0]_rep__1/C  (IS_INVERTED)
   -------------------------------------------------------------------    -------------------
-                         FDCE (Prop_fdce_C_Q)         0.228     8.496 r  snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_num_reg[0]_rep__2/Q
+                         FDCE (Prop_fdce_C_Q)         0.228     8.496 r  snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_num_reg[0]_rep__1/Q
                          net (fo=117, unplaced)       0.630     9.126    snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_parameter_reg_r2_128_191_261_263/ADDRB0
                          RAMD64E (Prop_ramd64e_RADR0_O)
                                                       0.123     9.249 r  snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_parameter_reg_r2_128_191_261_263/RAMB/O
@@ -779,7 +779,7 @@ Slack (MET) :             0.722ns  (required time - arrival time)
                                                       0.073    11.841 r  MMCME2_ADV/CLKOUT3
                          net (fo=1, unplaced)         0.442    12.283    main_s7mmcm_clkout
                          BUFG (Prop_bufg_I_O)         0.083    12.366 r  BUFG_3/O
-                         net (fo=9899, unplaced)      0.439    12.805    snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_block/clk
+                         net (fo=9874, unplaced)      0.439    12.805    snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_block/snn_clk_clk
                          FDCE                                         r  snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_block/integrated_potential_reg[0]/C
                          clock pessimism              0.318    13.123    
                          clock uncertainty           -0.066    13.057    
@@ -825,7 +825,7 @@ Slack (VIOLATED) :        -0.049ns  (arrival time - required time)
                                                       0.050     0.809 r  MMCME2_ADV/CLKOUT3
                          net (fo=1, unplaced)         0.231     1.040    main_s7mmcm_clkout
                          BUFG (Prop_bufg_I_O)         0.026     1.066 r  BUFG_3/O
-                         net (fo=9899, unplaced)      0.114     1.180    snn_1x1_wrapper/load_neuron_inst_fifo/clk
+                         net (fo=9874, unplaced)      0.114     1.180    snn_1x1_wrapper/load_neuron_inst_fifo/snn_clk_clk
                          FDCE                                         r  snn_1x1_wrapper/load_neuron_inst_fifo/count_reg[6]/C
   -------------------------------------------------------------------    -------------------
                          FDCE (Prop_fdce_C_Q)         0.100     1.280 r  snn_1x1_wrapper/load_neuron_inst_fifo/count_reg[6]/Q
@@ -845,7 +845,7 @@ Slack (VIOLATED) :        -0.049ns  (arrival time - required time)
                                                       0.053     1.055 r  MMCME2_ADV/CLKOUT3
                          net (fo=1, unplaced)         0.243     1.298    main_s7mmcm_clkout
                          BUFG (Prop_bufg_I_O)         0.030     1.328 r  BUFG_3/O
-                         net (fo=9899, unplaced)      0.259     1.587    snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_instructions_reg_0_127_0_0/WCLK
+                         net (fo=9874, unplaced)      0.259     1.587    snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_instructions_reg_0_127_0_0/WCLK
                          RAMD64E                                      r  snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_instructions_reg_0_127_0_0/DP.HIGH/CLK
                          clock pessimism             -0.262     1.325    
                          RAMD64E (Hold_ramd64e_CLK_WADR6)
@@ -871,7 +871,7 @@ Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actua
 Min Period        n/a     BUFG/I              n/a            1.409         10.000      8.592                BUFG_3/I
 Max Period        n/a     MMCME2_ADV/CLKOUT3  n/a            213.360       10.000      203.360              MMCME2_ADV/CLKOUT3
 Low Pulse Width   Slow    RAMD64E/CLK         n/a            0.768         5.000       4.232                snn_1x1_wrapper/packet_out_fifo/fifomem/mem_reg_0_63_0_2/RAMA/CLK
-High Pulse Width  Slow    RAMD64E/CLK         n/a            0.768         5.000       4.232                snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_parameter_reg_r1_192_255_348_350/RAMC/CLK
+High Pulse Width  Slow    RAMD64E/CLK         n/a            0.768         5.000       4.232                snn_1x1_wrapper/RANCNetworkGrid_1x1_ins/Core0/neuron_grid/datapath/neuron_parameter_reg_r1_192_255_351_353/RAMA/CLK
 
 
 
@@ -920,11 +920,11 @@ Slack (MET) :             6.925ns  (required time - arrival time)
                                                       0.077     2.125 r  MMCME2_ADV/CLKOUT0
                          net (fo=1, unplaced)         0.466     2.591    main_crg_clkout0
                          BUFG (Prop_bufg_I_O)         0.093     2.684 r  BUFG/O
-                         net (fo=10780, unplaced)     0.466     3.150    sys_clk
+                         net (fo=10829, unplaced)     0.466     3.150    sys_clk
                          FDPE                                         r  FDPE_1/C
   -------------------------------------------------------------------    -------------------
                          FDPE (Prop_fdpe_C_Q)         0.223     3.373 f  FDPE_1/Q
-                         net (fo=8767, unplaced)      0.349     3.722    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/sys_rst
+                         net (fo=8728, unplaced)      0.349     3.722    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/sys_rst
                          FDCE                                         f  snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/wq1_rptr_reg[0]/CLR
   -------------------------------------------------------------------    -------------------
 
@@ -940,7 +940,7 @@ Slack (MET) :             6.925ns  (required time - arrival time)
                                                       0.073     9.841 r  MMCME2_ADV/CLKOUT0
                          net (fo=1, unplaced)         0.442    10.283    main_crg_clkout0
                          BUFG (Prop_bufg_I_O)         0.083    10.366 r  BUFG/O
-                         net (fo=10780, unplaced)     0.321    10.687    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/main_edabk_snn_sys_clk
+                         net (fo=10829, unplaced)     0.321    10.687    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/main_edabk_snn_sys_clk
                          FDCE                                         r  snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/wq1_rptr_reg[0]/C
                          clock pessimism              0.318    11.005    
                          clock uncertainty           -0.064    10.940    
@@ -986,11 +986,11 @@ Slack (MET) :             0.235ns  (arrival time - required time)
                                                       0.050     0.809 r  MMCME2_ADV/CLKOUT0
                          net (fo=1, unplaced)         0.231     1.040    main_crg_clkout0
                          BUFG (Prop_bufg_I_O)         0.026     1.066 r  BUFG/O
-                         net (fo=10780, unplaced)     0.098     1.164    sys_clk
+                         net (fo=10829, unplaced)     0.098     1.164    sys_clk
                          FDPE                                         r  FDPE_1/C
   -------------------------------------------------------------------    -------------------
                          FDPE (Prop_fdpe_C_Q)         0.100     1.264 f  FDPE_1/Q
-                         net (fo=8767, unplaced)      0.173     1.437    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/sys_rst
+                         net (fo=8728, unplaced)      0.173     1.437    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/sys_rst
                          FDCE                                         f  snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/wq1_rptr_reg[0]/CLR
   -------------------------------------------------------------------    -------------------
 
@@ -1006,7 +1006,7 @@ Slack (MET) :             0.235ns  (arrival time - required time)
                                                       0.053     1.055 r  MMCME2_ADV/CLKOUT0
                          net (fo=1, unplaced)         0.243     1.298    main_crg_clkout0
                          BUFG (Prop_bufg_I_O)         0.030     1.328 r  BUFG/O
-                         net (fo=10780, unplaced)     0.243     1.571    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/main_edabk_snn_sys_clk
+                         net (fo=10829, unplaced)     0.243     1.571    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/main_edabk_snn_sys_clk
                          FDCE                                         r  snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/wq1_rptr_reg[0]/C
                          clock pessimism             -0.262     1.309    
                          FDCE (Remov_fdce_C_CLR)     -0.107     1.202    snn_1x1_wrapper/load_neuron_inst_fifo/async_fifo_ins/sync_r2w/wq1_rptr_reg[0]

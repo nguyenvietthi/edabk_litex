@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date             : Tue Sep 13 17:37:07 2022
+| Date             : Wed Sep 14 09:59:53 2022
 | Host             : pc182-linux running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command          : report_power -file xilinx_kc705_power.rpt
 | Design           : xilinx_kc705
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.726        |
+| Total On-Chip Power (W)  | 1.865        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.549        |
-| Device Static (W)        | 0.176        |
-| Total Off-Chip Power (W) | 0.702        |
+| Dynamic (W)              | 1.688        |
+| Device Static (W)        | 0.177        |
+| Total Off-Chip Power (W) | 0.604        |
 | Effective TJA (C/W)      | 1.8          |
-| Max Ambient (C)          | 81.9         |
-| Junction Temperature (C) | 28.1         |
+| Max Ambient (C)          | 81.7         |
+| Junction Temperature (C) | 28.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,22 +53,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.123 |        8 |       --- |             --- |
-| Slice Logic              |     0.445 |    42359 |       --- |             --- |
+| Clocks                   |     0.118 |        8 |       --- |             --- |
+| Slice Logic              |     0.449 |    42370 |       --- |             --- |
 |   Others                 |     0.410 |      295 |       --- |             --- |
-|   LUT as Logic           |     0.032 |    18083 |    203800 |            8.87 |
-|   LUT as Distributed RAM |     0.001 |     6296 |     64000 |            9.84 |
-|   Register               |     0.001 |    13738 |    407600 |            3.37 |
-|   CARRY4                 |    <0.001 |      300 |     50950 |            0.59 |
-|   F7/F8 Muxes            |    <0.001 |     1072 |    203800 |            0.53 |
+|   LUT as Logic           |     0.035 |    18086 |    203800 |            8.87 |
+|   Register               |     0.001 |    13696 |    407600 |            3.36 |
+|   CARRY4                 |     0.001 |      300 |     50950 |            0.59 |
+|   LUT as Distributed RAM |    <0.001 |     6364 |     64000 |            9.94 |
+|   F7/F8 Muxes            |    <0.001 |     1048 |    203800 |            0.51 |
 |   LUT as Shift Register  |    <0.001 |        2 |     64000 |           <0.01 |
-| Signals                  |     0.119 |    31886 |       --- |             --- |
-| Block RAM                |     0.204 |     86.5 |       445 |           19.44 |
+| Signals                  |     0.118 |    31904 |       --- |             --- |
+| Block RAM                |     0.202 |       86 |       445 |           19.33 |
 | MMCM                     |     0.110 |        1 |        10 |           10.00 |
-| DSPs                     |     0.000 |        4 |       840 |            0.48 |
-| I/O                      |     0.548 |      135 |       500 |           27.00 |
-| Static Power             |     0.176 |          |           |                 |
-| Total                    |     1.726 |          |           |                 |
+| DSPs                     |     0.004 |        4 |       840 |            0.48 |
+| I/O                      |     0.688 |      135 |       500 |           27.00 |
+| Static Power             |     0.177 |          |           |                 |
+| Total                    |     1.865 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,15 +78,15 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.565 |       0.485 |      0.080 |
+| Vccint    |       1.000 |     0.566 |       0.485 |      0.081 |
 | Vccaux    |       1.800 |     0.452 |       0.424 |      0.029 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.004 |       0.003 |      0.001 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vcco15    |       1.500 |     0.638 |       0.637 |      0.001 |
+| Vcco15    |       1.500 |     0.654 |       0.653 |      0.001 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
-| Vccaux_io |       2.000 |     0.012 |       0.012 |      0.000 |
+| Vccaux_io |       2.000 |     0.020 |       0.020 |      0.000 |
 | Vccbram   |       1.000 |     0.021 |       0.016 |      0.005 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -153,99 +153,99 @@ Table of Contents
 +-----------------------------------------------------+-----------+
 | Name                                                | Power (W) |
 +-----------------------------------------------------+-----------+
-| xilinx_kc705                                        |     1.549 |
-|   IOBUF                                             |     0.003 |
-|   IOBUFDS                                           |     0.004 |
-|     OBUFTDS                                         |     0.002 |
-|   IOBUFDS_1                                         |     0.004 |
-|     OBUFTDS                                         |     0.002 |
-|   IOBUFDS_2                                         |     0.004 |
-|     OBUFTDS                                         |     0.002 |
-|   IOBUFDS_3                                         |     0.004 |
-|     OBUFTDS                                         |     0.002 |
-|   IOBUFDS_4                                         |     0.004 |
-|     OBUFTDS                                         |     0.002 |
-|   IOBUFDS_5                                         |     0.004 |
-|     OBUFTDS                                         |     0.002 |
-|   IOBUFDS_6                                         |     0.004 |
-|     OBUFTDS                                         |     0.002 |
-|   IOBUFDS_7                                         |     0.004 |
-|     OBUFTDS                                         |     0.002 |
-|   IOBUF_1                                           |     0.003 |
-|   IOBUF_10                                          |     0.003 |
-|   IOBUF_11                                          |     0.003 |
-|   IOBUF_12                                          |     0.003 |
-|   IOBUF_13                                          |     0.003 |
-|   IOBUF_14                                          |     0.003 |
-|   IOBUF_15                                          |     0.003 |
-|   IOBUF_16                                          |     0.003 |
-|   IOBUF_17                                          |     0.003 |
-|   IOBUF_18                                          |     0.003 |
-|   IOBUF_19                                          |     0.003 |
-|   IOBUF_2                                           |     0.003 |
-|   IOBUF_20                                          |     0.003 |
-|   IOBUF_21                                          |     0.003 |
-|   IOBUF_22                                          |     0.003 |
-|   IOBUF_23                                          |     0.003 |
-|   IOBUF_24                                          |     0.003 |
-|   IOBUF_25                                          |     0.003 |
-|   IOBUF_26                                          |     0.003 |
-|   IOBUF_27                                          |     0.003 |
-|   IOBUF_28                                          |     0.003 |
-|   IOBUF_29                                          |     0.003 |
-|   IOBUF_3                                           |     0.003 |
-|   IOBUF_30                                          |     0.003 |
-|   IOBUF_31                                          |     0.003 |
-|   IOBUF_32                                          |     0.003 |
-|   IOBUF_33                                          |     0.003 |
-|   IOBUF_34                                          |     0.003 |
-|   IOBUF_35                                          |     0.003 |
-|   IOBUF_36                                          |     0.003 |
-|   IOBUF_37                                          |     0.003 |
-|   IOBUF_38                                          |     0.003 |
-|   IOBUF_39                                          |     0.003 |
-|   IOBUF_4                                           |     0.003 |
-|   IOBUF_40                                          |     0.003 |
-|   IOBUF_41                                          |     0.003 |
-|   IOBUF_42                                          |     0.003 |
-|   IOBUF_43                                          |     0.003 |
-|   IOBUF_44                                          |     0.003 |
-|   IOBUF_45                                          |     0.003 |
-|   IOBUF_46                                          |     0.003 |
-|   IOBUF_47                                          |     0.003 |
-|   IOBUF_48                                          |     0.003 |
-|   IOBUF_49                                          |     0.003 |
-|   IOBUF_5                                           |     0.003 |
-|   IOBUF_50                                          |     0.003 |
-|   IOBUF_51                                          |     0.003 |
-|   IOBUF_52                                          |     0.003 |
-|   IOBUF_53                                          |     0.003 |
-|   IOBUF_54                                          |     0.003 |
-|   IOBUF_55                                          |     0.003 |
-|   IOBUF_56                                          |     0.003 |
-|   IOBUF_57                                          |     0.003 |
-|   IOBUF_58                                          |     0.003 |
-|   IOBUF_59                                          |     0.003 |
-|   IOBUF_6                                           |     0.003 |
-|   IOBUF_60                                          |     0.003 |
-|   IOBUF_61                                          |     0.003 |
-|   IOBUF_62                                          |     0.003 |
-|   IOBUF_63                                          |     0.003 |
+| xilinx_kc705                                        |     1.688 |
+|   IOBUF                                             |     0.005 |
+|   IOBUFDS                                           |     0.005 |
+|     OBUFTDS                                         |     0.001 |
+|   IOBUFDS_1                                         |     0.005 |
+|     OBUFTDS                                         |     0.001 |
+|   IOBUFDS_2                                         |     0.005 |
+|     OBUFTDS                                         |     0.001 |
+|   IOBUFDS_3                                         |     0.005 |
+|     OBUFTDS                                         |     0.001 |
+|   IOBUFDS_4                                         |     0.005 |
+|     OBUFTDS                                         |     0.001 |
+|   IOBUFDS_5                                         |     0.005 |
+|     OBUFTDS                                         |     0.001 |
+|   IOBUFDS_6                                         |     0.005 |
+|     OBUFTDS                                         |     0.001 |
+|   IOBUFDS_7                                         |     0.005 |
+|     OBUFTDS                                         |     0.001 |
+|   IOBUF_1                                           |     0.005 |
+|   IOBUF_10                                          |     0.005 |
+|   IOBUF_11                                          |     0.005 |
+|   IOBUF_12                                          |     0.005 |
+|   IOBUF_13                                          |     0.005 |
+|   IOBUF_14                                          |     0.005 |
+|   IOBUF_15                                          |     0.005 |
+|   IOBUF_16                                          |     0.005 |
+|   IOBUF_17                                          |     0.005 |
+|   IOBUF_18                                          |     0.005 |
+|   IOBUF_19                                          |     0.005 |
+|   IOBUF_2                                           |     0.005 |
+|   IOBUF_20                                          |     0.005 |
+|   IOBUF_21                                          |     0.005 |
+|   IOBUF_22                                          |     0.005 |
+|   IOBUF_23                                          |     0.005 |
+|   IOBUF_24                                          |     0.005 |
+|   IOBUF_25                                          |     0.005 |
+|   IOBUF_26                                          |     0.005 |
+|   IOBUF_27                                          |     0.005 |
+|   IOBUF_28                                          |     0.005 |
+|   IOBUF_29                                          |     0.005 |
+|   IOBUF_3                                           |     0.005 |
+|   IOBUF_30                                          |     0.005 |
+|   IOBUF_31                                          |     0.005 |
+|   IOBUF_32                                          |     0.005 |
+|   IOBUF_33                                          |     0.005 |
+|   IOBUF_34                                          |     0.005 |
+|   IOBUF_35                                          |     0.005 |
+|   IOBUF_36                                          |     0.005 |
+|   IOBUF_37                                          |     0.005 |
+|   IOBUF_38                                          |     0.005 |
+|   IOBUF_39                                          |     0.005 |
+|   IOBUF_4                                           |     0.005 |
+|   IOBUF_40                                          |     0.005 |
+|   IOBUF_41                                          |     0.005 |
+|   IOBUF_42                                          |     0.005 |
+|   IOBUF_43                                          |     0.005 |
+|   IOBUF_44                                          |     0.005 |
+|   IOBUF_45                                          |     0.005 |
+|   IOBUF_46                                          |     0.005 |
+|   IOBUF_47                                          |     0.005 |
+|   IOBUF_48                                          |     0.005 |
+|   IOBUF_49                                          |     0.005 |
+|   IOBUF_5                                           |     0.005 |
+|   IOBUF_50                                          |     0.005 |
+|   IOBUF_51                                          |     0.005 |
+|   IOBUF_52                                          |     0.005 |
+|   IOBUF_53                                          |     0.005 |
+|   IOBUF_54                                          |     0.005 |
+|   IOBUF_55                                          |     0.005 |
+|   IOBUF_56                                          |     0.005 |
+|   IOBUF_57                                          |     0.005 |
+|   IOBUF_58                                          |     0.005 |
+|   IOBUF_59                                          |     0.005 |
+|   IOBUF_6                                           |     0.005 |
+|   IOBUF_60                                          |     0.005 |
+|   IOBUF_61                                          |     0.005 |
+|   IOBUF_62                                          |     0.005 |
+|   IOBUF_63                                          |     0.005 |
 |   IOBUF_64                                          |    <0.001 |
 |   IOBUF_65                                          |    <0.001 |
 |   IOBUF_66                                          |    <0.001 |
 |   IOBUF_67                                          |    <0.001 |
 |   IOBUF_68                                          |    <0.001 |
-|   IOBUF_7                                           |     0.003 |
-|   IOBUF_8                                           |     0.003 |
-|   IOBUF_9                                           |     0.003 |
+|   IOBUF_7                                           |     0.005 |
+|   IOBUF_8                                           |     0.005 |
+|   IOBUF_9                                           |     0.005 |
 |   OBUFDS                                            |     0.003 |
-|   VexRiscv                                          |     0.031 |
-|     IBusCachedPlugin_cache                          |     0.008 |
-|     dataCache_1                                     |     0.004 |
-|   snn_1x1_wrapper                                   |     0.158 |
-|     RANCNetworkGrid_1x1_ins                         |     0.092 |
-|       Core0                                         |     0.091 |
+|   VexRiscv                                          |     0.045 |
+|     IBusCachedPlugin_cache                          |     0.007 |
+|     dataCache_1                                     |     0.008 |
+|   snn_1x1_wrapper                                   |     0.152 |
+|     RANCNetworkGrid_1x1_ins                         |     0.090 |
+|       Core0                                         |     0.089 |
 |         Router                                      |     0.018 |
 |           forward_east                              |     0.002 |
 |             Merge                                   |    <0.001 |
@@ -265,17 +265,17 @@ Table of Contents
 |             north_buffer                            |    <0.001 |
 |             routing_buffer                          |    <0.001 |
 |             south_buffer                            |    <0.001 |
-|           from_local                                |     0.002 |
+|           from_local                                |     0.001 |
 |             buffer_east                             |    <0.001 |
 |             buffer_west                             |    <0.001 |
 |           local_in                                  |     0.011 |
 |             Merge                                   |     0.011 |
-|         Scheduler                                   |     0.032 |
+|         Scheduler                                   |     0.031 |
 |           SRAM                                      |     0.019 |
 |           counter                                   |     0.012 |
-|         neuron_grid                                 |     0.042 |
+|         neuron_grid                                 |     0.040 |
 |           controller                                |    <0.001 |
-|           datapath                                  |     0.042 |
+|           datapath                                  |     0.040 |
 |             neuron_block                            |     0.002 |
 |             neuron_instructions_reg_0_127_0_0       |    <0.001 |
 |             neuron_instructions_reg_0_127_1_1       |    <0.001 |
@@ -1308,7 +1308,7 @@ Table of Contents
 |         sync_w2r                                    |    <0.001 |
 |         wptr_full                                   |    <0.001 |
 |     load_packet_fifo                                |     0.002 |
-|       fifomem                                       |     0.001 |
+|       fifomem                                       |    <0.001 |
 |         mem_reg_0_63_0_2                            |    <0.001 |
 |         mem_reg_0_63_12_14                          |    <0.001 |
 |         mem_reg_0_63_15_17                          |    <0.001 |
@@ -1353,9 +1353,9 @@ Table of Contents
 |       sync_r2w                                      |    <0.001 |
 |       sync_w2r                                      |    <0.001 |
 |       wptr_full                                     |    <0.001 |
-|     load_param_fifo                                 |     0.062 |
-|       async_fifo_ins                                |     0.037 |
-|         fifomem                                     |     0.011 |
+|     load_param_fifo                                 |     0.058 |
+|       async_fifo_ins                                |     0.034 |
+|         fifomem                                     |     0.010 |
 |           mem_reg_0_63_0_2                          |    <0.001 |
 |           mem_reg_0_63_102_104                      |    <0.001 |
 |           mem_reg_0_63_105_107                      |    <0.001 |
@@ -1852,7 +1852,7 @@ Table of Contents
 |           mem_reg_64_127_96_98                      |    <0.001 |
 |           mem_reg_64_127_99_101                     |    <0.001 |
 |           mem_reg_64_127_9_11                       |    <0.001 |
-|         rptr_empty                                  |     0.025 |
+|         rptr_empty                                  |     0.024 |
 |         sync_r2w                                    |    <0.001 |
 |         sync_w2r                                    |    <0.001 |
 |         wptr_full                                   |    <0.001 |
@@ -1917,6 +1917,24 @@ Table of Contents
 |   storage_9_reg_0_7_6_11                            |    <0.001 |
 |   storage_reg_0_15_0_5                              |    <0.001 |
 |   storage_reg_0_15_6_9                              |    <0.001 |
+|   tag_mem_reg_0_63_0_2                              |    <0.001 |
+|   tag_mem_reg_0_63_12_14                            |    <0.001 |
+|   tag_mem_reg_0_63_15_17                            |    <0.001 |
+|   tag_mem_reg_0_63_18_20                            |    <0.001 |
+|   tag_mem_reg_0_63_24_26                            |    <0.001 |
+|   tag_mem_reg_0_63_27_27                            |    <0.001 |
+|   tag_mem_reg_0_63_3_5                              |    <0.001 |
+|   tag_mem_reg_0_63_6_8                              |    <0.001 |
+|   tag_mem_reg_0_63_9_11                             |    <0.001 |
+|   tag_mem_reg_64_127_0_2                            |    <0.001 |
+|   tag_mem_reg_64_127_12_14                          |    <0.001 |
+|   tag_mem_reg_64_127_15_17                          |    <0.001 |
+|   tag_mem_reg_64_127_18_20                          |    <0.001 |
+|   tag_mem_reg_64_127_24_26                          |    <0.001 |
+|   tag_mem_reg_64_127_27_27                          |    <0.001 |
+|   tag_mem_reg_64_127_3_5                            |    <0.001 |
+|   tag_mem_reg_64_127_6_8                            |    <0.001 |
+|   tag_mem_reg_64_127_9_11                           |    <0.001 |
 +-----------------------------------------------------+-----------+
 
 

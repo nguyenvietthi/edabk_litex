@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
-| Date         : Tue Sep 13 17:31:36 2022
+| Date         : Wed Sep 14 09:53:34 2022
 | Host         : pc182-linux running 64-bit CentOS Linux release 7.9.2009 (Core)
 | Command      : report_utilization -hierarchical -file xilinx_kc705_utilization_hierarchical_synth.rpt
 | Design       : xilinx_kc705
@@ -21,16 +21,16 @@ Table of Contents
 +-------------------------------+--------------------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
 |            Instance           |                Module                | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | DSP48 Blocks |
 +-------------------------------+--------------------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
-| xilinx_kc705                  |                                (top) |      24379 |      18081 |    6296 |    2 | 13746 |     49 |     75 |            4 |
-|   (xilinx_kc705)              |                                (top) |       6280 |       6126 |     152 |    2 |  6395 |     48 |     67 |            0 |
-|   VexRiscv                    |                             VexRiscv |       2718 |       2718 |       0 |    0 |  1288 |      1 |      8 |            4 |
-|     (VexRiscv)                |                             VexRiscv |       1588 |       1588 |       0 |    0 |  1112 |      0 |      2 |            4 |
-|     IBusCachedPlugin_cache    |                     InstructionCache |        618 |        618 |       0 |    0 |   111 |      1 |      1 |            0 |
-|     dataCache_1               |                            DataCache |        512 |        512 |       0 |    0 |    65 |      0 |      5 |            0 |
-|   snn_1x1_wrapper             |                      snn_1x1_wrapper |      15381 |       9237 |    6144 |    0 |  6063 |      0 |      0 |            0 |
-|     RANCNetworkGrid_1x1_ins   |                  RANCNetworkGrid_1x1 |      12267 |       8315 |    3952 |    0 |  5550 |      0 |      0 |            0 |
-|       Core0                   |                             Core_1x1 |      12174 |       8222 |    3952 |    0 |  5435 |      0 |      0 |            0 |
-|         (Core0)               |                             Core_1x1 |         19 |         19 |       0 |    0 |    17 |      0 |      0 |            0 |
+| xilinx_kc705                  |                                (top) |      24507 |      18141 |    6364 |    2 | 13704 |     49 |     74 |            4 |
+|   (xilinx_kc705)              |                                (top) |       6402 |       6180 |     220 |    2 |  6376 |     48 |     66 |            0 |
+|   VexRiscv                    |                             VexRiscv |       2784 |       2784 |       0 |    0 |  1288 |      1 |      8 |            4 |
+|     (VexRiscv)                |                             VexRiscv |       1590 |       1590 |       0 |    0 |  1112 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache    |                     InstructionCache |        614 |        614 |       0 |    0 |   111 |      1 |      1 |            0 |
+|     dataCache_1               |                            DataCache |        580 |        580 |       0 |    0 |    65 |      0 |      5 |            0 |
+|   snn_1x1_wrapper             |                      snn_1x1_wrapper |      15321 |       9177 |    6144 |    0 |  6040 |      0 |      0 |            0 |
+|     RANCNetworkGrid_1x1_ins   |                  RANCNetworkGrid_1x1 |      12383 |       8431 |    3952 |    0 |  5549 |      0 |      0 |            0 |
+|       Core0                   |                             Core_1x1 |      12290 |       8338 |    3952 |    0 |  5434 |      0 |      0 |            0 |
+|         (Core0)               |                             Core_1x1 |         18 |         18 |       0 |    0 |    17 |      0 |      0 |            0 |
 |         Router                |                               Router |       1649 |       1649 |       0 |    0 |  1149 |      0 |      0 |            0 |
 |           forward_east        |                   ForwardEastWest_21 |        132 |        132 |       0 |    0 |   260 |      0 |      0 |            0 |
 |             Merge             |                            Merge2_40 |         42 |         42 |       0 |    0 |    33 |      0 |      0 |            0 |
@@ -55,11 +55,11 @@ Table of Contents
 |             buffer_west       |                            buffer_29 |         73 |         73 |       0 |    0 |   157 |      0 |      0 |            0 |
 |           local_in            |                           LocalIn_26 |       1195 |       1195 |       0 |    0 |    37 |      0 |      0 |            0 |
 |             Merge             |            Merge2__parameterized0_27 |       1195 |       1195 |       0 |    0 |    37 |      0 |      0 |            0 |
-|         Scheduler             |                            Scheduler |       5173 |       5173 |       0 |    0 |  4128 |      0 |      0 |            0 |
+|         Scheduler             |                            Scheduler |       5172 |       5172 |       0 |    0 |  4127 |      0 |      0 |            0 |
 |           SRAM                |                        SchedulerSRAM |       1092 |       1092 |       0 |    0 |  4096 |      0 |      0 |            0 |
-|           counter             |                              Counter |       4081 |       4081 |       0 |    0 |    32 |      0 |      0 |            0 |
-|         neuron_grid           |                      neuron_grid_1x1 |       5333 |       1381 |    3952 |    0 |   141 |      0 |      0 |            0 |
-|           controller          |               neuron_grid_controller |         61 |         61 |       0 |    0 |     4 |      0 |      0 |            0 |
+|           counter             |                              Counter |       4080 |       4080 |       0 |    0 |    31 |      0 |      0 |            0 |
+|         neuron_grid           |                      neuron_grid_1x1 |       5451 |       1499 |    3952 |    0 |   141 |      0 |      0 |            0 |
+|           controller          |               neuron_grid_controller |        179 |        179 |       0 |    0 |     4 |      0 |      0 |            0 |
 |           datapath            |             neuron_grid_datapath_1x1 |       5272 |       1320 |    3952 |    0 |   137 |      0 |      0 |            0 |
 |             (datapath)        |             neuron_grid_datapath_1x1 |       4720 |        768 |    3952 |    0 |   128 |      0 |      0 |            0 |
 |             neuron_block      |                         neuron_block |        552 |        552 |       0 |    0 |     9 |      0 |      0 |            0 |
@@ -87,31 +87,31 @@ Table of Contents
 |             buffer_west       |                            buffer_12 |          2 |          2 |       0 |    0 |     3 |      0 |      0 |            0 |
 |           local_in            |                              LocalIn |          9 |          9 |       0 |    0 |    11 |      0 |      0 |            0 |
 |             Merge             |               Merge2__parameterized0 |          9 |          9 |       0 |    0 |    11 |      0 |      0 |            0 |
-|     load_neuron_inst_fifo     |      load_param_fifo__parameterized0 |         65 |         49 |      16 |    0 |    80 |      0 |      0 |            0 |
+|     load_neuron_inst_fifo     |      load_param_fifo__parameterized0 |         64 |         48 |      16 |    0 |    80 |      0 |      0 |            0 |
 |       (load_neuron_inst_fifo) |      load_param_fifo__parameterized0 |          6 |          6 |       0 |    0 |     8 |      0 |      0 |            0 |
-|       async_fifo_ins          |           async_fifo__parameterized0 |         59 |         43 |      16 |    0 |    72 |      0 |      0 |            0 |
+|       async_fifo_ins          |           async_fifo__parameterized0 |         58 |         42 |      16 |    0 |    72 |      0 |      0 |            0 |
 |         fifomem               |              fifomem__parameterized0 |         18 |          2 |      16 |    0 |     0 |      0 |      0 |            0 |
 |         rptr_empty            |                         rptr_empty_8 |         19 |         19 |       0 |    0 |    18 |      0 |      0 |            0 |
 |         sync_r2w              |                           sync_r2w_9 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
 |         sync_w2r              |                          sync_w2r_10 |          1 |          1 |       0 |    0 |    18 |      0 |      0 |            0 |
-|         wptr_full             |                         wptr_full_11 |         21 |         21 |       0 |    0 |    18 |      0 |      0 |            0 |
-|     load_packet_fifo          |           async_fifo__parameterized1 |        263 |        103 |     160 |    0 |   102 |      0 |      0 |            0 |
-|       fifomem                 |              fifomem__parameterized1 |        220 |         60 |     160 |    0 |    30 |      0 |      0 |            0 |
+|         wptr_full             |                         wptr_full_11 |         20 |         20 |       0 |    0 |    18 |      0 |      0 |            0 |
+|     load_packet_fifo          |           async_fifo__parameterized1 |        233 |         73 |     160 |    0 |   102 |      0 |      0 |            0 |
+|       fifomem                 |              fifomem__parameterized1 |        190 |         30 |     160 |    0 |    30 |      0 |      0 |            0 |
 |       rptr_empty              |                         rptr_empty_4 |         21 |         21 |       0 |    0 |    18 |      0 |      0 |            0 |
 |       sync_r2w                |                           sync_r2w_5 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
 |       sync_w2r                |                           sync_w2r_6 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
 |       wptr_full               |                          wptr_full_7 |         22 |         22 |       0 |    0 |    18 |      0 |      0 |            0 |
-|     load_param_fifo           |                      load_param_fifo |       2680 |        712 |    1968 |    0 |   257 |      0 |      0 |            0 |
-|       (load_param_fifo)       |                      load_param_fifo |         91 |         91 |       0 |    0 |    92 |      0 |      0 |            0 |
-|       async_fifo_ins          |                           async_fifo |       2589 |        621 |    1968 |    0 |   165 |      0 |      0 |            0 |
+|     load_param_fifo           |                      load_param_fifo |       2537 |        569 |    1968 |    0 |   235 |      0 |      0 |            0 |
+|       (load_param_fifo)       |                      load_param_fifo |         70 |         70 |       0 |    0 |    72 |      0 |      0 |            0 |
+|       async_fifo_ins          |                           async_fifo |       2467 |        499 |    1968 |    0 |   163 |      0 |      0 |            0 |
 |         fifomem               |                              fifomem |       2336 |        368 |    1968 |    0 |     0 |      0 |      0 |            0 |
-|         rptr_empty            |                         rptr_empty_0 |        209 |        209 |       0 |    0 |    92 |      0 |      0 |            0 |
+|         rptr_empty            |                         rptr_empty_0 |         85 |         85 |       0 |    0 |    88 |      0 |      0 |            0 |
 |         sync_r2w              |                           sync_r2w_1 |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
 |         sync_w2r              |                           sync_w2r_2 |          1 |          1 |       0 |    0 |    18 |      0 |      0 |            0 |
-|         wptr_full             |                          wptr_full_3 |         43 |         43 |       0 |    0 |    37 |      0 |      0 |            0 |
-|     packet_out_fifo           |           async_fifo__parameterized2 |        105 |         57 |      48 |    0 |    72 |      0 |      0 |            0 |
+|         wptr_full             |                          wptr_full_3 |         45 |         45 |       0 |    0 |    39 |      0 |      0 |            0 |
+|     packet_out_fifo           |           async_fifo__parameterized2 |        103 |         55 |      48 |    0 |    72 |      0 |      0 |            0 |
 |       fifomem                 |              fifomem__parameterized2 |         64 |         16 |      48 |    0 |     0 |      0 |      0 |            0 |
-|       rptr_empty              |                           rptr_empty |         19 |         19 |       0 |    0 |    18 |      0 |      0 |            0 |
+|       rptr_empty              |                           rptr_empty |         17 |         17 |       0 |    0 |    18 |      0 |      0 |            0 |
 |       sync_r2w                |                             sync_r2w |          1 |          1 |       0 |    0 |    18 |      0 |      0 |            0 |
 |       sync_w2r                |                             sync_w2r |          0 |          0 |       0 |    0 |    18 |      0 |      0 |            0 |
 |       wptr_full               |                            wptr_full |         21 |         21 |       0 |    0 |    18 |      0 |      0 |            0 |

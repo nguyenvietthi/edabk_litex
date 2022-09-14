@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Tue Sep 13 17:22:50 2022
-# Process ID: 29397
+# Start of session at: Wed Sep 14 09:44:33 2022
+# Process ID: 10802
 # Current directory: /home/thinv0/edabk_litex/soc_snn/soc/build/xilinx_kc705/gateware
 # Command line: vivado -mode batch -source xilinx_kc705.tcl
 # Log file: /home/thinv0/edabk_litex/soc_snn/soc/build/xilinx_kc705/gateware/vivado.log
