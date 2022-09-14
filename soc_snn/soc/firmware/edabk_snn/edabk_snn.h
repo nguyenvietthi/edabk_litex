@@ -6,4 +6,5 @@
 void load_neuron_parameter(void);
 void load_neuron_inst(void);
 void load_packet_in(void);
+void test_function(void);
 #endif 

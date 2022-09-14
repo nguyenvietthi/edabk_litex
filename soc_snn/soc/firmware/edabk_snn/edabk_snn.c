@@ -7,6 +7,21 @@
 #include <libfatfs/ff.h>			
 #include <libfatfs/diskio.h>
 
+static const long hextable[] = {
+   [0 ... 255] = -1, // bit aligned access into this table is considerably
+   ['0'] = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, // faster for most modern processors,
+   ['A'] = 10, 11, 12, 13, 14, 15,       // for the space conscious, reduce to
+   ['a'] = 10, 11, 12, 13, 14, 15        // signed char.
+};
+
+long hexdec(unsigned const char *hex) {
+   long ret = 0; 
+   while (*hex && ret >= 0) {
+      ret = (ret << 4) | hextable[*hex++];
+   }
+   return ret; 
+}
+
 void load_neuron_parameter(void){
 	FIL fptr[1];
 	FRESULT op = f_open(fptr, "csram.mem", FA_READ);
@@ -20,7 +35,7 @@ void load_neuron_parameter(void){
 	int i = 0;
 
 	while ((f_eof(fptr) == 0)){
-		f_gets((char*)param_string, sizeof(param_string), fptr);// read current line
+		f_gets((char*)param_string, 93, fptr);// read current line
 		f_lseek(fptr, line_index);// move to the next line
 		// printf("param: %s\n", param_string);
 		line_index = line_index + 93;
@@ -33,15 +48,14 @@ void load_neuron_parameter(void){
             	strncpy(value, param_string + 4 + (j - 1) * 8, 8);
             	value[9] = 0; 
        		}	   
-			   		// printf("param: %s\n", value);
-			param[i][j] = (int)strtol(value, NULL, 16);;
+			param[i][j] = hexdec(value);
 		}
 		i++;
 	}
 	
 	#ifdef DEBUG
 	for(int i = 0; i < 256; i++){
-		printf("parameter %d: 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x \n", i, \
+		printf("parameter %3d: %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X \n", i, \
 		param[i][0],param[i][1],param[i][2],param[i][3],param[i][4],param[i][5], param[i][6] \
 		,param[i][7],param[i][8],param[i][9],param[i][10],param[i][11]);
 	}
@@ -65,7 +79,7 @@ void load_neuron_parameter(void){
 		}
 	} while (index < 256);
 
-		printf("Done!!!\n");
+	printf("Parameter load successful!!!\n\n");
 
 }
 
@@ -83,8 +97,8 @@ void load_neuron_inst(void){
 	int i = 0;
 
 	while ((f_eof(fptr) == 0)){
-		f_gets((char*)neuron_inst_string, sizeof(neuron_inst_string), fptr);// read current line
-		f_lseek(fptr, line_index);// move to the next line
+		f_gets((char*)neuron_inst_string, sizeof(neuron_inst_string), fptr);
+		f_lseek(fptr, line_index);
 		line_index = line_index + 3;
 		neuron_inst_string[3] = 0;
 		neuron_inst[i] = strtol(neuron_inst_string, (char **)NULL, 16);
@@ -93,17 +107,18 @@ void load_neuron_inst(void){
 
 	#ifdef DEBUG
 	for(int i = 0; i < 256; i++){
-		printf("inst %d: 0x%x\n", i, neuron_inst[i]);
+		printf("Neuron instructions %3d: 0x%x\n", i, neuron_inst[i]);
 	}
 	#endif
 	
     do {
 		if (!edabk_snn_snn_status_neuron_inst_wfull_read()) {
-			edabk_snn_neuron_inst_wdata_write (neuron_inst[index]) ;		
-			printf("innnn:%x\n", edabk_snn_neuron_inst_wdata_read());
+			edabk_snn_neuron_inst_wdata_write (neuron_inst[index]);		
 			index++;
 		}
 	} while (index < 256);
+	printf("Neuron instructions successful!!!\n\n");
+
 }
 
 
@@ -122,8 +137,8 @@ void load_packet_in(void){
 	int i = 0;
 
 	while ((f_eof(fptr) == 0)){
-		f_gets((char*)value, sizeof(value), fptr);// read current line
-		f_lseek(fptr, line_index);// move to the next line
+		f_gets((char*)value, sizeof(value), fptr);
+		f_lseek(fptr, line_index);
 		line_index = line_index + 6;
 		value[6] = 0;
 		packet_in[i] = strtol(value, (char **)NULL, 16);
@@ -132,7 +147,7 @@ void load_packet_in(void){
 
 	#ifdef DEBUG
 	for(int i = 0; i < 22; i++){
-		printf("packet in %d: 0x%x\n", i ,packet_in[i]);
+		printf("Packet in %3d: 0x%x\n", i ,packet_in[i]);
 	}
 	#endif
 	
@@ -143,4 +158,38 @@ void load_packet_in(void){
 		}
 	} while (index < 22);
 
+}
+
+void test_function(void){
+	
+	load_neuron_parameter();
+	load_neuron_inst();
+	load_packet_in();
+
+	// while(!edabk_snn_snn_status_tick_ready_read()){
+	// 	if (readchar_nonblock()) {
+  	// 		getchar();
+  	// 		break;
+  	// 	}
+	// }
+	printf("\nTick ready!!!!!!!!\n");
+	edabk_snn_tick_write(1);
+
+	while(!edabk_snn_snn_status_wait_packets_read()){
+		printf("Waiting!!!!!!!!\n");
+	}
+	printf("\nRead packet out!!!!!!!!\n");
+
+	while (1)
+	{
+		if(!edabk_snn_snn_status_packet_out_rempty_read()){
+			printf("Packet out: %x\n", edabk_snn_packet_out_read());
+			edabk_snn_packet_out_rinc_write(1);
+		}
+
+		if (readchar_nonblock()) {
+  			getchar();
+  			break;
+  		}
+	}
 }

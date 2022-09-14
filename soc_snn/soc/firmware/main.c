@@ -214,50 +214,10 @@ int main(void)
 	if(sd_init()) {
 		printf("SDCard init successfully!\n");
 	} else {
-		printf("SDCard init failed!\n");
+		printf("SDCard init failed!\n\n");
 	}
 
-	load_neuron_parameter();
-	load_neuron_inst();
-		while(1){
-
-		if (readchar_nonblock()) {
-  			getchar();
-  		break;}
-  	}
-	load_packet_in();
-
-		
-
-	while(!edabk_snn_snn_status_tick_ready_read()){
-
-		if (readchar_nonblock()) {
-  		getchar();
-  		break;
-  	}
-	}
-	printf("Tick ready!!!!!!!!\n");
-	edabk_snn_tick_write(1);
-	printf("tick = %x\n", edabk_snn_tick_read());
-
-	while(!edabk_snn_snn_status_wait_packets_read){
-	printf("Waiting!!!!!!!!\n");
-	}
-	printf("OK!!!!!!!!\n");
-
-	while (1)
-	{
-		if(!edabk_snn_snn_status_packet_out_rempty_read()){
-			printf("packet out: %x\n", edabk_snn_packet_out_read());
-			edabk_snn_packet_out_rinc_write(1);
-
-		}
-		if (readchar_nonblock()) {
-  		getchar();
-  		break;
-  	}
-	}
-	
+	test_function();
 
 	help();
 	prompt();
