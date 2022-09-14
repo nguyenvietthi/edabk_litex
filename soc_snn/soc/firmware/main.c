@@ -88,6 +88,7 @@ static void help(void)
 	puts("Available commands:");
 	puts("help               - Show this command");
 	puts("reboot             - Reboot CPU");
+	puts("test_snn           - Test SNN function");
 	puts("show_sd_info       - Show SDCard info");
 #ifdef CSR_LEDS_BASE
 	puts("led                - Led demo");
@@ -186,6 +187,8 @@ static void console_service(void)
 		reboot_cmd();
 	else if(strcmp(token, "show_sd_info") == 0)
 		show_SD_info();
+	else if(strcmp(token, "test_snn") == 0)
+		test_function();
 #ifdef CSR_LEDS_BASE
 	else if(strcmp(token, "led") == 0)
 		led_cmd();
@@ -217,7 +220,7 @@ int main(void)
 		printf("SDCard init failed!\n\n");
 	}
 
-	test_function();
+	// test_function();
 
 	help();
 	prompt();
