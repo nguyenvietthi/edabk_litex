@@ -44,7 +44,7 @@ class edabk_snn(Module, AutoCSR, AutoDoc):
             CSRField(name="packet_out_rempty", description="Packet out data is empty", size=1, reset=0x0),
             CSRField(name="token_controller_error", description="Token controller error", size=1, reset=0x0),
             CSRField(name="scheduler_error", description="Scheduler error", size=1, reset=0x0),
-            CSRField(name="wait_packets", description="wait for packet to put on snn /Time to read packetout", size=1, reset=0x0)
+            CSRField(name="wait_packets", description="Wait for packet to put on snn/ Time to read packetout", size=1, reset=0x0)
         ], description="SNN status")
 
         self.comb += self.param_wdata.eq(Cat(self.param0.storage, 
