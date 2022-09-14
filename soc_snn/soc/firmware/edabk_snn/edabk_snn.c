@@ -166,13 +166,13 @@ void test_function(void){
 	load_neuron_inst();
 	load_packet_in();
 
-	// while(!edabk_snn_snn_status_tick_ready_read()){
-	// 	if (readchar_nonblock()) {
-  	// 		getchar();
-  	// 		break;
-  	// 	}
-	// }
+	while (!edabk_snn_tick_ready_read()){
+		printf("Waiting tick_ready!!!!!!!!\n");
+	}
+
+	edabk_snn_tick_ready_write(0);
 	printf("\nTick ready!!!!!!!!\n");
+	
 	edabk_snn_tick_write(1);
 
 	while(!edabk_snn_snn_status_wait_packets_read()){
