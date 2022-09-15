@@ -154,9 +154,9 @@ static void donut_cmd(void)
 static void helloc_cmd(void)
 {
 	printf("Hello C demo...\n");
-	load_neuron_parameter();
-	load_neuron_inst();
-	load_packet_in();
+	// load_neuron_parameter();
+	// load_neuron_inst();
+	// load_packet_in();
 }
 
 #ifdef WITH_CXX

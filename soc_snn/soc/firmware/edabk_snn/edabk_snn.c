@@ -55,7 +55,7 @@ void load_neuron_parameter(void){
 	
 	#ifdef DEBUG
 	for(int i = 0; i < 256; i++){
-		printf("parameter %3d: %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X \n", i, \
+		printf("Parameter %3d: %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X %8X \n", i, \
 		param[i][0],param[i][1],param[i][2],param[i][3],param[i][4],param[i][5], param[i][6] \
 		,param[i][7],param[i][8],param[i][9],param[i][10],param[i][11]);
 	}
@@ -122,18 +122,18 @@ void load_neuron_inst(void){
 }
 
 
-void load_packet_in(void){
+void load_packet_in(const char* path, uint8_t num_inputs){
 	FIL fptr[1];
-	FRESULT op = f_open(fptr, "input.mem", FA_READ);
+	FRESULT op = f_open(fptr, path, FA_READ);
 
 	if (op != FR_OK){
-		printf("Could not open file: %s\n", "input.mem");
+		printf("Could not open file: %s\n", path);
 	}
 
 	char value[6];
 	int line_index = 6;
 	uint16_t index = 0;
-	uint32_t packet_in[22];
+	uint32_t packet_in[num_inputs];
 	int i = 0;
 
 	while ((f_eof(fptr) == 0)){
@@ -146,8 +146,8 @@ void load_packet_in(void){
 	}
 
 	#ifdef DEBUG
-	for(int i = 0; i < 22; i++){
-		printf("Packet in %3d: 0x%x\n", i ,packet_in[i]);
+	for(int i = 0; i < num_inputs; i++){
+		printf("Packet in %3d: 0x%X\n", i ,packet_in[i]);
 	}
 	#endif
 	
@@ -156,15 +156,13 @@ void load_packet_in(void){
 			edabk_snn_packet_wdata_write (packet_in[index]) ;		
 			index++;
 		}
-	} while (index < 22);
+	} while (index < num_inputs);
 
 }
 
-void test_function(void){
-	
-	load_neuron_parameter();
-	load_neuron_inst();
-	load_packet_in();
+void handling_packets(const char* path, uint8_t num_inputs){
+
+	load_packet_in(path, num_inputs);
 
 	while (!edabk_snn_tick_ready_read()){
 		printf("Waiting tick_ready!!!!!!!!\n");
@@ -183,7 +181,7 @@ void test_function(void){
 	while (1)
 	{
 		if(!edabk_snn_snn_status_packet_out_rempty_read()){
-			printf("Packet out: %x\n", edabk_snn_packet_out_read());
+			printf("Packet out: 0x%X\n", edabk_snn_packet_out_read());
 			edabk_snn_packet_out_rinc_write(1);
 		}
 
@@ -192,4 +190,15 @@ void test_function(void){
   			break;
   		}
 	}
+}
+
+void test_function(void){
+	
+	load_neuron_parameter();
+	load_neuron_inst();
+
+	handling_packets("input.mem", 0x16);
+	handling_packets("input_1.mem", 0x25);
+	handling_packets("input_2.mem", 0xe);
+	handling_packets("input_3.mem", 0x31);
 }
