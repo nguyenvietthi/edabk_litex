@@ -402,6 +402,6 @@ EDABK_SNN_SNN_STATUS
 +-------+------------------------+-------------------------------------------------------+
 | [5]   | SCHEDULER_ERROR        | Scheduler error                                       |
 +-------+------------------------+-------------------------------------------------------+
-| [6]   | WAIT_PACKETS           | wait for packet to put on snn /Time to read packetout |
+| [6]   | WAIT_PACKETS           | Wait for packet to put on snn/ Time to read packetout |
 +-------+------------------------+-------------------------------------------------------+
 

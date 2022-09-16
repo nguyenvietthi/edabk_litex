@@ -102,8 +102,11 @@
 <tr class="row-even"><td><a class="reference internal" href="#edabk-snn-packet-out"><span class="std std-ref">EDABK_SNN_PACKET_OUT</span></a></td>
 <td><a class="reference internal" href="#edabk-snn-packet-out"><span class="std std-ref">0xf0000040</span></a></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#edabk-snn-snn-status"><span class="std std-ref">EDABK_SNN_SNN_STATUS</span></a></td>
-<td><a class="reference internal" href="#edabk-snn-snn-status"><span class="std std-ref">0xf0000044</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#edabk-snn-tick-ready"><span class="std std-ref">EDABK_SNN_TICK_READY</span></a></td>
+<td><a class="reference internal" href="#edabk-snn-tick-ready"><span class="std std-ref">0xf0000044</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#edabk-snn-snn-status"><span class="std std-ref">EDABK_SNN_SNN_STATUS</span></a></td>
+<td><a class="reference internal" href="#edabk-snn-snn-status"><span class="std std-ref">0xf0000048</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -402,9 +405,27 @@
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="edabk-snn-tick-ready">
+<h3>EDABK_SNN_TICK_READY<a class="headerlink" href="#edabk-snn-tick-ready" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf0000000 + 0x44 = 0xf0000044</cite></p>
+<blockquote>
+<div><p>Tick ready</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "tick_ready", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
 <div class="section" id="edabk-snn-snn-status">
 <h3>EDABK_SNN_SNN_STATUS<a class="headerlink" href="#edabk-snn-snn-status" title="Permalink to this headline">¶</a></h3>
-<p><cite>Address: 0xf0000000 + 0x44 = 0xf0000044</cite></p>
+<p><cite>Address: 0xf0000000 + 0x48 = 0xf0000048</cite></p>
 <blockquote>
 <div><p>SNN status</p>
 
@@ -419,8 +440,7 @@
         {"name": "token_controller_error",  "bits": 1},
         {"name": "scheduler_error",  "bits": 1},
         {"name": "wait_packets",  "bits": 1},
-        {"name": "tick_ready",  "bits": 1},
-        {"bits": 24}
+        {"bits": 25}
     ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
 }
 </script>
@@ -465,11 +485,7 @@
 </tr>
 <tr class="row-even"><td>[6]</td>
 <td>WAIT_PACKETS</td>
-<td>wait for packet to put on snn /Time to read packetout</td>
-</tr>
-<tr class="row-odd"><td>[7]</td>
-<td>TICK_READY</td>
-<td>Tick ready</td>
+<td>Wait for packet to put on snn/ Time to read packetout</td>
 </tr>
 </tbody>
 </table>
