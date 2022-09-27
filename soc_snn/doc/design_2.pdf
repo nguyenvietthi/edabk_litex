@@ -1,0 +1,622 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Title    (first)
+  /Author   (thinv0)
+  /Producer (Concept Engineering GmbH)
+  /Creator  (Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35)
+  /CreationDate (D:20220927171120)
+>>
+endobj
+2 0 obj
+<<
+  /Type     /Catalog
+  /Pages    3 0 R
+  /Outlines 7 0 R
+  /PageMode /UseThumbs
+  /ViewerPreferences << /DisplayDocTitle true >>
+>>
+endobj
+4 0 obj
+<<
+  /Type     /Font
+  /Subtype  /Type1
+  /Name     /F1
+  /BaseFont /Helvetica
+  /Encoding /MacRomanEncoding
+>>
+endobj
+5 0 obj
+<<
+  /ExtGState  6 0 R
+  /Font       << /F1 4 0 R >>
+  /ColorSpace << /PCS [/Pattern /DeviceRGB] >>
+  /Pattern    8 0 R
+  /XObject    9 0 R
+>>
+endobj
+%
+% Nlview page 1
+% (user space scaling 1.386)
+%
+10 0 obj
+<<
+  /Type      /Page
+  /Parent    3 0 R
+  /Resources 5 0 R
+  /Contents  11 0 R
+  /MediaBox  [0 0 612 792]
+  /Rotate    0
+>>
+endobj
+11 0 obj
+<<
+  /Length 4276
+>>
+stream
+1 0 0 1 0 131.58 cm
+1 0 0 1 28.8 28.8 cm
+1.386 0 0 -1.386 0 0 cm
+1 0 0 1 0 -340 cm
+0 0 400 340 re
+W n
+/GS gs
+1 0 0 1 10 10 cm
+q
+1.000 1.000 1.000 rg
+/GSa0 gs
+-10 -10 400 341 re
+f
+Q
+q
+0.929 0.965 0.996 rg
+/GSa0 gs
+37 22 m
+343 22 l
+343 22 l
+346 23 l
+348 24 l
+349 26 l
+350 29 l
+350 29 l
+350 291 l
+350 291 l
+349 294 l
+348 296 l
+346 297 l
+343 298 l
+343 298 l
+37 298 l
+37 298 l
+34 297 l
+32 296 l
+31 294 l
+30 291 l
+30 291 l
+30 29 l
+30 29 l
+31 26 l
+32 24 l
+34 23 l
+h f
+Q
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 190 20 cm
+BT
+/F1 12 Tf
+1 0 0 -1 0 0 Tm
+-54.36 2.484 Td
+(snn_1x1_wrapper_0) Tj
+ET
+Q
+q
+0.255 0.380 0.624 rg
+/GSa0 gs
+1 0 0 1 190 300 cm
+BT
+/F1 12 Tf
+1 0 0 -1 0 0 Tm
+-47.688 -8.616 Td
+(snn_1x1_wrapper) Tj
+ET
+Q
+[] 0 d
+3 w
+0.000 0.000 0.000 RG
+/GSA0 gs
+20 50 m
+30 50 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 50 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(clk) Tj
+ET
+Q
+30 70 m
+30 68.3431 28.6569 67 27 67 c
+25.3431 67 24 68.3431 24 70 c
+24 71.6569 25.3431 73 27 73 c
+28.6569 73 30 71.6569 30 70 c
+S
+20 70 m
+24 70 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 70 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(reset_n) Tj
+ET
+Q
+20 90 m
+30 90 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 90 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(sys_clk) Tj
+ET
+Q
+20 110 m
+30 110 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 110 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(sys_reset_n) Tj
+ET
+Q
+20 130 m
+30 130 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 130 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(tick) Tj
+ET
+Q
+20 150 m
+30 150 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 150 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(packet_winc) Tj
+ET
+Q
+5 w
+20 170 m
+30 170 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 170 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(packet_wdata[29:0]) Tj
+ET
+Q
+3 w
+360 80 m
+350 80 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 80 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-55.02 -3.59 Td
+(packet_wfull) Tj
+ET
+Q
+20 190 m
+30 190 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 190 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(param_winc) Tj
+ET
+Q
+5 w
+20 210 m
+30 210 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 210 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(param_wdata[367:0]) Tj
+ET
+Q
+3 w
+360 100 m
+350 100 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 100 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-53.9 -3.59 Td
+(param_wfull) Tj
+ET
+Q
+20 230 m
+30 230 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 230 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(neuron_inst_winc) Tj
+ET
+Q
+5 w
+20 250 m
+30 250 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 250 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(neuron_inst_wdata[1:0]) Tj
+ET
+Q
+3 w
+360 120 m
+350 120 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 120 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-77.81 -3.59 Td
+(neuron_inst_wfull) Tj
+ET
+Q
+5 w
+360 140 m
+350 140 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 140 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-68.38 -3.59 Td
+(packet_out[7:0]) Tj
+ET
+Q
+3 w
+20 270 m
+30 270 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 32 270 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+0 -3.59 Td
+(packet_out_rinc) Tj
+ET
+Q
+360 160 m
+350 160 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 160 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-85.04 -3.59 Td
+(packet_out_rempty) Tj
+ET
+Q
+360 180 m
+350 180 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 180 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-97.81 -3.59 Td
+(token_controller_error) Tj
+ET
+Q
+360 200 m
+350 200 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 200 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-70.02 -3.59 Td
+(scheduler_error) Tj
+ET
+Q
+360 220 m
+350 220 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 220 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-57.8 -3.59 Td
+(wait_packets) Tj
+ET
+Q
+360 240 m
+350 240 l
+S
+q
+0.000 0.000 0.000 rg
+/GSa0 gs
+1 0 0 1 348 240 cm
+BT
+/F1 10 Tf
+1 0 0 -1 0 0 Tm
+-45.57 -3.59 Td
+(tick_ready) Tj
+ET
+Q
+1 w
+0.255 0.380 0.624 RG
+37 22 m
+343 22 l
+S
+350 29 m
+350.003 28.8889 350.003 28.7778 350 28.6667 c
+349.908 24.8927 346.774 21.908 343 22 c
+S
+350 29 m
+350 291 l
+S
+343 298 m
+343.111 298.003 343.222 298.003 343.333 298 c
+347.107 297.908 350.092 294.774 350 291 c
+S
+343 298 m
+37 298 l
+S
+30 291 m
+29.9973 291.111 29.9973 291.222 30 291.333 c
+30.092 295.107 33.2261 298.092 37 298 c
+S
+30 291 m
+30 29 l
+S
+37 22 m
+36.8889 21.9973 36.7778 21.9973 36.6667 22 c
+32.8927 22.092 29.908 25.2261 30 29 c
+S
+endstream
+endobj
+3 0 obj
+<<
+  /Type    /Pages
+  /Kids
+  [
+  10 0 R
+  ]
+  /Count   1
+  /ProcSet [ /PDF /Text ]
+>>
+endobj
+6 0 obj
+<<
+  /GS << /Type /ExtGState
+         /LC    0
+         /LJ    0
+         /ML    4.0
+         /ca    1.0
+         /CA    1.0
+         /AIS   false
+         /SMask /None
+  >>
+  /GSa0 << /Type /ExtGState /ca 1 >>
+  /GSA0 << /Type /ExtGState /CA 1 >>
+>>
+endobj
+14 0 obj
+<<
+  /Title  (snn_1x1_wrapper_0 design_2_snn_1x1_wrapper_0_0)
+  /C      [0.0 0.0 0.4]
+  /Dest   [10 0 R /FitR 70 183 541 608]
+  /Parent 13 0 R
+>>
+endobj
+13 0 obj
+<<
+  /Title  (instances)
+  /C      [0.0 0.4 0.0]
+  /F      1
+  /Parent 12 0 R
+  /First  14 0 R
+  /Last   14 0 R
+  /Count  1
+  /Next   15 0 R
+>>
+endobj
+15 0 obj
+<<
+  /Title  (ports)
+  /C      [0.0 0.4 0.0]
+  /F      1
+  /Parent 12 0 R
+  /First  0 0 R
+  /Last   0 0 R
+  /Count  0
+  /Prev   13 0 R
+  /Next   16 0 R
+>>
+endobj
+16 0 obj
+<<
+  /Title  (portBuses)
+  /C      [0.0 0.4 0.0]
+  /F      1
+  /Parent 12 0 R
+  /First  0 0 R
+  /Last   0 0 R
+  /Count  0
+  /Prev   15 0 R
+  /Next   17 0 R
+>>
+endobj
+17 0 obj
+<<
+  /Title  (nets)
+  /C      [0.0 0.4 0.0]
+  /F      1
+  /Parent 12 0 R
+  /First  0 0 R
+  /Last   0 0 R
+  /Count  0
+  /Prev   16 0 R
+  /Next   18 0 R
+>>
+endobj
+18 0 obj
+<<
+  /Title  (netBundles)
+  /C      [0.0 0.4 0.0]
+  /F      1
+  /Parent 12 0 R
+  /First  0 0 R
+  /Last   0 0 R
+  /Count  0
+  /Prev   17 0 R
+>>
+endobj
+12 0 obj
+<<
+  /Title  (Nlview page 1)
+  /C      [0.4 0.0 0.0]
+  /Dest   [10 0 R /Fit]
+  /Parent 7 0 R
+  /First  13 0 R
+  /Last   18 0 R
+  /Count  5
+>>
+endobj
+8 0 obj
+<<
+>>
+endobj
+9 0 obj
+<<
+>>
+endobj
+7 0 obj
+<<
+  /Type  /Outline
+  /First 12 0 R
+  /Last  12 0 R
+  /Count 1
+>>
+endobj
+xref
+0 19
+0000000000 65535 f 
+0000000009 00000 n 
+0000000208 00000 n 
+0000005163 00000 n 
+0000000358 00000 n 
+0000000485 00000 n 
+0000005266 00000 n 
+0000006729 00000 n 
+0000006687 00000 n 
+0000006708 00000 n 
+0000000692 00000 n 
+0000000833 00000 n 
+0000006529 00000 n 
+0000005694 00000 n 
+0000005532 00000 n 
+0000005854 00000 n 
+0000006025 00000 n 
+0000006200 00000 n 
+0000006370 00000 n 
+trailer
+<<
+  /Size 19
+  /Info 1 0 R
+  /Root 2 0 R
+>>
+startxref
+6811
+%%EOF
