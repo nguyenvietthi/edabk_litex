@@ -23,6 +23,7 @@ from litex.soc.cores.icap import ICAPBitstream
 from litex.soc.cores.clock import S7MMCM
 
 from litex.tools.litex_json2dts_linux import generate_dts
+from edabk_snn import edabk_snn
 
 # SoCLinux -----------------------------------------------------------------------------------------
 
@@ -41,6 +42,19 @@ def SoCLinux(soc_cls, **kwargs):
             rgb_led_pads = self.platform.request("rgb_led", 0)
             for n in "rgb":
                 setattr(self.submodules, "rgb_led_{}0".format(n), PWM(getattr(rgb_led_pads, n)))
+
+        # EDABK SNN---------------------------------------------------------------------------------
+        # SNN clk, Generate 100MHz from PLL.
+        def add_edabk_snn(self):
+            self.clock_domains.cd_snn_clk = ClockDomain()
+            self.crg.pll.create_clkout(self.cd_snn_clk, 100e6)
+            snn_clk = ClockSignal("snn_clk")
+            # platform.add_platform_command("set_property SEVERITY {{Warning}} [get_drc_checks REQP-52]")
+
+            self.submodules.edabk_snn = edabk_snn(self.platform)
+            self.add_csr("edabk_snn")
+            self.comb += self.edabk_snn.clk.eq(snn_clk)
+            self.comb += self.edabk_snn.sys_clk.eq(ClockSignal())
 
         # Switches ---------------------------------------------------------------------------------
         def add_switches(self):
