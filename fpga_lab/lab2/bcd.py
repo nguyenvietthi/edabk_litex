@@ -82,8 +82,6 @@ class Instance_BCD(Module):
             # i_master_clk=ClockSignal(), # if using clock
             # i_master_rst=ResetSignal(), 
             "bcd"                    , #module name
-            p_a = 12345,
-            p_ccc = 12345666,
             i_value=self.value       , #i_ + signal name
             o_hundreds=self.hundreds , #o_ + signal name
             o_tens=self.tens         ,
